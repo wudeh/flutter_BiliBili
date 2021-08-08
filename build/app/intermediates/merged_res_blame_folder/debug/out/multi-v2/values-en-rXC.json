@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "G:\\flutter_app\\bilibili\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rXC\\values-en-rXC.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\竹子梢头\\.gradle\\caches\\transforms-2\\files-2.1\\2e94107f30f39be366a17347c2bf100b\\core-1.1.0\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "202",
+                        "endOffsets": "253"
+                    },
+                    "to": {
+                        "startLines": "7",
+                        "startColumns": "4",
+                        "startOffsets": "1104",
+                        "endColumns": "202",
+                        "endOffsets": "1302"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\竹子梢头\\.gradle\\caches\\transforms-2\\files-2.1\\dd1c4ac0d91354cd162679805abac19a\\jetified-media2-session-1.1.0-alpha01\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,262,461,659,872",
+                        "endColumns": "206,198,197,212,231",
+                        "endOffsets": "257,456,654,867,1099"
+                    }
+                }
+            ]
+        }
+    ]
+}

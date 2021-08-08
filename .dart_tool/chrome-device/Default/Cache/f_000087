@@ -1,0 +1,250 @@
+define(['dart_sdk', 'packages/flutter/src/painting/_network_image_web.dart', 'packages/flutter/src/painting/image_stream.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/extended_image_library/src/extended_image_provider.dart', 'packages/flutter/src/painting/image_resolution.dart'], (function load__packages__extended_image_library__src__extended_asset_bundle_image_provider_dart(dart_sdk, packages__flutter__src__painting___network_image_web$46dart, packages__flutter__src__painting__image_stream$46dart, packages__flutter__src__foundation__debug$46dart, packages__extended_image_library__src__extended_image_provider$46dart, packages__flutter__src__painting__image_resolution$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const _js_helper = dart_sdk._js_helper;
+  const ui = dart_sdk.ui;
+  const typed_data = dart_sdk.typed_data;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const image_provider = packages__flutter__src__painting___network_image_web$46dart.src__painting__image_provider;
+  const image_stream = packages__flutter__src__painting__image_stream$46dart.src__painting__image_stream;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  const extended_image_provider = packages__extended_image_library__src__extended_image_provider$46dart.src__extended_image_provider;
+  const image_resolution = packages__flutter__src__painting__image_resolution$46dart.src__painting__image_resolution;
+  var extended_asset_bundle_image_provider = Object.create(dart.library);
+  var $buffer = dartx.buffer;
+  var $asUint8List = dartx.asUint8List;
+  var $runtimeType = dartx.runtimeType;
+  var $_equals = dartx._equals;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    CompleterOfExtendedAssetBundleImageKey: () => (T.CompleterOfExtendedAssetBundleImageKey = dart.constFn(async.Completer$(extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey)))(),
+    AssetBundleImageKeyToNull: () => (T.AssetBundleImageKeyToNull = dart.constFn(dart.fnType(core.Null, [image_provider.AssetBundleImageKey])))(),
+    ImageProviderOfObject: () => (T.ImageProviderOfObject = dart.constFn(image_provider.ImageProvider$(core.Object)))(),
+    DiagnosticsPropertyOfImageProviderOfObject: () => (T.DiagnosticsPropertyOfImageProviderOfObject = dart.constFn(diagnostics.DiagnosticsProperty$(T.ImageProviderOfObject())))(),
+    DiagnosticsPropertyOfAssetBundleImageKey: () => (T.DiagnosticsPropertyOfAssetBundleImageKey = dart.constFn(diagnostics.DiagnosticsProperty$(image_provider.AssetBundleImageKey)))(),
+    SyncIterableOfDiagnosticsNode: () => (T.SyncIterableOfDiagnosticsNode = dart.constFn(_js_helper.SyncIterable$(diagnostics.DiagnosticsNode)))(),
+    IterableOfDiagnosticsNode: () => (T.IterableOfDiagnosticsNode = dart.constFn(core.Iterable$(diagnostics.DiagnosticsNode)))(),
+    VoidToIterableOfDiagnosticsNode: () => (T.VoidToIterableOfDiagnosticsNode = dart.constFn(dart.fnType(T.IterableOfDiagnosticsNode(), [])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  var I = ["package:extended_image_library/src/extended_asset_bundle_image_provider.dart"];
+  var cacheRawData$ = dart.privateName(extended_asset_bundle_image_provider, "ExtendedExactAssetImageProvider.cacheRawData");
+  var imageCacheName$ = dart.privateName(extended_asset_bundle_image_provider, "ExtendedExactAssetImageProvider.imageCacheName");
+  var _loadAsync = dart.privateName(extended_asset_bundle_image_provider, "_loadAsync");
+  const ExactAssetImage_ExtendedImageProvider$36 = class ExactAssetImage_ExtendedImageProvider extends image_provider.ExactAssetImage {};
+  (ExactAssetImage_ExtendedImageProvider$36.new = function(assetName, opts) {
+    ExactAssetImage_ExtendedImageProvider$36.__proto__.new.call(this, assetName, opts);
+  }).prototype = ExactAssetImage_ExtendedImageProvider$36.prototype;
+  dart.applyMixin(ExactAssetImage_ExtendedImageProvider$36, extended_image_provider.ExtendedImageProvider$(image_provider.AssetBundleImageKey));
+  extended_asset_bundle_image_provider.ExtendedExactAssetImageProvider = class ExtendedExactAssetImageProvider extends ExactAssetImage_ExtendedImageProvider$36 {
+    get cacheRawData() {
+      return this[cacheRawData$];
+    }
+    set cacheRawData(value) {
+      super.cacheRawData = value;
+    }
+    get imageCacheName() {
+      return this[imageCacheName$];
+    }
+    set imageCacheName(value) {
+      super.imageCacheName = value;
+    }
+    obtainKey(configuration) {
+      let completer = T.CompleterOfExtendedAssetBundleImageKey().new();
+      super.obtainKey(configuration).then(core.Null, dart.fn(value => {
+        completer.complete(new extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey.new({bundle: value.bundle, scale: value.scale, name: value.name, cacheRawData: this.cacheRawData, imageCacheName: this.imageCacheName}));
+      }, T.AssetBundleImageKeyToNull()));
+      return completer.future;
+    }
+    load(key, decode) {
+      image_provider.AssetBundleImageKey.as(key);
+      return new image_stream.MultiFrameImageStreamCompleter.new({codec: this[_loadAsync](key, decode), scale: key.scale, informationCollector: dart.fn(() => new (T.SyncIterableOfDiagnosticsNode()).new((function*() {
+          yield new (T.DiagnosticsPropertyOfImageProviderOfObject()).new("Image provider", this);
+          yield new (T.DiagnosticsPropertyOfAssetBundleImageKey()).new("Image key", key);
+        }).bind(this)), T.VoidToIterableOfDiagnosticsNode())});
+    }
+    [_loadAsync](key, decode) {
+      return async.async(ui.Codec, (function* _loadAsync() {
+        let data = null;
+        try {
+          data = (yield key.bundle.load(key.name));
+        } catch (e) {
+          let ex = dart.getThrown(e);
+          if (assertions.FlutterError.is(ex)) {
+            this.imageCache.evict(key);
+            dart.rethrow(e);
+          } else
+            throw e;
+        }
+        let result = data[$buffer][$asUint8List]();
+        return yield this.instantiateImageCodec(result, decode);
+      }).bind(this));
+    }
+  };
+  (extended_asset_bundle_image_provider.ExtendedExactAssetImageProvider.new = function(assetName, opts) {
+    let bundle = opts && 'bundle' in opts ? opts.bundle : null;
+    let $package = opts && 'package' in opts ? opts.package : null;
+    let scale = opts && 'scale' in opts ? opts.scale : 1;
+    let cacheRawData = opts && 'cacheRawData' in opts ? opts.cacheRawData : false;
+    let imageCacheName = opts && 'imageCacheName' in opts ? opts.imageCacheName : null;
+    this[cacheRawData$] = cacheRawData;
+    this[imageCacheName$] = imageCacheName;
+    extended_asset_bundle_image_provider.ExtendedExactAssetImageProvider.__proto__.new.call(this, assetName, {bundle: bundle, package: $package, scale: scale});
+    ;
+  }).prototype = extended_asset_bundle_image_provider.ExtendedExactAssetImageProvider.prototype;
+  dart.addTypeTests(extended_asset_bundle_image_provider.ExtendedExactAssetImageProvider);
+  dart.addTypeCaches(extended_asset_bundle_image_provider.ExtendedExactAssetImageProvider);
+  dart.setMethodSignature(extended_asset_bundle_image_provider.ExtendedExactAssetImageProvider, () => ({
+    __proto__: dart.getMethods(extended_asset_bundle_image_provider.ExtendedExactAssetImageProvider.__proto__),
+    obtainKey: dart.fnType(async.Future$(extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey), [image_provider.ImageConfiguration]),
+    [_loadAsync]: dart.fnType(async.Future$(ui.Codec), [image_provider.AssetBundleImageKey, dart.fnType(async.Future$(ui.Codec), [typed_data.Uint8List], {allowUpscaling: core.bool, cacheHeight: dart.nullable(core.int), cacheWidth: dart.nullable(core.int)}, {})])
+  }));
+  dart.setLibraryUri(extended_asset_bundle_image_provider.ExtendedExactAssetImageProvider, I[0]);
+  dart.setFieldSignature(extended_asset_bundle_image_provider.ExtendedExactAssetImageProvider, () => ({
+    __proto__: dart.getFields(extended_asset_bundle_image_provider.ExtendedExactAssetImageProvider.__proto__),
+    cacheRawData: dart.finalFieldType(core.bool),
+    imageCacheName: dart.finalFieldType(dart.nullable(core.String))
+  }));
+  var cacheRawData$0 = dart.privateName(extended_asset_bundle_image_provider, "ExtendedAssetImageProvider.cacheRawData");
+  var imageCacheName$0 = dart.privateName(extended_asset_bundle_image_provider, "ExtendedAssetImageProvider.imageCacheName");
+  const AssetImage_ExtendedImageProvider$36 = class AssetImage_ExtendedImageProvider extends image_resolution.AssetImage {};
+  (AssetImage_ExtendedImageProvider$36.new = function(assetName, opts) {
+    AssetImage_ExtendedImageProvider$36.__proto__.new.call(this, assetName, opts);
+  }).prototype = AssetImage_ExtendedImageProvider$36.prototype;
+  dart.applyMixin(AssetImage_ExtendedImageProvider$36, extended_image_provider.ExtendedImageProvider$(image_provider.AssetBundleImageKey));
+  extended_asset_bundle_image_provider.ExtendedAssetImageProvider = class ExtendedAssetImageProvider extends AssetImage_ExtendedImageProvider$36 {
+    get cacheRawData() {
+      return this[cacheRawData$0];
+    }
+    set cacheRawData(value) {
+      super.cacheRawData = value;
+    }
+    get imageCacheName() {
+      return this[imageCacheName$0];
+    }
+    set imageCacheName(value) {
+      super.imageCacheName = value;
+    }
+    obtainKey(configuration) {
+      let completer = T.CompleterOfExtendedAssetBundleImageKey().new();
+      super.obtainKey(configuration).then(core.Null, dart.fn(value => {
+        completer.complete(new extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey.new({bundle: value.bundle, scale: value.scale, name: value.name, cacheRawData: this.cacheRawData, imageCacheName: this.imageCacheName}));
+      }, T.AssetBundleImageKeyToNull()));
+      return completer.future;
+    }
+    load(key, decode) {
+      image_provider.AssetBundleImageKey.as(key);
+      return new image_stream.MultiFrameImageStreamCompleter.new({codec: this[_loadAsync](key, decode), scale: key.scale, informationCollector: dart.fn(() => new (T.SyncIterableOfDiagnosticsNode()).new((function*() {
+          yield new (T.DiagnosticsPropertyOfImageProviderOfObject()).new("Image provider", this);
+          yield new (T.DiagnosticsPropertyOfAssetBundleImageKey()).new("Image key", key);
+        }).bind(this)), T.VoidToIterableOfDiagnosticsNode())});
+    }
+    [_loadAsync](key, decode) {
+      return async.async(ui.Codec, (function* _loadAsync() {
+        let data = null;
+        try {
+          data = (yield key.bundle.load(key.name));
+        } catch (e) {
+          let ex = dart.getThrown(e);
+          if (assertions.FlutterError.is(ex)) {
+            this.imageCache.evict(key);
+            dart.rethrow(e);
+          } else
+            throw e;
+        }
+        let result = data[$buffer][$asUint8List]();
+        return yield this.instantiateImageCodec(result, decode);
+      }).bind(this));
+    }
+  };
+  (extended_asset_bundle_image_provider.ExtendedAssetImageProvider.new = function(assetName, opts) {
+    let bundle = opts && 'bundle' in opts ? opts.bundle : null;
+    let $package = opts && 'package' in opts ? opts.package : null;
+    let cacheRawData = opts && 'cacheRawData' in opts ? opts.cacheRawData : false;
+    let imageCacheName = opts && 'imageCacheName' in opts ? opts.imageCacheName : null;
+    this[cacheRawData$0] = cacheRawData;
+    this[imageCacheName$0] = imageCacheName;
+    extended_asset_bundle_image_provider.ExtendedAssetImageProvider.__proto__.new.call(this, assetName, {bundle: bundle, package: $package});
+    ;
+  }).prototype = extended_asset_bundle_image_provider.ExtendedAssetImageProvider.prototype;
+  dart.addTypeTests(extended_asset_bundle_image_provider.ExtendedAssetImageProvider);
+  dart.addTypeCaches(extended_asset_bundle_image_provider.ExtendedAssetImageProvider);
+  dart.setMethodSignature(extended_asset_bundle_image_provider.ExtendedAssetImageProvider, () => ({
+    __proto__: dart.getMethods(extended_asset_bundle_image_provider.ExtendedAssetImageProvider.__proto__),
+    obtainKey: dart.fnType(async.Future$(extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey), [image_provider.ImageConfiguration]),
+    [_loadAsync]: dart.fnType(async.Future$(ui.Codec), [image_provider.AssetBundleImageKey, dart.fnType(async.Future$(ui.Codec), [typed_data.Uint8List], {allowUpscaling: core.bool, cacheHeight: dart.nullable(core.int), cacheWidth: dart.nullable(core.int)}, {})])
+  }));
+  dart.setLibraryUri(extended_asset_bundle_image_provider.ExtendedAssetImageProvider, I[0]);
+  dart.setFieldSignature(extended_asset_bundle_image_provider.ExtendedAssetImageProvider, () => ({
+    __proto__: dart.getFields(extended_asset_bundle_image_provider.ExtendedAssetImageProvider.__proto__),
+    cacheRawData: dart.finalFieldType(core.bool),
+    imageCacheName: dart.finalFieldType(dart.nullable(core.String))
+  }));
+  var cacheRawData$1 = dart.privateName(extended_asset_bundle_image_provider, "ExtendedAssetBundleImageKey.cacheRawData");
+  var imageCacheName$1 = dart.privateName(extended_asset_bundle_image_provider, "ExtendedAssetBundleImageKey.imageCacheName");
+  extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey = class ExtendedAssetBundleImageKey extends image_provider.AssetBundleImageKey {
+    get cacheRawData() {
+      return this[cacheRawData$1];
+    }
+    set cacheRawData(value) {
+      super.cacheRawData = value;
+    }
+    get imageCacheName() {
+      return this[imageCacheName$1];
+    }
+    set imageCacheName(value) {
+      super.imageCacheName = value;
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (!dart.runtimeType(other)._equals(this[$runtimeType])) {
+        return false;
+      }
+      return extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey.is(other) && this.bundle[$_equals](other.bundle) && this.name === other.name && this.scale === other.scale && this.cacheRawData === other.cacheRawData && this.imageCacheName == other.imageCacheName;
+    }
+    get hashCode() {
+      return ui.hashValues(this.bundle, this.name, this.scale, this.cacheRawData, this.imageCacheName);
+    }
+  };
+  (extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey.new = function(opts) {
+    let bundle = opts && 'bundle' in opts ? opts.bundle : null;
+    let name = opts && 'name' in opts ? opts.name : null;
+    let scale = opts && 'scale' in opts ? opts.scale : null;
+    let cacheRawData = opts && 'cacheRawData' in opts ? opts.cacheRawData : null;
+    let imageCacheName = opts && 'imageCacheName' in opts ? opts.imageCacheName : null;
+    this[cacheRawData$1] = cacheRawData;
+    this[imageCacheName$1] = imageCacheName;
+    extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey.__proto__.new.call(this, {bundle: bundle, name: name, scale: scale});
+    ;
+  }).prototype = extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey.prototype;
+  dart.addTypeTests(extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey);
+  dart.addTypeCaches(extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey);
+  dart.setMethodSignature(extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey, () => ({
+    __proto__: dart.getMethods(extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey.__proto__),
+    _equals: dart.fnType(core.bool, [dart.dynamic]),
+    [$_equals]: dart.fnType(core.bool, [dart.dynamic])
+  }));
+  dart.setLibraryUri(extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey, I[0]);
+  dart.setFieldSignature(extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey, () => ({
+    __proto__: dart.getFields(extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey.__proto__),
+    cacheRawData: dart.finalFieldType(core.bool),
+    imageCacheName: dart.finalFieldType(dart.nullable(core.String))
+  }));
+  dart.defineExtensionMethods(extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey, ['_equals']);
+  dart.defineExtensionAccessors(extended_asset_bundle_image_provider.ExtendedAssetBundleImageKey, ['hashCode']);
+  dart.trackLibraries("packages/extended_image_library/src/extended_asset_bundle_image_provider.dart", {
+    "package:extended_image_library/src/extended_asset_bundle_image_provider.dart": extended_asset_bundle_image_provider
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["../../../../../../packages/flutter/lib/src/painting/image_provider.dart","extended_asset_bundle_image_provider.dart","../../../../../../packages/flutter/lib/src/painting/image_resolution.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;sEA2iCS;;;;IClhCI;;;;;;IAIG;;;;;;cAGS;AACwB,sBACzC;AASF,MARI,AAAyB,gBAAf,aAAa,kBAAO,QAAqB;AAOrD,QANF,AAAU,SAAD,UAAU,kFACT,AAAM,KAAD,gBACN,AAAM,KAAD,cACN,AAAM,KAAD,qBACG,mCACE;;AAGpB,YAAO,AAAU,UAAD;IAClB;SAG8C,KAAqB;4CAArB;AAC5C,YAAO,6DACE,iBAAW,GAAG,EAAE,MAAM,UACtB,AAAI,GAAD,8BACY;AACpB,gBAAM,yDAAmC,kBAAkB;AAC3D,gBAAM,uDAAyC,aAAa,GAAG;QAChE;IAEL;iBAQwB,KAAqB;AADlB;AAEhB;AAGT;AACwC,UAAtC,QAAO,MAAM,AAAI,AAAO,GAAR,aAAa,AAAI,GAAD;;;AAChC;AAC0B,YAArB,AAAW,sBAAM,GAAG;AAClB,YAAP;;;;AAEc,qBAAS,AAAK,AAAO,IAAR;AAC7B,cAAO,OAAM,2BAAsB,MAAM,EAAE,MAAM;MACnD;;;uFAjES;QACM;QACL;QACD;QACF;QACA;IADA;IACA;AACF,kGAAM,SAAS,WAAU,MAAM,WAAW,iBAAgB,KAAK;;EAAC;;;;;;;;;;;;;;;;;;iECwJ9D;;;;ID3EI;;;;;;IAIG;;;;;;cAIS;AACwB,sBACzC;AASF,MARI,AAAyB,gBAAf,aAAa,kBAAO,QAAqB;AAOrD,QANF,AAAU,SAAD,UAAU,kFACT,AAAM,KAAD,gBACN,AAAM,KAAD,cACN,AAAM,KAAD,qBACG,mCACE;;AAGpB,YAAO,AAAU,UAAD;IAClB;SAG8C,KAAqB;4CAArB;AAC5C,YAAO,6DACE,iBAAW,GAAG,EAAE,MAAM,UACtB,AAAI,GAAD,8BACY;AACpB,gBAAM,yDAAmC,kBAAkB;AAC3D,gBAAM,uDAAyC,aAAa,GAAG;QAChE;IAEL;iBAQwB,KAAqB;AADlB;AAEhB;AAGT;AACwC,UAAtC,QAAO,MAAM,AAAI,AAAO,GAAR,aAAa,AAAI,GAAD;;;AAChC;AAC0B,YAArB,AAAW,sBAAM,GAAG;AAClB,YAAP;;;;AAEc,qBAAS,AAAK,AAAO,IAAR;AAC7B,cAAO,OAAM,2BAAsB,MAAM,EAAE,MAAM;MACnD;;;kFAjES;QACM;QACL;QACH;QACA;IADA;IACA;AACF,6FAAM,SAAS,WAAU,MAAM,WAAW;;EAAQ;;;;;;;;;;;;;;;;;IA4E5C;;;;;;IAIG;;;;;;;UAGW;AACvB,WAAU,iBAAN,KAAK,UAAgB;AACvB,cAAO;;AAET,YAAa,AAI0B,qEAJhC,KAAK,KACR,AAAO,sBAAG,AAAM,KAAD,YACf,AAAK,cAAG,AAAM,KAAD,SACb,AAAM,eAAG,AAAM,KAAD,UACd,AAAa,sBAAG,AAAM,KAAD,iBACrB,AAAe,uBAAG,AAAM,KAAD;IAC7B;;AAGoB,2BACd,aACA,WACA,YACA,mBACA;IACD;;;QArCkB;QACL;QACA;QACF;QACA;IADA;IACA;AACX,uGAAc,MAAM,QAAQ,IAAI,SAAS,KAAK;;EAAC","file":"../../../../../../../packages/extended_image_library/src/extended_asset_bundle_image_provider.dart.lib.js"}');
+  // Exports:
+  return {
+    src__extended_asset_bundle_image_provider: extended_asset_bundle_image_provider
+  };
+}));
+
+//# sourceMappingURL=extended_asset_bundle_image_provider.dart.lib.js.map

@@ -1,0 +1,346 @@
+define(['dart_sdk', 'packages/flutter/src/foundation/synchronous_future.dart', 'packages/flutter/src/painting/_network_image_web.dart', 'packages/extended_image_library/src/extended_image_provider.dart', 'packages/flutter/src/painting/image_stream.dart'], (function load__packages__extended_image_library__src__extended_resize_image_provider_dart(dart_sdk, packages__flutter__src__foundation__synchronous_future$46dart, packages__flutter__src__painting___network_image_web$46dart, packages__extended_image_library__src__extended_image_provider$46dart, packages__flutter__src__painting__image_stream$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const ui = dart_sdk.ui;
+  const typed_data = dart_sdk.typed_data;
+  const math = dart_sdk.math;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const synchronous_future = packages__flutter__src__foundation__synchronous_future$46dart.src__foundation__synchronous_future;
+  const image_provider = packages__flutter__src__painting___network_image_web$46dart.src__painting__image_provider;
+  const extended_image_provider = packages__extended_image_library__src__extended_image_provider$46dart.src__extended_image_provider;
+  const image_stream = packages__flutter__src__painting__image_stream$46dart.src__painting__image_stream;
+  var extended_resize_image_provider = Object.create(dart.library);
+  var $toInt = dartx.toInt;
+  var $rightShift = dartx['>>'];
+  var $floor = dartx.floor;
+  var $runtimeType = dartx.runtimeType;
+  var $_equals = dartx._equals;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    FutureOfCodec: () => (T.FutureOfCodec = dart.constFn(async.Future$(ui.Codec)))(),
+    boolN: () => (T.boolN = dart.constFn(dart.nullable(core.bool)))(),
+    intN: () => (T.intN = dart.constFn(dart.nullable(core.int)))(),
+    Uint8List__ToFutureOfCodec: () => (T.Uint8List__ToFutureOfCodec = dart.constFn(dart.fnType(T.FutureOfCodec(), [typed_data.Uint8List], {allowUpscaling: T.boolN(), cacheHeight: T.intN(), cacheWidth: T.intN()}, {})))(),
+    SynchronousFutureOf_SizeAwareCacheKey: () => (T.SynchronousFutureOf_SizeAwareCacheKey = dart.constFn(synchronous_future.SynchronousFuture$(extended_resize_image_provider._SizeAwareCacheKey)))(),
+    ObjectToNull: () => (T.ObjectToNull = dart.constFn(dart.fnType(core.Null, [core.Object])))(),
+    CompleterOf_SizeAwareCacheKey: () => (T.CompleterOf_SizeAwareCacheKey = dart.constFn(async.Completer$(extended_resize_image_provider._SizeAwareCacheKey)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  var I = [
+    "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/extended_image_library-3.1.0/lib/src/extended_resize_image_provider.dart",
+    "package:extended_image_library/src/extended_resize_image_provider.dart"
+  ];
+  var imageProvider$ = dart.privateName(extended_resize_image_provider, "ExtendedResizeImage.imageProvider");
+  var maxBytes$ = dart.privateName(extended_resize_image_provider, "ExtendedResizeImage.maxBytes");
+  var compressionRatio$ = dart.privateName(extended_resize_image_provider, "ExtendedResizeImage.compressionRatio");
+  var width$ = dart.privateName(extended_resize_image_provider, "ExtendedResizeImage.width");
+  var height$ = dart.privateName(extended_resize_image_provider, "ExtendedResizeImage.height");
+  var allowUpscaling$ = dart.privateName(extended_resize_image_provider, "ExtendedResizeImage.allowUpscaling");
+  var cacheRawData$ = dart.privateName(extended_resize_image_provider, "ExtendedResizeImage.cacheRawData");
+  var imageCacheName$ = dart.privateName(extended_resize_image_provider, "ExtendedResizeImage.imageCacheName");
+  var _instantiateImageCodec = dart.privateName(extended_resize_image_provider, "_instantiateImageCodec");
+  var _resize = dart.privateName(extended_resize_image_provider, "_resize");
+  var providerCacheKey$ = dart.privateName(extended_resize_image_provider, "_SizeAwareCacheKey.providerCacheKey");
+  var maxBytes$0 = dart.privateName(extended_resize_image_provider, "_SizeAwareCacheKey.maxBytes");
+  var compressionRatio$0 = dart.privateName(extended_resize_image_provider, "_SizeAwareCacheKey.compressionRatio");
+  var width$0 = dart.privateName(extended_resize_image_provider, "_SizeAwareCacheKey.width");
+  var height$0 = dart.privateName(extended_resize_image_provider, "_SizeAwareCacheKey.height");
+  var cacheRawData$0 = dart.privateName(extended_resize_image_provider, "_SizeAwareCacheKey.cacheRawData");
+  var imageCacheName$0 = dart.privateName(extended_resize_image_provider, "_SizeAwareCacheKey.imageCacheName");
+  extended_resize_image_provider._SizeAwareCacheKey = class _SizeAwareCacheKey extends core.Object {
+    get providerCacheKey() {
+      return this[providerCacheKey$];
+    }
+    set providerCacheKey(value) {
+      super.providerCacheKey = value;
+    }
+    get maxBytes() {
+      return this[maxBytes$0];
+    }
+    set maxBytes(value) {
+      super.maxBytes = value;
+    }
+    get compressionRatio() {
+      return this[compressionRatio$0];
+    }
+    set compressionRatio(value) {
+      super.compressionRatio = value;
+    }
+    get width() {
+      return this[width$0];
+    }
+    set width(value) {
+      super.width = value;
+    }
+    get height() {
+      return this[height$0];
+    }
+    set height(value) {
+      super.height = value;
+    }
+    get cacheRawData() {
+      return this[cacheRawData$0];
+    }
+    set cacheRawData(value) {
+      super.cacheRawData = value;
+    }
+    get imageCacheName() {
+      return this[imageCacheName$0];
+    }
+    set imageCacheName(value) {
+      super.imageCacheName = value;
+    }
+    _equals(other) {
+      if (other == null) return false;
+      if (!other[$runtimeType]._equals(this[$runtimeType])) {
+        return false;
+      }
+      return extended_resize_image_provider._SizeAwareCacheKey.is(other) && other.providerCacheKey[$_equals](this.providerCacheKey) && other.maxBytes == this.maxBytes && other.compressionRatio == this.compressionRatio && other.width == this.width && other.height == this.height && this.cacheRawData === other.cacheRawData && this.imageCacheName == other.imageCacheName;
+    }
+    get hashCode() {
+      return ui.hashValues(this.providerCacheKey, this.maxBytes, this.compressionRatio, this.width, this.height, this.cacheRawData, this.imageCacheName);
+    }
+  };
+  (extended_resize_image_provider._SizeAwareCacheKey.new = function(providerCacheKey, compressionRatio, maxBytes, width, height, cacheRawData, imageCacheName) {
+    this[providerCacheKey$] = providerCacheKey;
+    this[compressionRatio$0] = compressionRatio;
+    this[maxBytes$0] = maxBytes;
+    this[width$0] = width;
+    this[height$0] = height;
+    this[cacheRawData$0] = cacheRawData;
+    this[imageCacheName$0] = imageCacheName;
+    ;
+  }).prototype = extended_resize_image_provider._SizeAwareCacheKey.prototype;
+  dart.addTypeTests(extended_resize_image_provider._SizeAwareCacheKey);
+  dart.addTypeCaches(extended_resize_image_provider._SizeAwareCacheKey);
+  dart.setLibraryUri(extended_resize_image_provider._SizeAwareCacheKey, I[1]);
+  dart.setFieldSignature(extended_resize_image_provider._SizeAwareCacheKey, () => ({
+    __proto__: dart.getFields(extended_resize_image_provider._SizeAwareCacheKey.__proto__),
+    providerCacheKey: dart.finalFieldType(core.Object),
+    maxBytes: dart.finalFieldType(dart.nullable(core.int)),
+    compressionRatio: dart.finalFieldType(dart.nullable(core.double)),
+    width: dart.finalFieldType(dart.nullable(core.int)),
+    height: dart.finalFieldType(dart.nullable(core.int)),
+    cacheRawData: dart.finalFieldType(core.bool),
+    imageCacheName: dart.finalFieldType(dart.nullable(core.String))
+  }));
+  dart.defineExtensionMethods(extended_resize_image_provider._SizeAwareCacheKey, ['_equals']);
+  dart.defineExtensionAccessors(extended_resize_image_provider._SizeAwareCacheKey, ['hashCode']);
+  const ImageProvider_ExtendedImageProvider$36 = class ImageProvider_ExtendedImageProvider extends image_provider.ImageProvider$(extended_resize_image_provider._SizeAwareCacheKey) {};
+  (ImageProvider_ExtendedImageProvider$36.new = function() {
+    ImageProvider_ExtendedImageProvider$36.__proto__.new.call(this);
+  }).prototype = ImageProvider_ExtendedImageProvider$36.prototype;
+  dart.applyMixin(ImageProvider_ExtendedImageProvider$36, extended_image_provider.ExtendedImageProvider$(extended_resize_image_provider._SizeAwareCacheKey));
+  extended_resize_image_provider.ExtendedResizeImage = class ExtendedResizeImage extends ImageProvider_ExtendedImageProvider$36 {
+    get imageProvider() {
+      return this[imageProvider$];
+    }
+    set imageProvider(value) {
+      super.imageProvider = value;
+    }
+    get maxBytes() {
+      return this[maxBytes$];
+    }
+    set maxBytes(value) {
+      super.maxBytes = value;
+    }
+    get compressionRatio() {
+      return this[compressionRatio$];
+    }
+    set compressionRatio(value) {
+      super.compressionRatio = value;
+    }
+    get width() {
+      return this[width$];
+    }
+    set width(value) {
+      super.width = value;
+    }
+    get height() {
+      return this[height$];
+    }
+    set height(value) {
+      super.height = value;
+    }
+    get allowUpscaling() {
+      return this[allowUpscaling$];
+    }
+    set allowUpscaling(value) {
+      super.allowUpscaling = value;
+    }
+    get cacheRawData() {
+      return this[cacheRawData$];
+    }
+    set cacheRawData(value) {
+      super.cacheRawData = value;
+    }
+    get imageCacheName() {
+      return this[imageCacheName$];
+    }
+    set imageCacheName(value) {
+      super.imageCacheName = value;
+    }
+    static resizeIfNeeded(opts) {
+      let provider = opts && 'provider' in opts ? opts.provider : null;
+      let cacheWidth = opts && 'cacheWidth' in opts ? opts.cacheWidth : null;
+      let cacheHeight = opts && 'cacheHeight' in opts ? opts.cacheHeight : null;
+      let compressionRatio = opts && 'compressionRatio' in opts ? opts.compressionRatio : null;
+      let maxBytes = opts && 'maxBytes' in opts ? opts.maxBytes : null;
+      let cacheRawData = opts && 'cacheRawData' in opts ? opts.cacheRawData : false;
+      let imageCacheName = opts && 'imageCacheName' in opts ? opts.imageCacheName : null;
+      if (compressionRatio != null && dart.notNull(compressionRatio) > 0 && dart.notNull(compressionRatio) < 1 || maxBytes != null && dart.notNull(maxBytes) > 0 || cacheWidth != null || cacheHeight != null) {
+        return new extended_resize_image_provider.ExtendedResizeImage.new(provider, {width: cacheWidth, height: cacheHeight, maxBytes: maxBytes, compressionRatio: compressionRatio, cacheRawData: cacheRawData, imageCacheName: imageCacheName});
+      }
+      return provider;
+    }
+    load(key, decode) {
+      extended_resize_image_provider._SizeAwareCacheKey.as(key);
+      let decodeResize = dart.fn((bytes, opts) => {
+        let allowUpscaling = opts && 'allowUpscaling' in opts ? opts.allowUpscaling : null;
+        let cacheHeight = opts && 'cacheHeight' in opts ? opts.cacheHeight : null;
+        let cacheWidth = opts && 'cacheWidth' in opts ? opts.cacheWidth : null;
+        if (!(cacheWidth == null && cacheHeight == null && allowUpscaling == null)) dart.assertFailed("ResizeImage cannot be composed with another ImageProvider that applies " + "cacheWidth, cacheHeight, or allowUpscaling.", I[0], 119, 9, "cacheWidth == null && cacheHeight == null && allowUpscaling == null");
+        return this[_instantiateImageCodec](bytes, {compressionRatio: this.compressionRatio, maxBytes: this.maxBytes, targetWidth: this.width, targetHeight: this.height});
+      }, T.Uint8List__ToFutureOfCodec());
+      let completer = this.imageProvider.load(key.providerCacheKey, decodeResize);
+      if (!false) {
+        completer.debugLabel = dart.str(completer.debugLabel) + " - Resized(compressionRatio:" + " " + dart.str(key.compressionRatio) + " maxBytes:" + dart.str(key.maxBytes) + " size:" + dart.str(key.width) + "*" + dart.str(key.height) + ")";
+      }
+      return completer;
+    }
+    obtainKey(configuration) {
+      let completer = null;
+      let result = null;
+      this.imageProvider.obtainKey(configuration).then(core.Null, dart.fn(key => {
+        if (completer == null) {
+          result = new (T.SynchronousFutureOf_SizeAwareCacheKey()).new(new extended_resize_image_provider._SizeAwareCacheKey.new(key, this.compressionRatio, this.maxBytes, this.width, this.height, this.cacheRawData, this.imageCacheName));
+        } else {
+          completer.complete(new extended_resize_image_provider._SizeAwareCacheKey.new(key, this.compressionRatio, this.maxBytes, this.width, this.height, this.cacheRawData, this.imageCacheName));
+        }
+      }, T.ObjectToNull()));
+      if (result != null) {
+        return dart.nullCheck(result);
+      }
+      completer = T.CompleterOf_SizeAwareCacheKey().new();
+      return completer.future;
+    }
+    [_instantiateImageCodec](list, opts) {
+      let compressionRatio = opts && 'compressionRatio' in opts ? opts.compressionRatio : null;
+      let maxBytes = opts && 'maxBytes' in opts ? opts.maxBytes : null;
+      let targetWidth = opts && 'targetWidth' in opts ? opts.targetWidth : null;
+      let targetHeight = opts && 'targetHeight' in opts ? opts.targetHeight : null;
+      return async.async(ui.Codec, (function* _instantiateImageCodec() {
+        let buffer = (yield ui.ImmutableBuffer.fromUint8List(list));
+        let descriptor = (yield ui.ImageDescriptor.encoded(buffer));
+        if (compressionRatio != null) {
+          let size = this[_resize](descriptor.width, descriptor.height, (descriptor.width * descriptor.height * 4 * dart.notNull(compressionRatio))[$toInt]());
+          targetWidth = size.width;
+          targetHeight = size.height;
+        } else if (maxBytes != null) {
+          let size = this[_resize](descriptor.width, descriptor.height, maxBytes);
+          targetWidth = size.width;
+          targetHeight = size.height;
+        } else if (!this.allowUpscaling) {
+          if (targetWidth != null && dart.notNull(targetWidth) > descriptor.width) {
+            targetWidth = descriptor.width;
+          }
+          if (targetHeight != null && dart.notNull(targetHeight) > descriptor.height) {
+            targetHeight = descriptor.height;
+          }
+        }
+        return descriptor.instantiateCodec({targetWidth: targetWidth, targetHeight: targetHeight});
+      }).bind(this));
+    }
+    [_resize](width, height, maxBytes) {
+      let ratio = width / height;
+      let maxSize_1_4 = maxBytes[$rightShift](2);
+      let targetHeight = math.sqrt(maxSize_1_4 / ratio)[$floor]();
+      let targetWidth = (ratio * targetHeight)[$floor]();
+      return new extended_resize_image_provider._IntSize.new(targetWidth, targetHeight);
+    }
+  };
+  (extended_resize_image_provider.ExtendedResizeImage.new = function(imageProvider, opts) {
+    let compressionRatio = opts && 'compressionRatio' in opts ? opts.compressionRatio : null;
+    let maxBytes = opts && 'maxBytes' in opts ? opts.maxBytes : 512000;
+    let width = opts && 'width' in opts ? opts.width : null;
+    let height = opts && 'height' in opts ? opts.height : null;
+    let allowUpscaling = opts && 'allowUpscaling' in opts ? opts.allowUpscaling : false;
+    let cacheRawData = opts && 'cacheRawData' in opts ? opts.cacheRawData : false;
+    let imageCacheName = opts && 'imageCacheName' in opts ? opts.imageCacheName : null;
+    this[imageProvider$] = imageProvider;
+    this[compressionRatio$] = compressionRatio;
+    this[maxBytes$] = maxBytes;
+    this[width$] = width;
+    this[height$] = height;
+    this[allowUpscaling$] = allowUpscaling;
+    this[cacheRawData$] = cacheRawData;
+    this[imageCacheName$] = imageCacheName;
+    if (!(compressionRatio != null && dart.notNull(compressionRatio) > 0 && dart.notNull(compressionRatio) < 1 || maxBytes != null && dart.notNull(maxBytes) > 0 || width != null || height != null)) dart.assertFailed(null, I[0], 29, 15, "(compressionRatio != null &&\n                compressionRatio > 0 &&\n                compressionRatio < 1) ||\n            (maxBytes != null && maxBytes > 0) ||\n            width != null ||\n            height != null");
+    extended_resize_image_provider.ExtendedResizeImage.__proto__.new.call(this);
+    ;
+  }).prototype = extended_resize_image_provider.ExtendedResizeImage.prototype;
+  dart.addTypeTests(extended_resize_image_provider.ExtendedResizeImage);
+  dart.addTypeCaches(extended_resize_image_provider.ExtendedResizeImage);
+  dart.setMethodSignature(extended_resize_image_provider.ExtendedResizeImage, () => ({
+    __proto__: dart.getMethods(extended_resize_image_provider.ExtendedResizeImage.__proto__),
+    load: dart.fnType(image_stream.ImageStreamCompleter, [dart.nullable(core.Object), dart.fnType(async.Future$(ui.Codec), [typed_data.Uint8List], {allowUpscaling: core.bool, cacheHeight: dart.nullable(core.int), cacheWidth: dart.nullable(core.int)}, {})]),
+    obtainKey: dart.fnType(async.Future$(extended_resize_image_provider._SizeAwareCacheKey), [image_provider.ImageConfiguration]),
+    [_instantiateImageCodec]: dart.fnType(async.Future$(ui.Codec), [typed_data.Uint8List], {compressionRatio: dart.nullable(core.double), maxBytes: dart.nullable(core.int), targetHeight: dart.nullable(core.int), targetWidth: dart.nullable(core.int)}, {}),
+    [_resize]: dart.fnType(extended_resize_image_provider._IntSize, [core.int, core.int, core.int])
+  }));
+  dart.setLibraryUri(extended_resize_image_provider.ExtendedResizeImage, I[1]);
+  dart.setFieldSignature(extended_resize_image_provider.ExtendedResizeImage, () => ({
+    __proto__: dart.getFields(extended_resize_image_provider.ExtendedResizeImage.__proto__),
+    imageProvider: dart.finalFieldType(image_provider.ImageProvider$(core.Object)),
+    maxBytes: dart.finalFieldType(dart.nullable(core.int)),
+    compressionRatio: dart.finalFieldType(dart.nullable(core.double)),
+    width: dart.finalFieldType(dart.nullable(core.int)),
+    height: dart.finalFieldType(dart.nullable(core.int)),
+    allowUpscaling: dart.finalFieldType(core.bool),
+    cacheRawData: dart.finalFieldType(core.bool),
+    imageCacheName: dart.finalFieldType(dart.nullable(core.String))
+  }));
+  var width$1 = dart.privateName(extended_resize_image_provider, "_IntSize.width");
+  var height$1 = dart.privateName(extended_resize_image_provider, "_IntSize.height");
+  extended_resize_image_provider._IntSize = class _IntSize extends core.Object {
+    get width() {
+      return this[width$1];
+    }
+    set width(value) {
+      super.width = value;
+    }
+    get height() {
+      return this[height$1];
+    }
+    set height(value) {
+      super.height = value;
+    }
+  };
+  (extended_resize_image_provider._IntSize.new = function(width, height) {
+    this[width$1] = width;
+    this[height$1] = height;
+    ;
+  }).prototype = extended_resize_image_provider._IntSize.prototype;
+  dart.addTypeTests(extended_resize_image_provider._IntSize);
+  dart.addTypeCaches(extended_resize_image_provider._IntSize);
+  dart.setLibraryUri(extended_resize_image_provider._IntSize, I[1]);
+  dart.setFieldSignature(extended_resize_image_provider._IntSize, () => ({
+    __proto__: dart.getFields(extended_resize_image_provider._IntSize.__proto__),
+    width: dart.finalFieldType(core.int),
+    height: dart.finalFieldType(core.int)
+  }));
+  dart.trackLibraries("packages/extended_image_library/src/extended_resize_image_provider.dart", {
+    "package:extended_image_library/src/extended_resize_image_provider.dart": extended_resize_image_provider
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["extended_resize_image_provider.dart"],"names":[],"mappings":"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","file":"../../../../../../../packages/extended_image_library/src/extended_resize_image_provider.dart.lib.js"}');
+  // Exports:
+  return {
+    src__extended_resize_image_provider: extended_resize_image_provider
+  };
+}));
+
+//# sourceMappingURL=extended_resize_image_provider.dart.lib.js.map

@@ -1,0 +1,1006 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/scheduler/binding.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/foundation/change_notifier.dart', 'packages/flutter/src/foundation/collections.dart', 'packages/flutter/src/rendering/layer.dart', 'packages/flutter/src/rendering/stack.dart', 'packages/flutter/src/painting/alignment.dart'], (function load__packages__oktoast__src__widget__overlay_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__scheduler__binding$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__foundation__change_notifier$46dart, packages__flutter__src__foundation__collections$46dart, packages__flutter__src__rendering__layer$46dart, packages__flutter__src__rendering__stack$46dart, packages__flutter__src__painting__alignment$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const ui = dart_sdk.ui;
+  const _interceptors = dart_sdk._interceptors;
+  const collection = dart_sdk.collection;
+  const math = dart_sdk.math;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const binding = packages__flutter__src__scheduler__binding$46dart.src__scheduler__binding;
+  const diagnostics = packages__flutter__src__foundation__debug$46dart.src__foundation__diagnostics;
+  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  const change_notifier = packages__flutter__src__foundation__change_notifier$46dart.src__foundation__change_notifier;
+  const collections = packages__flutter__src__foundation__collections$46dart.src__foundation__collections;
+  const box = packages__flutter__src__rendering__layer$46dart.src__rendering__box;
+  const object = packages__flutter__src__rendering__layer$46dart.src__rendering__object;
+  const layer = packages__flutter__src__rendering__layer$46dart.src__rendering__layer;
+  const stack = packages__flutter__src__rendering__stack$46dart.src__rendering__stack;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  var overlay = Object.create(dart.library);
+  var $remove = dartx.remove;
+  var $runtimeType = dartx.runtimeType;
+  var $add = dartx.add;
+  var $indexOf = dartx.indexOf;
+  var $length = dartx.length;
+  var $contains = dartx.contains;
+  var $insert = dartx.insert;
+  var $every = dartx.every;
+  var $isEmpty = dartx.isEmpty;
+  var $insertAll = dartx.insertAll;
+  var $toList = dartx.toList;
+  var $lastIndexOf = dartx.lastIndexOf;
+  var $clear = dartx.clear;
+  var $addAll = dartx.addAll;
+  var $_get = dartx._get;
+  var $_equals = dartx._equals;
+  var $reversed = dartx.reversed;
+  var $skip = dartx.skip;
+  var $forEach = dartx.forEach;
+  var $isNotEmpty = dartx.isNotEmpty;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    GlobalKeyOf_OverlayEntryWidgetState: () => (T.GlobalKeyOf_OverlayEntryWidgetState = dart.constFn(framework.GlobalKey$(overlay._OverlayEntryWidgetState)))(),
+    DurationTovoid: () => (T.DurationTovoid = dart.constFn(dart.fnType(dart.void, [core.Duration])))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    DiagnosticsPropertyOfWidget: () => (T.DiagnosticsPropertyOfWidget = dart.constFn(diagnostics.DiagnosticsProperty$(framework.Widget)))(),
+    JSArrayOfDiagnosticsNode: () => (T.JSArrayOfDiagnosticsNode = dart.constFn(_interceptors.JSArray$(diagnostics.DiagnosticsNode)))(),
+    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
+    JSArrayOfOverlayEntry: () => (T.JSArrayOfOverlayEntry = dart.constFn(_interceptors.JSArray$(overlay.OverlayEntry)))(),
+    OverlayEntryTobool: () => (T.OverlayEntryTobool = dart.constFn(dart.fnType(core.bool, [overlay.OverlayEntry])))(),
+    ListOfOverlayEntry: () => (T.ListOfOverlayEntry = dart.constFn(core.List$(overlay.OverlayEntry)))(),
+    LinkedHashSetOfOverlayEntry: () => (T.LinkedHashSetOfOverlayEntry = dart.constFn(collection.LinkedHashSet$(overlay.OverlayEntry)))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    DiagnosticsPropertyOfListOfOverlayEntry: () => (T.DiagnosticsPropertyOfListOfOverlayEntry = dart.constFn(diagnostics.DiagnosticsProperty$(T.ListOfOverlayEntry())))(),
+    RenderBoxTodouble: () => (T.RenderBoxTodouble = dart.constFn(dart.fnType(core.double, [box.RenderBox])))(),
+    OffsetN: () => (T.OffsetN = dart.constFn(dart.nullable(ui.Offset)))(),
+    BoxHitTestResultAndOffsetNTobool: () => (T.BoxHitTestResultAndOffsetNTobool = dart.constFn(dart.fnType(core.bool, [box.BoxHitTestResult, T.OffsetN()])))(),
+    EnumPropertyOfTextDirection: () => (T.EnumPropertyOfTextDirection = dart.constFn(diagnostics.EnumProperty$(ui.TextDirection)))(),
+    ListOfDiagnosticsNode: () => (T.ListOfDiagnosticsNode = dart.constFn(core.List$(diagnostics.DiagnosticsNode)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "enabled",
+        [_Location_column]: 7,
+        [_Location_line]: 203,
+        [_Location_file]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 204,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2, C[3] || CT.C3], widget_inspector._Location);
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 202,
+        [_Location_file]: "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/oktoast-3.1.1/lib/src/widget/overlay.dart"
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([], overlay.OverlayEntry);
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: ui.Clip.prototype,
+        [_name]: "Clip.hardEdge",
+        index: 1
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "key",
+        [_Location_column]: 11,
+        [_Location_line]: 510,
+        [_Location_file]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "entry",
+        [_Location_column]: 11,
+        [_Location_line]: 511,
+        [_Location_file]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.constList([C[8] || CT.C8, C[9] || CT.C9], widget_inspector._Location);
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[7] || CT.C7,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 509,
+        [_Location_file]: "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/oktoast-3.1.1/lib/src/widget/overlay.dart"
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "key",
+        [_Location_column]: 11,
+        [_Location_line]: 518,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "entry",
+        [_Location_column]: 11,
+        [_Location_line]: 519,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "tickerEnabled",
+        [_Location_column]: 11,
+        [_Location_line]: 520,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.constList([C[12] || CT.C12, C[13] || CT.C13, C[14] || CT.C14], widget_inspector._Location);
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 517,
+        [_Location_file]: "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/oktoast-3.1.1/lib/src/widget/overlay.dart"
+      });
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "skipCount",
+        [_Location_column]: 7,
+        [_Location_line]: 525,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 7,
+        [_Location_line]: 526,
+        [_Location_file]: null
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "clipBehavior",
+        [_Location_column]: 7,
+        [_Location_line]: 527,
+        [_Location_file]: null
+      });
+    },
+    get C16() {
+      return C[16] = dart.constList([C[17] || CT.C17, C[18] || CT.C18, C[19] || CT.C19], widget_inspector._Location);
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[16] || CT.C16,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 524,
+        [_Location_file]: "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/oktoast-3.1.1/lib/src/widget/overlay.dart"
+      });
+    },
+    get C20() {
+      return C[20] = dart.constList([], framework.Widget);
+    }
+  }, false);
+  var C = Array(21).fill(void 0);
+  var I = [
+    "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/oktoast-3.1.1/lib/src/widget/overlay.dart",
+    "package:oktoast/src/widget/overlay.dart"
+  ];
+  var builder$ = dart.privateName(overlay, "OverlayEntry.builder");
+  var _mounted = dart.privateName(overlay, "_mounted");
+  var _overlay = dart.privateName(overlay, "_overlay");
+  var _key = dart.privateName(overlay, "_key");
+  var _opaque = dart.privateName(overlay, "_opaque");
+  var _maintainState = dart.privateName(overlay, "_maintainState");
+  var _didChangeEntryOpacity = dart.privateName(overlay, "_didChangeEntryOpacity");
+  var _updateMounted = dart.privateName(overlay, "_updateMounted");
+  var _entries = dart.privateName(overlay, "_entries");
+  var _markDirty = dart.privateName(overlay, "_markDirty");
+  var _markNeedsBuild = dart.privateName(overlay, "_markNeedsBuild");
+  overlay.OverlayEntry = class OverlayEntry extends change_notifier.ChangeNotifier {
+    get builder() {
+      return this[builder$];
+    }
+    set builder(value) {
+      super.builder = value;
+    }
+    get opaque() {
+      return this[_opaque];
+    }
+    set opaque(value) {
+      let t0;
+      if (this[_opaque] === value) {
+        return;
+      }
+      this[_opaque] = value;
+      t0 = this[_overlay];
+      t0 == null ? null : t0[_didChangeEntryOpacity]();
+    }
+    get maintainState() {
+      return this[_maintainState];
+    }
+    set maintainState(value) {
+      if (this[_maintainState] === value) {
+        return;
+      }
+      this[_maintainState] = value;
+      if (!(this[_overlay] != null)) dart.assertFailed(null, I[0], 111, 12, "_overlay != null");
+      dart.nullCheck(this[_overlay])[_didChangeEntryOpacity]();
+    }
+    get mounted() {
+      return this[_mounted];
+    }
+    [_updateMounted](value) {
+      if (value === this[_mounted]) {
+        return;
+      }
+      this[_mounted] = value;
+      this.notifyListeners();
+    }
+    remove() {
+      if (!(this[_overlay] != null)) dart.assertFailed(null, I[0], 143, 12, "_overlay != null");
+      let overlay = dart.nullCheck(this[_overlay]);
+      this[_overlay] = null;
+      if (!overlay.mounted) {
+        return;
+      }
+      overlay[_entries][$remove](this);
+      if (dart.nullCheck(binding.SchedulerBinding.instance).schedulerPhase === binding.SchedulerPhase.persistentCallbacks) {
+        dart.nullCheck(binding.SchedulerBinding.instance).addPostFrameCallback(dart.fn(duration => {
+          overlay[_markDirty]();
+        }, T.DurationTovoid()));
+      } else {
+        overlay[_markDirty]();
+      }
+    }
+    markNeedsBuild() {
+      let t0;
+      t0 = this[_key].currentState;
+      t0 == null ? null : t0[_markNeedsBuild]();
+    }
+    toString() {
+      return diagnostics.describeIdentity(this) + "(opaque: " + dart.str(this.opaque) + "; maintainState: " + dart.str(this.maintainState) + ")";
+    }
+  };
+  (overlay.OverlayEntry.new = function(opts) {
+    let builder = opts && 'builder' in opts ? opts.builder : null;
+    let opaque = opts && 'opaque' in opts ? opts.opaque : false;
+    let maintainState = opts && 'maintainState' in opts ? opts.maintainState : false;
+    this[_mounted] = false;
+    this[_overlay] = null;
+    this[_key] = T.GlobalKeyOf_OverlayEntryWidgetState().new();
+    this[builder$] = builder;
+    this[_opaque] = opaque;
+    this[_maintainState] = maintainState;
+    overlay.OverlayEntry.__proto__.new.call(this);
+    ;
+  }).prototype = overlay.OverlayEntry.prototype;
+  dart.addTypeTests(overlay.OverlayEntry);
+  dart.addTypeCaches(overlay.OverlayEntry);
+  dart.setMethodSignature(overlay.OverlayEntry, () => ({
+    __proto__: dart.getMethods(overlay.OverlayEntry.__proto__),
+    [_updateMounted]: dart.fnType(dart.void, [core.bool]),
+    remove: dart.fnType(dart.void, []),
+    markNeedsBuild: dart.fnType(dart.void, [])
+  }));
+  dart.setGetterSignature(overlay.OverlayEntry, () => ({
+    __proto__: dart.getGetters(overlay.OverlayEntry.__proto__),
+    opaque: core.bool,
+    maintainState: core.bool,
+    mounted: core.bool
+  }));
+  dart.setSetterSignature(overlay.OverlayEntry, () => ({
+    __proto__: dart.getSetters(overlay.OverlayEntry.__proto__),
+    opaque: core.bool,
+    maintainState: core.bool
+  }));
+  dart.setLibraryUri(overlay.OverlayEntry, I[1]);
+  dart.setFieldSignature(overlay.OverlayEntry, () => ({
+    __proto__: dart.getFields(overlay.OverlayEntry.__proto__),
+    builder: dart.finalFieldType(dart.fnType(framework.Widget, [framework.BuildContext])),
+    [_opaque]: dart.fieldType(core.bool),
+    [_maintainState]: dart.fieldType(core.bool),
+    [_mounted]: dart.fieldType(core.bool),
+    [_overlay]: dart.fieldType(dart.nullable(overlay.OverlayState)),
+    [_key]: dart.finalFieldType(framework.GlobalKey$(overlay._OverlayEntryWidgetState))
+  }));
+  dart.defineExtensionMethods(overlay.OverlayEntry, ['toString']);
+  var entry$ = dart.privateName(overlay, "_OverlayEntryWidget.entry");
+  var tickerEnabled$ = dart.privateName(overlay, "_OverlayEntryWidget.tickerEnabled");
+  overlay._OverlayEntryWidget = class _OverlayEntryWidget extends framework.StatefulWidget {
+    get entry() {
+      return this[entry$];
+    }
+    set entry(value) {
+      super.entry = value;
+    }
+    get tickerEnabled() {
+      return this[tickerEnabled$];
+    }
+    set tickerEnabled(value) {
+      super.tickerEnabled = value;
+    }
+    createState() {
+      return new overlay._OverlayEntryWidgetState.new();
+    }
+  };
+  (overlay._OverlayEntryWidget.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let entry = opts && 'entry' in opts ? opts.entry : null;
+    let tickerEnabled = opts && 'tickerEnabled' in opts ? opts.tickerEnabled : true;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[entry$] = entry;
+    this[tickerEnabled$] = tickerEnabled;
+    overlay._OverlayEntryWidget.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = overlay._OverlayEntryWidget.prototype;
+  dart.addTypeTests(overlay._OverlayEntryWidget);
+  dart.addTypeCaches(overlay._OverlayEntryWidget);
+  dart.setMethodSignature(overlay._OverlayEntryWidget, () => ({
+    __proto__: dart.getMethods(overlay._OverlayEntryWidget.__proto__),
+    createState: dart.fnType(overlay._OverlayEntryWidgetState, [])
+  }));
+  dart.setLibraryUri(overlay._OverlayEntryWidget, I[1]);
+  dart.setFieldSignature(overlay._OverlayEntryWidget, () => ({
+    __proto__: dart.getFields(overlay._OverlayEntryWidget.__proto__),
+    entry: dart.finalFieldType(overlay.OverlayEntry),
+    tickerEnabled: dart.finalFieldType(core.bool)
+  }));
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  overlay._OverlayEntryWidgetState = class _OverlayEntryWidgetState extends framework.State$(overlay._OverlayEntryWidget) {
+    initState() {
+      super.initState();
+      this.widget.entry[_updateMounted](true);
+    }
+    dispose() {
+      this.widget.entry[_updateMounted](false);
+      super.dispose();
+    }
+    build(context) {
+      let t1, t0;
+      return new ticker_provider.TickerMode.new({enabled: this.widget.tickerEnabled, child: (t0 = this.widget.entry, t1 = context, t0.builder(t1)), $creationLocationd_0dea112b090073317d4: C[0] || CT.C0});
+    }
+    [_markNeedsBuild]() {
+      this.setState(dart.fn(() => {
+      }, T.VoidTovoid()));
+    }
+  };
+  (overlay._OverlayEntryWidgetState.new = function() {
+    overlay._OverlayEntryWidgetState.__proto__.new.call(this);
+    ;
+  }).prototype = overlay._OverlayEntryWidgetState.prototype;
+  dart.addTypeTests(overlay._OverlayEntryWidgetState);
+  dart.addTypeCaches(overlay._OverlayEntryWidgetState);
+  dart.setMethodSignature(overlay._OverlayEntryWidgetState, () => ({
+    __proto__: dart.getMethods(overlay._OverlayEntryWidgetState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext]),
+    [_markNeedsBuild]: dart.fnType(dart.void, [])
+  }));
+  dart.setLibraryUri(overlay._OverlayEntryWidgetState, I[1]);
+  var initialEntries$ = dart.privateName(overlay, "Overlay.initialEntries");
+  var clipBehavior$ = dart.privateName(overlay, "Overlay.clipBehavior");
+  var _name = dart.privateName(ui, "_name");
+  overlay.Overlay = class Overlay extends framework.StatefulWidget {
+    get initialEntries() {
+      return this[initialEntries$];
+    }
+    set initialEntries(value) {
+      super.initialEntries = value;
+    }
+    get clipBehavior() {
+      return this[clipBehavior$];
+    }
+    set clipBehavior(value) {
+      super.clipBehavior = value;
+    }
+    static of(context, opts) {
+      let rootOverlay = opts && 'rootOverlay' in opts ? opts.rootOverlay : false;
+      let debugRequiredFor = opts && 'debugRequiredFor' in opts ? opts.debugRequiredFor : null;
+      let result = rootOverlay ? context.findRootAncestorStateOfType(overlay.OverlayState) : context.findAncestorStateOfType(overlay.OverlayState);
+      if (!dart.fn(() => {
+        if (debugRequiredFor != null && result == null) {
+          let information = (() => {
+            let t0 = T.JSArrayOfDiagnosticsNode().of([new assertions.ErrorSummary.new("No Overlay widget found."), new assertions.ErrorDescription.new(dart.str(dart.runtimeType(debugRequiredFor)) + " widgets require an Overlay widget ancestor for correct operation."), new assertions.ErrorHint.new("The most common way to add an Overlay to an application is to include a MaterialApp or Navigator widget in the runApp() call."), new (T.DiagnosticsPropertyOfWidget()).new("The specific widget that failed to find an overlay was", debugRequiredFor, {style: diagnostics.DiagnosticsTreeStyle.errorProperty})]);
+            if (!context.widget._equals(debugRequiredFor)) t0[$add](context.describeElement("The context from which that widget was searching for an overlay was"));
+            return t0;
+          })();
+          dart.throw(new assertions.FlutterError.fromParts(information));
+        }
+        return true;
+      }, T.VoidTobool())()) dart.assertFailed(null, I[0], 289, 12, "() {\n      if (debugRequiredFor != null && result == null) {\n        final List<DiagnosticsNode> information = <DiagnosticsNode>[\n          ErrorSummary('No Overlay widget found.'),\n          ErrorDescription(\n              '${debugRequiredFor.runtimeType} widgets require an Overlay widget ancestor for correct operation.'),\n          ErrorHint(\n              'The most common way to add an Overlay to an application is to include a MaterialApp or Navigator widget in the runApp() call.'),\n          DiagnosticsProperty<Widget>(\n              'The specific widget that failed to find an overlay was',\n              debugRequiredFor,\n              style: DiagnosticsTreeStyle.errorProperty),\n          if (context.widget != debugRequiredFor)\n            context.describeElement(\n                'The context from which that widget was searching for an overlay was')\n        ];\n\n        throw FlutterError.fromParts(information);\n      }\n      return true;\n    }()");
+      return result;
+    }
+    createState() {
+      return new overlay.OverlayState.new();
+    }
+  };
+  (overlay.Overlay.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let initialEntries = opts && 'initialEntries' in opts ? opts.initialEntries : C[4] || CT.C4;
+    let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C[5] || CT.C5;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[initialEntries$] = initialEntries;
+    this[clipBehavior$] = clipBehavior;
+    overlay.Overlay.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = overlay.Overlay.prototype;
+  dart.addTypeTests(overlay.Overlay);
+  dart.addTypeCaches(overlay.Overlay);
+  dart.setMethodSignature(overlay.Overlay, () => ({
+    __proto__: dart.getMethods(overlay.Overlay.__proto__),
+    createState: dart.fnType(overlay.OverlayState, [])
+  }));
+  dart.setLibraryUri(overlay.Overlay, I[1]);
+  dart.setFieldSignature(overlay.Overlay, () => ({
+    __proto__: dart.getFields(overlay.Overlay.__proto__),
+    initialEntries: dart.finalFieldType(core.List$(overlay.OverlayEntry)),
+    clipBehavior: dart.finalFieldType(ui.Clip)
+  }));
+  var _insertionIndex = dart.privateName(overlay, "_insertionIndex");
+  var _debugVerifyInsertPosition = dart.privateName(overlay, "_debugVerifyInsertPosition");
+  const State_TickerProviderStateMixin$36 = class State_TickerProviderStateMixin extends framework.State$(overlay.Overlay) {};
+  (State_TickerProviderStateMixin$36.new = function() {
+    ticker_provider.TickerProviderStateMixin$(overlay.Overlay)[dart.mixinNew].call(this);
+    State_TickerProviderStateMixin$36.__proto__.new.call(this);
+  }).prototype = State_TickerProviderStateMixin$36.prototype;
+  dart.applyMixin(State_TickerProviderStateMixin$36, ticker_provider.TickerProviderStateMixin$(overlay.Overlay));
+  overlay.OverlayState = class OverlayState extends State_TickerProviderStateMixin$36 {
+    initState() {
+      super.initState();
+      this.insertAll(this.widget.initialEntries);
+    }
+    [_insertionIndex](below, above) {
+      if (!(above == null || below == null)) dart.assertFailed(null, I[0], 331, 12, "above == null || below == null");
+      if (below != null) {
+        return this[_entries][$indexOf](below);
+      }
+      if (above != null) {
+        return this[_entries][$indexOf](above) + 1;
+      }
+      return this[_entries][$length];
+    }
+    insert(entry, opts) {
+      let below = opts && 'below' in opts ? opts.below : null;
+      let above = opts && 'above' in opts ? opts.above : null;
+      if (!this[_debugVerifyInsertPosition](above, below)) dart.assertFailed(null, I[0], 349, 12, "_debugVerifyInsertPosition(above, below)");
+      if (!!this[_entries][$contains](entry)) dart.assertFailed("The specified entry is already present in the Overlay.", I[0], 350, 12, "!_entries.contains(entry)");
+      if (!(entry[_overlay] == null)) dart.assertFailed("The specified entry is already present in another Overlay.", I[0], 352, 12, "entry._overlay == null");
+      entry[_overlay] = this;
+      this.setState(dart.fn(() => {
+        this[_entries][$insert](this[_insertionIndex](below, above), entry);
+      }, T.VoidTovoid()));
+    }
+    insertAll(entries, opts) {
+      let below = opts && 'below' in opts ? opts.below : null;
+      let above = opts && 'above' in opts ? opts.above : null;
+      if (!this[_debugVerifyInsertPosition](above, below)) dart.assertFailed(null, I[0], 369, 12, "_debugVerifyInsertPosition(above, below)");
+      if (!entries[$every](dart.fn(entry => !this[_entries][$contains](entry), T.OverlayEntryTobool()))) dart.assertFailed("One or more of the specified entries are already present in the Overlay.", I[0], 370, 12, "entries.every((OverlayEntry entry) => !_entries.contains(entry))");
+      if (!entries[$every](dart.fn(entry => entry[_overlay] == null, T.OverlayEntryTobool()))) dart.assertFailed("One or more of the specified entries are already present in another Overlay.", I[0], 372, 12, "entries.every((OverlayEntry entry) => entry._overlay == null)");
+      if (entries[$isEmpty]) {
+        return;
+      }
+      for (let entry of entries) {
+        if (!(entry[_overlay] == null)) dart.assertFailed(null, I[0], 378, 14, "entry._overlay == null");
+        entry[_overlay] = this;
+      }
+      this.setState(dart.fn(() => {
+        this[_entries][$insertAll](this[_insertionIndex](below, above), entries);
+      }, T.VoidTovoid()));
+    }
+    [_debugVerifyInsertPosition](above, below, opts) {
+      let t1, t1$, t1$0, t1$1;
+      let newEntries = opts && 'newEntries' in opts ? opts.newEntries : null;
+      if (!(above == null || below == null)) dart.assertFailed("Only one of `above` and `below` may be specified.", I[0], 389, 7, "above == null || below == null");
+      if (!(above == null || dart.equals(above[_overlay], this) && this[_entries][$contains](above) && dart.test((t1$ = (t1 = newEntries, t1 == null ? null : t1[$contains](above)), t1$ == null ? true : t1$)))) dart.assertFailed("The provided entry used for `above` must be present in the Overlay" + (newEntries != null ? " and in the `newEntriesList`" : "") + ".", I[0], 393, 7, "above == null ||\n          (above._overlay == this &&\n              _entries.contains(above) &&\n              (newEntries?.contains(above) ?? true))");
+      if (!(below == null || dart.equals(below[_overlay], this) && this[_entries][$contains](below) && dart.test((t1$1 = (t1$0 = newEntries, t1$0 == null ? null : t1$0[$contains](below)), t1$1 == null ? true : t1$1)))) dart.assertFailed("The provided entry used for `below` must be present in the Overlay" + (newEntries != null ? " and in the `newEntriesList`" : "") + ".", I[0], 400, 7, "below == null ||\n          (below._overlay == this &&\n              _entries.contains(below) &&\n              (newEntries?.contains(below) ?? true))");
+      return true;
+    }
+    rearrange(newEntries, opts) {
+      let t1;
+      let below = opts && 'below' in opts ? opts.below : null;
+      let above = opts && 'above' in opts ? opts.above : null;
+      let newEntriesList = T.ListOfOverlayEntry().is(newEntries) ? newEntries : newEntries[$toList]({growable: false});
+      if (!this[_debugVerifyInsertPosition](above, below, {newEntries: newEntriesList})) dart.assertFailed(null, I[0], 432, 9, "_debugVerifyInsertPosition(above, below, newEntries: newEntriesList)");
+      if (!newEntriesList[$every](dart.fn(entry => entry[_overlay] == null || dart.equals(entry[_overlay], this), T.OverlayEntryTobool()))) dart.assertFailed("One or more of the specified entries are already present in another Overlay.", I[0], 434, 9, "newEntriesList.every((OverlayEntry entry) =>\n            entry._overlay == null || entry._overlay == this)");
+      if (!newEntriesList[$every](dart.fn(entry => this[_entries][$indexOf](entry) === this[_entries][$lastIndexOf](entry), T.OverlayEntryTobool()))) dart.assertFailed("One or more of the specified entries are specified multiple times.", I[0], 438, 9, "newEntriesList.every((OverlayEntry entry) =>\n            _entries.indexOf(entry) == _entries.lastIndexOf(entry))");
+      if (newEntriesList[$isEmpty]) {
+        return;
+      }
+      if (collections.listEquals(overlay.OverlayEntry, this[_entries], newEntriesList)) {
+        return;
+      }
+      let old = T.LinkedHashSetOfOverlayEntry().from(this[_entries]);
+      for (let entry of newEntriesList) {
+        t1 = entry;
+        t1[_overlay] == null ? t1[_overlay] = this : null;
+      }
+      this.setState(dart.fn(() => {
+        this[_entries][$clear]();
+        this[_entries][$addAll](newEntriesList);
+        old.removeAll(newEntriesList);
+        this[_entries][$insertAll](this[_insertionIndex](below, above), old);
+      }, T.VoidTovoid()));
+    }
+    [_markDirty]() {
+      if (this.mounted) {
+        this.setState(dart.fn(() => {
+        }, T.VoidTovoid()));
+      }
+    }
+    debugIsVisible(entry) {
+      let result = false;
+      if (!this[_entries][$contains](entry)) dart.assertFailed(null, I[0], 474, 12, "_entries.contains(entry)");
+      if (!dart.fn(() => {
+        for (let i = this[_entries][$length] - 1; i > 0; i = i - 1) {
+          let candidate = this[_entries][$_get](i);
+          if (candidate[$_equals](entry)) {
+            result = true;
+            break;
+          }
+          if (candidate.opaque) {
+            break;
+          }
+        }
+        return true;
+      }, T.VoidTobool())()) dart.assertFailed(null, I[0], 475, 12, "() {\n      for (int i = _entries.length - 1; i > 0; i -= 1) {\n        final OverlayEntry candidate = _entries[i];\n        if (candidate == entry) {\n          result = true;\n          break;\n        }\n        if (candidate.opaque) {\n          break;\n        }\n      }\n      return true;\n    }()");
+      return result;
+    }
+    [_didChangeEntryOpacity]() {
+      this.setState(dart.fn(() => {
+      }, T.VoidTovoid()));
+    }
+    build(context) {
+      let children = T.JSArrayOfWidget().of([]);
+      let onstage = true;
+      let onstageCount = 0;
+      for (let i = this[_entries][$length] - 1; i >= 0; i = i - 1) {
+        let entry = this[_entries][$_get](i);
+        if (onstage) {
+          onstageCount = onstageCount + 1;
+          children[$add](new overlay._OverlayEntryWidget.new({key: entry[_key], entry: entry, $creationLocationd_0dea112b090073317d4: C[6] || CT.C6}));
+          if (entry.opaque) {
+            onstage = false;
+          }
+        } else if (entry.maintainState) {
+          children[$add](new overlay._OverlayEntryWidget.new({key: entry[_key], entry: entry, tickerEnabled: false, $creationLocationd_0dea112b090073317d4: C[10] || CT.C10}));
+        }
+      }
+      return new overlay._Theatre.new({skipCount: children[$length] - onstageCount, children: children[$reversed][$toList]({growable: false}), clipBehavior: this.widget.clipBehavior, $creationLocationd_0dea112b090073317d4: C[15] || CT.C15});
+    }
+    debugFillProperties(properties) {
+      super.debugFillProperties(properties);
+      properties.add(new (T.DiagnosticsPropertyOfListOfOverlayEntry()).new("entries", this[_entries]));
+    }
+  };
+  (overlay.OverlayState.new = function() {
+    this[_entries] = T.JSArrayOfOverlayEntry().of([]);
+    overlay.OverlayState.__proto__.new.call(this);
+    ;
+  }).prototype = overlay.OverlayState.prototype;
+  dart.addTypeTests(overlay.OverlayState);
+  dart.addTypeCaches(overlay.OverlayState);
+  dart.setMethodSignature(overlay.OverlayState, () => ({
+    __proto__: dart.getMethods(overlay.OverlayState.__proto__),
+    [_insertionIndex]: dart.fnType(core.int, [dart.nullable(overlay.OverlayEntry), dart.nullable(overlay.OverlayEntry)]),
+    insert: dart.fnType(dart.void, [overlay.OverlayEntry], {above: dart.nullable(overlay.OverlayEntry), below: dart.nullable(overlay.OverlayEntry)}, {}),
+    insertAll: dart.fnType(dart.void, [core.Iterable$(overlay.OverlayEntry)], {above: dart.nullable(overlay.OverlayEntry), below: dart.nullable(overlay.OverlayEntry)}, {}),
+    [_debugVerifyInsertPosition]: dart.fnType(core.bool, [dart.nullable(overlay.OverlayEntry), dart.nullable(overlay.OverlayEntry)], {newEntries: dart.nullable(core.Iterable$(overlay.OverlayEntry))}, {}),
+    rearrange: dart.fnType(dart.void, [core.Iterable$(overlay.OverlayEntry)], {above: dart.nullable(overlay.OverlayEntry), below: dart.nullable(overlay.OverlayEntry)}, {}),
+    [_markDirty]: dart.fnType(dart.void, []),
+    debugIsVisible: dart.fnType(core.bool, [overlay.OverlayEntry]),
+    [_didChangeEntryOpacity]: dart.fnType(dart.void, []),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(overlay.OverlayState, I[1]);
+  dart.setFieldSignature(overlay.OverlayState, () => ({
+    __proto__: dart.getFields(overlay.OverlayState.__proto__),
+    [_entries]: dart.finalFieldType(core.List$(overlay.OverlayEntry))
+  }));
+  overlay._Theatre = class _Theatre extends framework.MultiChildRenderObjectWidget {
+    createElement() {
+      return new overlay._TheatreElement.new(this);
+    }
+    createRenderObject(context) {
+      return new overlay._RenderTheatre.new({skipCount: this.skipCount, textDirection: basic.Directionality.of(context), clipBehavior: this.clipBehavior});
+    }
+    updateRenderObject(context, renderObject) {
+      let t1;
+      overlay._RenderTheatre.as(renderObject);
+      t1 = renderObject;
+      (() => {
+        t1.skipCount = this.skipCount;
+        t1.textDirection = basic.Directionality.of(context);
+        t1.clipBehavior = this.clipBehavior;
+        return t1;
+      })();
+    }
+    debugFillProperties(properties) {
+      super.debugFillProperties(properties);
+      properties.add(new diagnostics.IntProperty.new("skipCount", this.skipCount));
+    }
+  };
+  (overlay._Theatre.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let skipCount = opts && 'skipCount' in opts ? opts.skipCount : 0;
+    let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C[5] || CT.C5;
+    let children = opts && 'children' in opts ? opts.children : C[20] || CT.C20;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this.skipCount = skipCount;
+    this.clipBehavior = clipBehavior;
+    if (!(skipCount >= 0)) dart.assertFailed(null, I[0], 550, 16, "skipCount >= 0");
+    if (!(children[$length] >= skipCount)) dart.assertFailed(null, I[0], 551, 16, "children.length >= skipCount");
+    overlay._Theatre.__proto__.new.call(this, {key: key, children: children, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = overlay._Theatre.prototype;
+  dart.addTypeTests(overlay._Theatre);
+  dart.addTypeCaches(overlay._Theatre);
+  dart.setMethodSignature(overlay._Theatre, () => ({
+    __proto__: dart.getMethods(overlay._Theatre.__proto__),
+    createElement: dart.fnType(overlay._TheatreElement, []),
+    createRenderObject: dart.fnType(overlay._RenderTheatre, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(overlay._Theatre, I[1]);
+  dart.setFieldSignature(overlay._Theatre, () => ({
+    __proto__: dart.getFields(overlay._Theatre.__proto__),
+    skipCount: dart.finalFieldType(core.int),
+    clipBehavior: dart.finalFieldType(ui.Clip)
+  }));
+  overlay._TheatreElement = class _TheatreElement extends framework.MultiChildRenderObjectElement {
+    get widget() {
+      return overlay._Theatre.as(super.widget);
+    }
+    get renderObject() {
+      return overlay._RenderTheatre.as(super.renderObject);
+    }
+    debugVisitOnstageChildren(visitor) {
+      if (!(this.children[$length] >= this.widget.skipCount)) dart.assertFailed(null, I[0], 596, 12, "children.length >= widget.skipCount");
+      this.children[$skip](this.widget.skipCount)[$forEach](visitor);
+    }
+  };
+  (overlay._TheatreElement.new = function(widget) {
+    overlay._TheatreElement.__proto__.new.call(this, widget);
+    ;
+  }).prototype = overlay._TheatreElement.prototype;
+  dart.addTypeTests(overlay._TheatreElement);
+  dart.addTypeCaches(overlay._TheatreElement);
+  dart.setGetterSignature(overlay._TheatreElement, () => ({
+    __proto__: dart.getGetters(overlay._TheatreElement.__proto__),
+    widget: overlay._Theatre,
+    renderObject: overlay._RenderTheatre
+  }));
+  dart.setLibraryUri(overlay._TheatreElement, I[1]);
+  var _hasVisualOverflow = dart.privateName(overlay, "_hasVisualOverflow");
+  var _resolvedAlignment = dart.privateName(overlay, "_resolvedAlignment");
+  var _clipBehavior = dart.privateName(overlay, "_clipBehavior");
+  var _clipRectLayer = dart.privateName(overlay, "_clipRectLayer");
+  var _textDirection = dart.privateName(overlay, "_textDirection");
+  var _skipCount = dart.privateName(overlay, "_skipCount");
+  var _resolve = dart.privateName(overlay, "_resolve");
+  var _markNeedResolution = dart.privateName(overlay, "_markNeedResolution");
+  var _firstOnstageChild = dart.privateName(overlay, "_firstOnstageChild");
+  var _lastOnstageChild = dart.privateName(overlay, "_lastOnstageChild");
+  var _onstageChildCount = dart.privateName(overlay, "_onstageChildCount");
+  const RenderBox_ContainerRenderObjectMixin$36 = class RenderBox_ContainerRenderObjectMixin extends box.RenderBox {};
+  (RenderBox_ContainerRenderObjectMixin$36.new = function() {
+    object.ContainerRenderObjectMixin$(box.RenderBox, stack.StackParentData)[dart.mixinNew].call(this);
+    RenderBox_ContainerRenderObjectMixin$36.__proto__.new.call(this);
+  }).prototype = RenderBox_ContainerRenderObjectMixin$36.prototype;
+  dart.applyMixin(RenderBox_ContainerRenderObjectMixin$36, object.ContainerRenderObjectMixin$(box.RenderBox, stack.StackParentData));
+  overlay._RenderTheatre = class _RenderTheatre extends RenderBox_ContainerRenderObjectMixin$36 {
+    setupParentData(child) {
+      box.RenderBox.as(child);
+      if (!stack.StackParentData.is(child.parentData)) child.parentData = new stack.StackParentData.new();
+    }
+    [_resolve]() {
+      if (this[_resolvedAlignment] != null) {
+        return;
+      }
+      this[_resolvedAlignment] = alignment.AlignmentDirectional.topStart.resolve(this.textDirection);
+    }
+    [_markNeedResolution]() {
+      this[_resolvedAlignment] = null;
+      this.markNeedsLayout();
+    }
+    get textDirection() {
+      return this[_textDirection];
+    }
+    set textDirection(value) {
+      if (this[_textDirection] === value) {
+        return;
+      }
+      this[_textDirection] = value;
+      this[_markNeedResolution]();
+    }
+    get skipCount() {
+      return this[_skipCount];
+    }
+    set skipCount(value) {
+      if (this[_skipCount] !== value) {
+        this[_skipCount] = value;
+        this.markNeedsLayout();
+      }
+    }
+    get clipBehavior() {
+      return this[_clipBehavior];
+    }
+    set clipBehavior(value) {
+      if (value !== this[_clipBehavior]) {
+        this[_clipBehavior] = value;
+        this.markNeedsPaint();
+        this.markNeedsSemanticsUpdate();
+      }
+    }
+    get [_firstOnstageChild]() {
+      if (this.skipCount === super.childCount) {
+        return null;
+      }
+      let child = super.firstChild;
+      for (let toSkip = this.skipCount; toSkip > 0; toSkip = toSkip - 1) {
+        let childParentData = stack.StackParentData.as(dart.nullCheck(dart.nullCheck(child).parentData));
+        child = childParentData.nextSibling;
+        if (!(child != null)) dart.assertFailed(null, I[0], 678, 14, "child != null");
+      }
+      return child;
+    }
+    get [_lastOnstageChild]() {
+      return this.skipCount === super.childCount ? null : this.lastChild;
+    }
+    get [_onstageChildCount]() {
+      return this.childCount - this.skipCount;
+    }
+    computeMinIntrinsicWidth(height) {
+      return stack.RenderStack.getIntrinsicDimension(this[_firstOnstageChild], dart.fn(child => child.getMinIntrinsicWidth(height), T.RenderBoxTodouble()));
+    }
+    computeMaxIntrinsicWidth(height) {
+      return stack.RenderStack.getIntrinsicDimension(this[_firstOnstageChild], dart.fn(child => child.getMaxIntrinsicWidth(height), T.RenderBoxTodouble()));
+    }
+    computeMinIntrinsicHeight(width) {
+      return stack.RenderStack.getIntrinsicDimension(this[_firstOnstageChild], dart.fn(child => child.getMinIntrinsicHeight(width), T.RenderBoxTodouble()));
+    }
+    computeMaxIntrinsicHeight(width) {
+      return stack.RenderStack.getIntrinsicDimension(this[_firstOnstageChild], dart.fn(child => child.getMaxIntrinsicHeight(width), T.RenderBoxTodouble()));
+    }
+    computeDistanceToActualBaseline(baseline) {
+      if (!!this.debugNeedsLayout) dart.assertFailed(null, I[0], 714, 12, "!debugNeedsLayout");
+      let result = null;
+      let child = this[_firstOnstageChild];
+      while (child != null) {
+        if (!!child.debugNeedsLayout) dart.assertFailed(null, I[0], 718, 14, "!child.debugNeedsLayout");
+        let childParentData = stack.StackParentData.as(dart.nullCheck(child.parentData));
+        let candidate = child.getDistanceToActualBaseline(baseline);
+        if (candidate != null) {
+          candidate = dart.notNull(candidate) + childParentData.offset.dy;
+          if (result != null) {
+            result = math.min(core.double, result, candidate);
+          } else {
+            result = candidate;
+          }
+        }
+        child = childParentData.nextSibling;
+      }
+      return result;
+    }
+    get sizedByParent() {
+      return true;
+    }
+    computeDryLayout(constraints) {
+      if (!constraints.biggest.isFinite) dart.assertFailed(null, I[0], 740, 12, "constraints.biggest.isFinite");
+      return constraints.biggest;
+    }
+    performLayout() {
+      this[_hasVisualOverflow] = false;
+      if (this[_onstageChildCount] === 0) {
+        return;
+      }
+      this[_resolve]();
+      if (!(this[_resolvedAlignment] != null)) dart.assertFailed(null, I[0], 753, 12, "_resolvedAlignment != null");
+      let nonPositionedConstraints = new box.BoxConstraints.tight(this.constraints.biggest);
+      let child = this[_firstOnstageChild];
+      while (child != null) {
+        let childParentData = stack.StackParentData.as(dart.nullCheck(child.parentData));
+        if (!childParentData.isPositioned) {
+          child.layout(nonPositionedConstraints, {parentUsesSize: true});
+          childParentData.offset = dart.nullCheck(this[_resolvedAlignment]).alongOffset(ui.Offset.as(this.size['-'](child.size)));
+        } else {
+          this[_hasVisualOverflow] = stack.RenderStack.layoutPositionedChild(child, childParentData, this.size, dart.nullCheck(this[_resolvedAlignment])) || this[_hasVisualOverflow];
+        }
+        if (!dart.equals(child.parentData, childParentData)) dart.assertFailed(null, I[0], 774, 14, "child.parentData == childParentData");
+        child = childParentData.nextSibling;
+      }
+    }
+    hitTestChildren(result, opts) {
+      let position = opts && 'position' in opts ? opts.position : null;
+      let child = this[_lastOnstageChild];
+      for (let i = 0; i < this[_onstageChildCount]; i = i + 1) {
+        if (!(child != null)) dart.assertFailed(null, I[0], 783, 14, "child != null");
+        let childParentData = stack.StackParentData.as(dart.nullCheck(dart.nullCheck(child).parentData));
+        let isHit = result.addWithPaintOffset({offset: childParentData.offset, position: position, hitTest: dart.fn((result, transformed) => {
+            if (!dart.equals(transformed, position['-'](childParentData.offset))) dart.assertFailed(null, I[0], 790, 18, "transformed == position - childParentData.offset");
+            return dart.nullCheck(child).hitTest(result, {position: dart.nullCheck(transformed)});
+          }, T.BoxHitTestResultAndOffsetNTobool())});
+        if (isHit) {
+          return true;
+        }
+        child = childParentData.previousSibling;
+      }
+      return false;
+    }
+    paintStack(context, offset) {
+      let child = this[_firstOnstageChild];
+      while (child != null) {
+        let childParentData = stack.StackParentData.as(dart.nullCheck(child.parentData));
+        context.paintChild(child, childParentData.offset['+'](offset));
+        child = childParentData.nextSibling;
+      }
+    }
+    paint(context, offset) {
+      if (this[_hasVisualOverflow] && this.clipBehavior !== ui.Clip.none) {
+        this[_clipRectLayer] = context.pushClipRect(this.needsCompositing, offset, ui.Offset.zero['&'](this.size), dart.bind(this, 'paintStack'), {clipBehavior: this.clipBehavior, oldLayer: this[_clipRectLayer]});
+      } else {
+        this[_clipRectLayer] = null;
+        this.paintStack(context, offset);
+      }
+    }
+    visitChildrenForSemantics(visitor) {
+      let child = this[_firstOnstageChild];
+      while (child != null) {
+        visitor(child);
+        let childParentData = stack.StackParentData.as(dart.nullCheck(child.parentData));
+        child = childParentData.nextSibling;
+      }
+    }
+    describeApproximatePaintClip(child) {
+      object.RenderObject.as(child);
+      return this[_hasVisualOverflow] ? ui.Offset.zero['&'](this.size) : null;
+    }
+    debugFillProperties(properties) {
+      super.debugFillProperties(properties);
+      properties.add(new diagnostics.IntProperty.new("skipCount", this.skipCount));
+      properties.add(new (T.EnumPropertyOfTextDirection()).new("textDirection", this.textDirection));
+    }
+    debugDescribeChildren() {
+      let offstageChildren = T.JSArrayOfDiagnosticsNode().of([]);
+      let onstageChildren = T.JSArrayOfDiagnosticsNode().of([]);
+      let count = 1;
+      let onstage = false;
+      let child = this.firstChild;
+      let firstOnstageChild = this[_firstOnstageChild];
+      while (child != null) {
+        if (dart.equals(child, firstOnstageChild)) {
+          onstage = true;
+          count = 1;
+        }
+        if (onstage) {
+          onstageChildren[$add](child.toDiagnosticsNode({name: "onstage " + dart.str(count)}));
+        } else {
+          offstageChildren[$add](child.toDiagnosticsNode({name: "offstage " + dart.str(count), style: diagnostics.DiagnosticsTreeStyle.offstage}));
+        }
+        let childParentData = stack.StackParentData.as(dart.nullCheck(child.parentData));
+        child = childParentData.nextSibling;
+        count = count + 1;
+      }
+      return (() => {
+        let t1 = T.ListOfDiagnosticsNode().of(onstageChildren);
+        if (offstageChildren[$isNotEmpty])
+          t1[$addAll](offstageChildren);
+        else
+          t1[$add](diagnostics.DiagnosticsNode.message("no offstage children", {style: diagnostics.DiagnosticsTreeStyle.offstage}));
+        return t1;
+      })();
+    }
+  };
+  (overlay._RenderTheatre.new = function(opts) {
+    let children = opts && 'children' in opts ? opts.children : null;
+    let textDirection = opts && 'textDirection' in opts ? opts.textDirection : null;
+    let skipCount = opts && 'skipCount' in opts ? opts.skipCount : 0;
+    let clipBehavior = opts && 'clipBehavior' in opts ? opts.clipBehavior : C[5] || CT.C5;
+    this[_hasVisualOverflow] = false;
+    this[_resolvedAlignment] = null;
+    this[_clipBehavior] = ui.Clip.hardEdge;
+    this[_clipRectLayer] = null;
+    if (!(skipCount >= 0)) dart.assertFailed(null, I[0], 608, 16, "skipCount >= 0");
+    this[_textDirection] = textDirection;
+    this[_skipCount] = skipCount;
+    this[_clipBehavior] = clipBehavior;
+    overlay._RenderTheatre.__proto__.new.call(this);
+    this.addAll(children);
+  }).prototype = overlay._RenderTheatre.prototype;
+  dart.addTypeTests(overlay._RenderTheatre);
+  dart.addTypeCaches(overlay._RenderTheatre);
+  dart.setMethodSignature(overlay._RenderTheatre, () => ({
+    __proto__: dart.getMethods(overlay._RenderTheatre.__proto__),
+    [_resolve]: dart.fnType(dart.void, []),
+    [_markNeedResolution]: dart.fnType(dart.void, []),
+    paintStack: dart.fnType(dart.void, [object.PaintingContext, ui.Offset])
+  }));
+  dart.setGetterSignature(overlay._RenderTheatre, () => ({
+    __proto__: dart.getGetters(overlay._RenderTheatre.__proto__),
+    textDirection: ui.TextDirection,
+    skipCount: core.int,
+    clipBehavior: ui.Clip,
+    [_firstOnstageChild]: dart.nullable(box.RenderBox),
+    [_lastOnstageChild]: dart.nullable(box.RenderBox),
+    [_onstageChildCount]: core.int
+  }));
+  dart.setSetterSignature(overlay._RenderTheatre, () => ({
+    __proto__: dart.getSetters(overlay._RenderTheatre.__proto__),
+    textDirection: ui.TextDirection,
+    skipCount: core.int,
+    clipBehavior: ui.Clip
+  }));
+  dart.setLibraryUri(overlay._RenderTheatre, I[1]);
+  dart.setFieldSignature(overlay._RenderTheatre, () => ({
+    __proto__: dart.getFields(overlay._RenderTheatre.__proto__),
+    [_hasVisualOverflow]: dart.fieldType(core.bool),
+    [_resolvedAlignment]: dart.fieldType(dart.nullable(alignment.Alignment)),
+    [_textDirection]: dart.fieldType(ui.TextDirection),
+    [_skipCount]: dart.fieldType(core.int),
+    [_clipBehavior]: dart.fieldType(ui.Clip),
+    [_clipRectLayer]: dart.fieldType(dart.nullable(layer.ClipRectLayer))
+  }));
+  dart.trackLibraries("packages/oktoast/src/widget/overlay.dart", {
+    "package:oktoast/src/widget/overlay.dart": overlay
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["overlay.dart"],"names":[],"mappings":"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","file":"../../../../../../../../packages/oktoast/src/widget/overlay.dart.lib.js"}');
+  // Exports:
+  return {
+    src__widget__overlay: overlay
+  };
+}));
+
+//# sourceMappingURL=overlay.dart.lib.js.map

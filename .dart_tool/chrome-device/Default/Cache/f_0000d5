@@ -1,0 +1,2082 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/bilibili/model/recommend_model.dart', 'packages/flutter_screenutil/flutter_screenutil.dart', 'packages/bilibili/http/http.dart', 'packages/bilibili/api/api.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/widgets/async.dart', 'packages/flutter/src/material/progress_indicator.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/material/refresh_indicator.dart', 'packages/flutter/src/widgets/scroll_view.dart', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter/src/material/colors.dart', 'packages/bilibili/page/common/extend_img.dart', 'packages/flutter/src/painting/box_decoration.dart', 'packages/flutter/src/painting/border_radius.dart', 'packages/flutter/src/rendering/flex.dart', 'packages/flutter/src/widgets/icon.dart', 'packages/flutter/src/material/icons.dart', 'packages/flutter/src/painting/strut_style.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/rendering/paragraph.dart', 'packages/flutter/src/painting/box_border.dart'], (function load__packages__bilibili__page__index__recommend_page_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__bilibili__model__recommend_model$46dart, packages__flutter_screenutil__flutter_screenutil$46dart, packages__bilibili__http__http$46dart, packages__bilibili__api__api$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__widgets__async$46dart, packages__flutter__src__material__progress_indicator$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__material__refresh_indicator$46dart, packages__flutter__src__widgets__scroll_view$46dart, packages__flutter__src__painting__basic_types$46dart, packages__flutter__src__material__colors$46dart, packages__bilibili__page__common__extend_img$46dart, packages__flutter__src__painting__box_decoration$46dart, packages__flutter__src__painting__border_radius$46dart, packages__flutter__src__rendering__flex$46dart, packages__flutter__src__widgets__icon$46dart, packages__flutter__src__material__icons$46dart, packages__flutter__src__painting__strut_style$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__rendering__paragraph$46dart, packages__flutter__src__painting__box_border$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _interceptors = dart_sdk._interceptors;
+  const async = dart_sdk.async;
+  const convert = dart_sdk.convert;
+  const ui = dart_sdk.ui;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const scroll_controller = packages__flutter__src__widgets__widget_span$46dart.src__widgets__scroll_controller;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const text = packages__flutter__src__widgets__widget_span$46dart.src__widgets__text;
+  const automatic_keep_alive = packages__flutter__src__widgets__widget_span$46dart.src__widgets__automatic_keep_alive;
+  const recommend_model = packages__bilibili__model__recommend_model$46dart.model__recommend_model;
+  const flutter_screenutil = packages__flutter_screenutil__flutter_screenutil$46dart.flutter_screenutil;
+  const http = packages__bilibili__http__http$46dart.http__http;
+  const api = packages__bilibili__api__api$46dart.api__api;
+  const scaffold = packages__flutter__src__material__icon_button$46dart.src__material__scaffold;
+  const theme = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const material = packages__flutter__src__material__icon_button$46dart.src__material__material;
+  const ink_decoration = packages__flutter__src__material__icon_button$46dart.src__material__ink_decoration;
+  const ink_well = packages__flutter__src__material__icon_button$46dart.src__material__ink_well;
+  const bottom_sheet = packages__flutter__src__material__icon_button$46dart.src__material__bottom_sheet;
+  const async$ = packages__flutter__src__widgets__async$46dart.src__widgets__async;
+  const progress_indicator = packages__flutter__src__material__progress_indicator$46dart.src__material__progress_indicator;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const refresh_indicator = packages__flutter__src__material__refresh_indicator$46dart.src__material__refresh_indicator;
+  const scroll_view = packages__flutter__src__widgets__scroll_view$46dart.src__widgets__scroll_view;
+  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
+  const colors = packages__flutter__src__material__colors$46dart.src__material__colors;
+  const extend_img = packages__bilibili__page__common__extend_img$46dart.page__common__extend_img;
+  const box_decoration = packages__flutter__src__painting__box_decoration$46dart.src__painting__box_decoration;
+  const border_radius = packages__flutter__src__painting__border_radius$46dart.src__painting__border_radius;
+  const flex = packages__flutter__src__rendering__flex$46dart.src__rendering__flex;
+  const icon = packages__flutter__src__widgets__icon$46dart.src__widgets__icon;
+  const icons = packages__flutter__src__material__icons$46dart.src__material__icons;
+  const text_style = packages__flutter__src__painting__strut_style$46dart.src__painting__text_style;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const paragraph = packages__flutter__src__rendering__paragraph$46dart.src__rendering__paragraph;
+  const box_border = packages__flutter__src__painting__box_border$46dart.src__painting__box_border;
+  var recommend_page = Object.create(dart.library);
+  var $addAll = dartx.addAll;
+  var $clear = dartx.clear;
+  var $map = dartx.map;
+  var $toList = dartx.toList;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    JSArrayOfItems: () => (T.JSArrayOfItems = dart.constFn(_interceptors.JSArray$(recommend_model.Items)))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    MapOfString$dynamic: () => (T.MapOfString$dynamic = dart.constFn(core.Map$(core.String, dart.dynamic)))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    Three_point_v2ToRenderObjectWidget: () => (T.Three_point_v2ToRenderObjectWidget = dart.constFn(dart.fnType(framework.RenderObjectWidget, [recommend_model.Three_point_v2])))(),
+    BuildContextToContainer: () => (T.BuildContextToContainer = dart.constFn(dart.fnType(container.Container, [framework.BuildContext])))(),
+    ItemsToMaterial: () => (T.ItemsToMaterial = dart.constFn(dart.fnType(material.Material, [recommend_model.Items])))(),
+    ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
+    AsyncSnapshotOfObjectN: () => (T.AsyncSnapshotOfObjectN = dart.constFn(async$.AsyncSnapshot$(T.ObjectN())))(),
+    BuildContextAndAsyncSnapshotOfObjectNToWidget: () => (T.BuildContextAndAsyncSnapshotOfObjectNToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext, T.AsyncSnapshotOfObjectN()])))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 17,
+        [_Location_line]: 84,
+        [_Location_file]: null
+      });
+    },
+    get C1() {
+      return C[1] = dart.constList([C[2] || CT.C2], widget_inspector._Location);
+    },
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[1] || CT.C1,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 83,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 83,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5], widget_inspector._Location);
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 82,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: async$.ConnectionState.prototype,
+        [_name]: "ConnectionState.waiting",
+        index: 1
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 17,
+        [_Location_line]: 91,
+        [_Location_file]: null
+      });
+    },
+    get C8() {
+      return C[8] = dart.constList([C[9] || CT.C9], widget_inspector._Location);
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[8] || CT.C8,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 90,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 62,
+        [_Location_line]: 129,
+        [_Location_file]: null
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 74,
+        [_Location_line]: 129,
+        [_Location_file]: null
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "img",
+        [_Location_column]: 87,
+        [_Location_line]: 129,
+        [_Location_file]: null
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "notCircle",
+        [_Location_column]: 101,
+        [_Location_line]: 129,
+        [_Location_file]: null
+      });
+    },
+    get C11() {
+      return C[11] = dart.constList([C[12] || CT.C12, C[13] || CT.C13, C[14] || CT.C14, C[15] || CT.C15], widget_inspector._Location);
+    },
+    get C10() {
+      return C[10] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[11] || CT.C11,
+        [_Location_name]: null,
+        [_Location_column]: 49,
+        [_Location_line]: 129,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C18() {
+      return C[18] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 58,
+        [_Location_line]: 130,
+        [_Location_file]: null
+      });
+    },
+    get C17() {
+      return C[17] = dart.constList([C[18] || CT.C18], widget_inspector._Location);
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[17] || CT.C17,
+        [_Location_name]: null,
+        [_Location_column]: 49,
+        [_Location_line]: 130,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 61,
+        [_Location_line]: 131,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.constList([C[21] || CT.C21], widget_inspector._Location);
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[20] || CT.C20,
+        [_Location_name]: null,
+        [_Location_column]: 49,
+        [_Location_line]: 131,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 47,
+        [_Location_line]: 128,
+        [_Location_file]: null
+      });
+    },
+    get C23() {
+      return C[23] = dart.constList([C[24] || CT.C24], widget_inspector._Location);
+    },
+    get C22() {
+      return C[22] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[23] || CT.C23,
+        [_Location_name]: null,
+        [_Location_column]: 52,
+        [_Location_line]: 127,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 65,
+        [_Location_line]: 140,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.constList([C[27] || CT.C27], widget_inspector._Location);
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[26] || CT.C26,
+        [_Location_name]: null,
+        [_Location_column]: 53,
+        [_Location_line]: 140,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 58,
+        [_Location_line]: 141,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.constList([C[30] || CT.C30], widget_inspector._Location);
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[29] || CT.C29,
+        [_Location_name]: null,
+        [_Location_column]: 49,
+        [_Location_line]: 141,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 54,
+        [_Location_line]: 142,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.constList([C[33] || CT.C33], widget_inspector._Location);
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[32] || CT.C32,
+        [_Location_name]: null,
+        [_Location_column]: 49,
+        [_Location_line]: 142,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 51,
+        [_Location_line]: 139,
+        [_Location_file]: null
+      });
+    },
+    get C35() {
+      return C[35] = dart.constList([C[36] || CT.C36], widget_inspector._Location);
+    },
+    get C34() {
+      return C[34] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[35] || CT.C35,
+        [_Location_name]: null,
+        [_Location_column]: 49,
+        [_Location_line]: 138,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 47,
+        [_Location_line]: 137,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.constList([C[39] || CT.C39], widget_inspector._Location);
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[38] || CT.C38,
+        [_Location_name]: null,
+        [_Location_column]: 52,
+        [_Location_line]: 136,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C42() {
+      return C[42] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 59,
+        [_Location_line]: 149,
+        [_Location_file]: null
+      });
+    },
+    get C41() {
+      return C[41] = dart.constList([C[42] || CT.C42], widget_inspector._Location);
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[41] || CT.C41,
+        [_Location_name]: null,
+        [_Location_column]: 54,
+        [_Location_line]: 149,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 47,
+        [_Location_line]: 149,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.constList([C[45] || CT.C45], widget_inspector._Location);
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[44] || CT.C44,
+        [_Location_name]: null,
+        [_Location_column]: 52,
+        [_Location_line]: 148,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 41,
+        [_Location_line]: 124,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.constList([C[48] || CT.C48], widget_inspector._Location);
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[47] || CT.C47,
+        [_Location_name]: null,
+        [_Location_column]: 46,
+        [_Location_line]: 123,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 39,
+        [_Location_line]: 121,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 39,
+        [_Location_line]: 122,
+        [_Location_file]: null
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 39,
+        [_Location_line]: 123,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.constList([C[51] || CT.C51, C[52] || CT.C52, C[53] || CT.C53], widget_inspector._Location);
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[50] || CT.C50,
+        [_Location_name]: null,
+        [_Location_column]: 44,
+        [_Location_line]: 120,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 48,
+        [_Location_line]: 179,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 62,
+        [_Location_line]: 179,
+        [_Location_file]: null
+      });
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "img",
+        [_Location_column]: 77,
+        [_Location_line]: 179,
+        [_Location_file]: null
+      });
+    },
+    get C59() {
+      return C[59] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "notCircle",
+        [_Location_column]: 91,
+        [_Location_line]: 179,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.constList([C[56] || CT.C56, C[57] || CT.C57, C[58] || CT.C58, C[59] || CT.C59], widget_inspector._Location);
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[55] || CT.C55,
+        [_Location_name]: null,
+        [_Location_column]: 35,
+        [_Location_line]: 179,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 60,
+        [_Location_line]: 196,
+        [_Location_file]: null
+      });
+    },
+    get C63() {
+      return C[63] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 77,
+        [_Location_line]: 196,
+        [_Location_file]: null
+      });
+    },
+    get C64() {
+      return C[64] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 89,
+        [_Location_line]: 196,
+        [_Location_file]: null
+      });
+    },
+    get C61() {
+      return C[61] = dart.constList([C[62] || CT.C62, C[63] || CT.C63, C[64] || CT.C64], widget_inspector._Location);
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[61] || CT.C61,
+        [_Location_name]: null,
+        [_Location_column]: 49,
+        [_Location_line]: 196,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C67() {
+      return C[67] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 58,
+        [_Location_line]: 197,
+        [_Location_file]: null
+      });
+    },
+    get C66() {
+      return C[66] = dart.constList([C[67] || CT.C67], widget_inspector._Location);
+    },
+    get C65() {
+      return C[65] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[66] || CT.C66,
+        [_Location_name]: null,
+        [_Location_column]: 49,
+        [_Location_line]: 197,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C70() {
+      return C[70] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 70,
+        [_Location_line]: 198,
+        [_Location_file]: null
+      });
+    },
+    get C71() {
+      return C[71] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 73,
+        [_Location_line]: 198,
+        [_Location_file]: null
+      });
+    },
+    get C69() {
+      return C[69] = dart.constList([C[70] || CT.C70, C[71] || CT.C71], widget_inspector._Location);
+    },
+    get C68() {
+      return C[68] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[69] || CT.C69,
+        [_Location_name]: null,
+        [_Location_column]: 49,
+        [_Location_line]: 198,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C74() {
+      return C[74] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 47,
+        [_Location_line]: 195,
+        [_Location_file]: null
+      });
+    },
+    get C73() {
+      return C[73] = dart.constList([C[74] || CT.C74], widget_inspector._Location);
+    },
+    get C72() {
+      return C[72] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[73] || CT.C73,
+        [_Location_name]: null,
+        [_Location_column]: 45,
+        [_Location_line]: 194,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C77() {
+      return C[77] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 54,
+        [_Location_line]: 201,
+        [_Location_file]: null
+      });
+    },
+    get C76() {
+      return C[76] = dart.constList([C[77] || CT.C77], widget_inspector._Location);
+    },
+    get C75() {
+      return C[75] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[76] || CT.C76,
+        [_Location_name]: null,
+        [_Location_column]: 45,
+        [_Location_line]: 201,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C80() {
+      return C[80] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 60,
+        [_Location_line]: 205,
+        [_Location_file]: null
+      });
+    },
+    get C81() {
+      return C[81] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "size",
+        [_Location_column]: 77,
+        [_Location_line]: 205,
+        [_Location_file]: null
+      });
+    },
+    get C82() {
+      return C[82] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 89,
+        [_Location_line]: 205,
+        [_Location_file]: null
+      });
+    },
+    get C79() {
+      return C[79] = dart.constList([C[80] || CT.C80, C[81] || CT.C81, C[82] || CT.C82], widget_inspector._Location);
+    },
+    get C78() {
+      return C[78] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[79] || CT.C79,
+        [_Location_name]: null,
+        [_Location_column]: 49,
+        [_Location_line]: 205,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C85() {
+      return C[85] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 58,
+        [_Location_line]: 206,
+        [_Location_file]: null
+      });
+    },
+    get C84() {
+      return C[84] = dart.constList([C[85] || CT.C85], widget_inspector._Location);
+    },
+    get C83() {
+      return C[83] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[84] || CT.C84,
+        [_Location_name]: null,
+        [_Location_column]: 49,
+        [_Location_line]: 206,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C88() {
+      return C[88] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 70,
+        [_Location_line]: 207,
+        [_Location_file]: null
+      });
+    },
+    get C89() {
+      return C[89] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 73,
+        [_Location_line]: 207,
+        [_Location_file]: null
+      });
+    },
+    get C87() {
+      return C[87] = dart.constList([C[88] || CT.C88, C[89] || CT.C89], widget_inspector._Location);
+    },
+    get C86() {
+      return C[86] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[87] || CT.C87,
+        [_Location_name]: null,
+        [_Location_column]: 49,
+        [_Location_line]: 207,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C92() {
+      return C[92] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 47,
+        [_Location_line]: 204,
+        [_Location_file]: null
+      });
+    },
+    get C91() {
+      return C[91] = dart.constList([C[92] || CT.C92], widget_inspector._Location);
+    },
+    get C90() {
+      return C[90] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[91] || CT.C91,
+        [_Location_name]: null,
+        [_Location_column]: 45,
+        [_Location_line]: 203,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C95() {
+      return C[95] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 43,
+        [_Location_line]: 191,
+        [_Location_file]: null
+      });
+    },
+    get C96() {
+      return C[96] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 43,
+        [_Location_line]: 192,
+        [_Location_file]: null
+      });
+    },
+    get C94() {
+      return C[94] = dart.constList([C[95] || CT.C95, C[96] || CT.C96], widget_inspector._Location);
+    },
+    get C93() {
+      return C[93] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[94] || CT.C94,
+        [_Location_name]: null,
+        [_Location_column]: 41,
+        [_Location_line]: 190,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C99() {
+      return C[99] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 62,
+        [_Location_line]: 212,
+        [_Location_file]: null
+      });
+    },
+    get C100() {
+      return C[100] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 65,
+        [_Location_line]: 212,
+        [_Location_file]: null
+      });
+    },
+    get C98() {
+      return C[98] = dart.constList([C[99] || CT.C99, C[100] || CT.C100], widget_inspector._Location);
+    },
+    get C97() {
+      return C[97] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[98] || CT.C98,
+        [_Location_name]: null,
+        [_Location_column]: 41,
+        [_Location_line]: 212,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C103() {
+      return C[103] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 41,
+        [_Location_line]: 188,
+        [_Location_file]: null
+      });
+    },
+    get C104() {
+      return C[104] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 39,
+        [_Location_line]: 189,
+        [_Location_file]: null
+      });
+    },
+    get C102() {
+      return C[102] = dart.constList([C[103] || CT.C103, C[104] || CT.C104], widget_inspector._Location);
+    },
+    get C101() {
+      return C[101] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[102] || CT.C102,
+        [_Location_name]: null,
+        [_Location_column]: 46,
+        [_Location_line]: 187,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C107() {
+      return C[107] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 39,
+        [_Location_line]: 186,
+        [_Location_file]: null
+      });
+    },
+    get C108() {
+      return C[108] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 39,
+        [_Location_line]: 187,
+        [_Location_file]: null
+      });
+    },
+    get C106() {
+      return C[106] = dart.constList([C[107] || CT.C107, C[108] || CT.C108], widget_inspector._Location);
+    },
+    get C105() {
+      return C[105] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[106] || CT.C106,
+        [_Location_name]: null,
+        [_Location_column]: 44,
+        [_Location_line]: 185,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C111() {
+      return C[111] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottom",
+        [_Location_column]: 37,
+        [_Location_line]: 182,
+        [_Location_file]: null
+      });
+    },
+    get C112() {
+      return C[112] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "left",
+        [_Location_column]: 37,
+        [_Location_line]: 183,
+        [_Location_file]: null
+      });
+    },
+    get C113() {
+      return C[113] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "right",
+        [_Location_column]: 37,
+        [_Location_line]: 184,
+        [_Location_file]: null
+      });
+    },
+    get C114() {
+      return C[114] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 37,
+        [_Location_line]: 185,
+        [_Location_file]: null
+      });
+    },
+    get C110() {
+      return C[110] = dart.constList([C[111] || CT.C111, C[112] || CT.C112, C[113] || CT.C113, C[114] || CT.C114], widget_inspector._Location);
+    },
+    get C109() {
+      return C[109] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[110] || CT.C110,
+        [_Location_name]: null,
+        [_Location_column]: 35,
+        [_Location_line]: 181,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C117() {
+      return C[117] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 33,
+        [_Location_line]: 178,
+        [_Location_file]: null
+      });
+    },
+    get C116() {
+      return C[116] = dart.constList([C[117] || CT.C117], widget_inspector._Location);
+    },
+    get C115() {
+      return C[115] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[116] || CT.C116,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 177,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C120() {
+      return C[120] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 52,
+        [_Location_line]: 224,
+        [_Location_file]: null
+      });
+    },
+    get C121() {
+      return C[121] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "maxLines",
+        [_Location_column]: 54,
+        [_Location_line]: 224,
+        [_Location_file]: null
+      });
+    },
+    get C122() {
+      return C[122] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "overflow",
+        [_Location_column]: 66,
+        [_Location_line]: 224,
+        [_Location_file]: null
+      });
+    },
+    get C123() {
+      return C[123] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 98,
+        [_Location_line]: 224,
+        [_Location_file]: null
+      });
+    },
+    get C119() {
+      return C[119] = dart.constList([C[120] || CT.C120, C[121] || CT.C121, C[122] || CT.C122, C[123] || CT.C123], widget_inspector._Location);
+    },
+    get C118() {
+      return C[118] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[119] || CT.C119,
+        [_Location_name]: null,
+        [_Location_column]: 40,
+        [_Location_line]: 224,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C126() {
+      return C[126] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 33,
+        [_Location_line]: 221,
+        [_Location_file]: null
+      });
+    },
+    get C127() {
+      return C[127] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 33,
+        [_Location_line]: 222,
+        [_Location_file]: null
+      });
+    },
+    get C128() {
+      return C[128] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 33,
+        [_Location_line]: 223,
+        [_Location_file]: null
+      });
+    },
+    get C129() {
+      return C[129] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 33,
+        [_Location_line]: 224,
+        [_Location_file]: null
+      });
+    },
+    get C125() {
+      return C[125] = dart.constList([C[126] || CT.C126, C[127] || CT.C127, C[128] || CT.C128, C[129] || CT.C129], widget_inspector._Location);
+    },
+    get C124() {
+      return C[124] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[125] || CT.C125,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 220,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C132() {
+      return C[132] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 48,
+        [_Location_line]: 232,
+        [_Location_file]: null
+      });
+    },
+    get C131() {
+      return C[131] = dart.constList([C[132] || CT.C132], widget_inspector._Location);
+    },
+    get C130() {
+      return C[130] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[131] || CT.C131,
+        [_Location_name]: null,
+        [_Location_column]: 39,
+        [_Location_line]: 232,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C135() {
+      return C[135] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 49,
+        [_Location_line]: 240,
+        [_Location_file]: null
+      });
+    },
+    get C136() {
+      return C[136] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 55,
+        [_Location_line]: 240,
+        [_Location_file]: null
+      });
+    },
+    get C134() {
+      return C[134] = dart.constList([C[135] || CT.C135, C[136] || CT.C136], widget_inspector._Location);
+    },
+    get C133() {
+      return C[133] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[134] || CT.C134,
+        [_Location_name]: null,
+        [_Location_column]: 44,
+        [_Location_line]: 240,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C139() {
+      return C[139] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 37,
+        [_Location_line]: 234,
+        [_Location_file]: null
+      });
+    },
+    get C140() {
+      return C[140] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 37,
+        [_Location_line]: 240,
+        [_Location_file]: null
+      });
+    },
+    get C138() {
+      return C[138] = dart.constList([C[139] || CT.C139, C[140] || CT.C140], widget_inspector._Location);
+    },
+    get C137() {
+      return C[137] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[138] || CT.C138,
+        [_Location_name]: null,
+        [_Location_column]: 39,
+        [_Location_line]: 233,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C143() {
+      return C[143] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 44,
+        [_Location_line]: 242,
+        [_Location_file]: null
+      });
+    },
+    get C142() {
+      return C[142] = dart.constList([C[143] || CT.C143], widget_inspector._Location);
+    },
+    get C141() {
+      return C[141] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[142] || CT.C142,
+        [_Location_name]: null,
+        [_Location_column]: 35,
+        [_Location_line]: 242,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C146() {
+      return C[146] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "data",
+        [_Location_column]: 63,
+        [_Location_line]: 245,
+        [_Location_file]: null
+      });
+    },
+    get C147() {
+      return C[147] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "maxLines",
+        [_Location_column]: 65,
+        [_Location_line]: 245,
+        [_Location_file]: null
+      });
+    },
+    get C148() {
+      return C[148] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "overflow",
+        [_Location_column]: 77,
+        [_Location_line]: 245,
+        [_Location_file]: null
+      });
+    },
+    get C149() {
+      return C[149] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "style",
+        [_Location_column]: 110,
+        [_Location_line]: 245,
+        [_Location_file]: null
+      });
+    },
+    get C145() {
+      return C[145] = dart.constList([C[146] || CT.C146, C[147] || CT.C147, C[148] || CT.C148, C[149] || CT.C149], widget_inspector._Location);
+    },
+    get C144() {
+      return C[144] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[145] || CT.C145,
+        [_Location_name]: null,
+        [_Location_column]: 44,
+        [_Location_line]: 245,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C152() {
+      return C[152] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 37,
+        [_Location_line]: 244,
+        [_Location_file]: null
+      });
+    },
+    get C153() {
+      return C[153] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 37,
+        [_Location_line]: 245,
+        [_Location_file]: null
+      });
+    },
+    get C151() {
+      return C[151] = dart.constList([C[152] || CT.C152, C[153] || CT.C153], widget_inspector._Location);
+    },
+    get C150() {
+      return C[150] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[151] || CT.C151,
+        [_Location_name]: null,
+        [_Location_column]: 35,
+        [_Location_line]: 243,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C156() {
+      return C[156] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 37,
+        [_Location_line]: 231,
+        [_Location_file]: null
+      });
+    },
+    get C155() {
+      return C[155] = dart.constList([C[156] || CT.C156], widget_inspector._Location);
+    },
+    get C154() {
+      return C[154] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[155] || CT.C155,
+        [_Location_name]: null,
+        [_Location_column]: 35,
+        [_Location_line]: 230,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C159() {
+      return C[159] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "icon",
+        [_Location_column]: 46,
+        [_Location_line]: 249,
+        [_Location_file]: null
+      });
+    },
+    get C160() {
+      return C[160] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 57,
+        [_Location_line]: 249,
+        [_Location_file]: null
+      });
+    },
+    get C158() {
+      return C[158] = dart.constList([C[159] || CT.C159, C[160] || CT.C160], widget_inspector._Location);
+    },
+    get C157() {
+      return C[157] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[158] || CT.C158,
+        [_Location_name]: null,
+        [_Location_column]: 35,
+        [_Location_line]: 249,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C163() {
+      return C[163] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "mainAxisAlignment",
+        [_Location_column]: 33,
+        [_Location_line]: 228,
+        [_Location_file]: null
+      });
+    },
+    get C164() {
+      return C[164] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 33,
+        [_Location_line]: 229,
+        [_Location_file]: null
+      });
+    },
+    get C162() {
+      return C[162] = dart.constList([C[163] || CT.C163, C[164] || CT.C164], widget_inspector._Location);
+    },
+    get C161() {
+      return C[161] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[162] || CT.C162,
+        [_Location_name]: null,
+        [_Location_column]: 31,
+        [_Location_line]: 227,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C167() {
+      return C[167] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 29,
+        [_Location_line]: 175,
+        [_Location_file]: null
+      });
+    },
+    get C166() {
+      return C[166] = dart.constList([C[167] || CT.C167], widget_inspector._Location);
+    },
+    get C165() {
+      return C[165] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[166] || CT.C166,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 174,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C170() {
+      return C[170] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "clipBehavior",
+        [_Location_column]: 27,
+        [_Location_line]: 160,
+        [_Location_file]: null
+      });
+    },
+    get C171() {
+      return C[171] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "width",
+        [_Location_column]: 27,
+        [_Location_line]: 161,
+        [_Location_file]: null
+      });
+    },
+    get C172() {
+      return C[172] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "decoration",
+        [_Location_column]: 27,
+        [_Location_line]: 162,
+        [_Location_file]: null
+      });
+    },
+    get C173() {
+      return C[173] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 27,
+        [_Location_line]: 174,
+        [_Location_file]: null
+      });
+    },
+    get C169() {
+      return C[169] = dart.constList([C[170] || CT.C170, C[171] || CT.C171, C[172] || CT.C172, C[173] || CT.C173], widget_inspector._Location);
+    },
+    get C168() {
+      return C[168] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[169] || CT.C169,
+        [_Location_name]: null,
+        [_Location_column]: 38,
+        [_Location_line]: 159,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C176() {
+      return C[176] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onLongPress",
+        [_Location_column]: 31,
+        [_Location_line]: 115,
+        [_Location_file]: null
+      });
+    },
+    get C177() {
+      return C[177] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 31,
+        [_Location_line]: 159,
+        [_Location_file]: null
+      });
+    },
+    get C175() {
+      return C[175] = dart.constList([C[176] || CT.C176, C[177] || CT.C177], widget_inspector._Location);
+    },
+    get C174() {
+      return C[174] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[175] || CT.C175,
+        [_Location_name]: null,
+        [_Location_column]: 36,
+        [_Location_line]: 114,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C180() {
+      return C[180] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 29,
+        [_Location_line]: 113,
+        [_Location_file]: null
+      });
+    },
+    get C181() {
+      return C[181] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 29,
+        [_Location_line]: 114,
+        [_Location_file]: null
+      });
+    },
+    get C179() {
+      return C[179] = dart.constList([C[180] || CT.C180, C[181] || CT.C181], widget_inspector._Location);
+    },
+    get C178() {
+      return C[178] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[179] || CT.C179,
+        [_Location_name]: null,
+        [_Location_column]: 34,
+        [_Location_line]: 112,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C184() {
+      return C[184] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 27,
+        [_Location_line]: 111,
+        [_Location_file]: null
+      });
+    },
+    get C185() {
+      return C[185] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 27,
+        [_Location_line]: 112,
+        [_Location_file]: null
+      });
+    },
+    get C183() {
+      return C[183] = dart.constList([C[184] || CT.C184, C[185] || CT.C185], widget_inspector._Location);
+    },
+    get C182() {
+      return C[182] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[183] || CT.C183,
+        [_Location_name]: null,
+        [_Location_column]: 32,
+        [_Location_line]: 110,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C188() {
+      return C[188] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "direction",
+        [_Location_column]: 23,
+        [_Location_line]: 106,
+        [_Location_file]: null
+      });
+    },
+    get C189() {
+      return C[189] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "spacing",
+        [_Location_column]: 23,
+        [_Location_line]: 107,
+        [_Location_file]: null
+      });
+    },
+    get C190() {
+      return C[190] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "runSpacing",
+        [_Location_column]: 23,
+        [_Location_line]: 108,
+        [_Location_file]: null
+      });
+    },
+    get C191() {
+      return C[191] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 23,
+        [_Location_line]: 109,
+        [_Location_file]: null
+      });
+    },
+    get C187() {
+      return C[187] = dart.constList([C[188] || CT.C188, C[189] || CT.C189, C[190] || CT.C190, C[191] || CT.C191], widget_inspector._Location);
+    },
+    get C186() {
+      return C[186] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[187] || CT.C187,
+        [_Location_name]: null,
+        [_Location_column]: 25,
+        [_Location_line]: 105,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C194() {
+      return C[194] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "strokeWidth",
+        [_Location_column]: 25,
+        [_Location_line]: 262,
+        [_Location_file]: null
+      });
+    },
+    get C195() {
+      return C[195] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 25,
+        [_Location_line]: 263,
+        [_Location_file]: null
+      });
+    },
+    get C193() {
+      return C[193] = dart.constList([C[194] || CT.C194, C[195] || CT.C195], widget_inspector._Location);
+    },
+    get C192() {
+      return C[192] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[193] || CT.C193,
+        [_Location_name]: null,
+        [_Location_column]: 30,
+        [_Location_line]: 261,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C198() {
+      return C[198] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 23,
+        [_Location_line]: 261,
+        [_Location_file]: null
+      });
+    },
+    get C197() {
+      return C[197] = dart.constList([C[198] || CT.C198], widget_inspector._Location);
+    },
+    get C196() {
+      return C[196] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[197] || CT.C197,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 260,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C201() {
+      return C[201] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "scrollDirection",
+        [_Location_column]: 23,
+        [_Location_line]: 102,
+        [_Location_file]: null
+      });
+    },
+    get C202() {
+      return C[202] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "controller",
+        [_Location_column]: 23,
+        [_Location_line]: 103,
+        [_Location_file]: null
+      });
+    },
+    get C203() {
+      return C[203] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 23,
+        [_Location_line]: 104,
+        [_Location_file]: null
+      });
+    },
+    get C200() {
+      return C[200] = dart.constList([C[201] || CT.C201, C[202] || CT.C202, C[203] || CT.C203], widget_inspector._Location);
+    },
+    get C199() {
+      return C[199] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[200] || CT.C200,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 101,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C206() {
+      return C[206] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 21,
+        [_Location_line]: 100,
+        [_Location_file]: null
+      });
+    },
+    get C207() {
+      return C[207] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 21,
+        [_Location_line]: 101,
+        [_Location_file]: null
+      });
+    },
+    get C208() {
+      return C[208] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onRefresh",
+        [_Location_column]: 19,
+        [_Location_line]: 268,
+        [_Location_file]: null
+      });
+    },
+    get C205() {
+      return C[205] = dart.constList([C[206] || CT.C206, C[207] || CT.C207, C[208] || CT.C208], widget_inspector._Location);
+    },
+    get C204() {
+      return C[204] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[205] || CT.C205,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 99,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C211() {
+      return C[211] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 19,
+        [_Location_line]: 95,
+        [_Location_file]: null
+      });
+    },
+    get C212() {
+      return C[212] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "margin",
+        [_Location_column]: 19,
+        [_Location_line]: 96,
+        [_Location_file]: null
+      });
+    },
+    get C213() {
+      return C[213] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "height",
+        [_Location_column]: 19,
+        [_Location_line]: 97,
+        [_Location_file]: null
+      });
+    },
+    get C214() {
+      return C[214] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "color",
+        [_Location_column]: 19,
+        [_Location_line]: 98,
+        [_Location_file]: null
+      });
+    },
+    get C215() {
+      return C[215] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 19,
+        [_Location_line]: 99,
+        [_Location_file]: null
+      });
+    },
+    get C210() {
+      return C[210] = dart.constList([C[211] || CT.C211, C[212] || CT.C212, C[213] || CT.C213, C[214] || CT.C214, C[215] || CT.C215], widget_inspector._Location);
+    },
+    get C209() {
+      return C[209] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[210] || CT.C210,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 94,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C216() {
+      return C[216] = dart.const({
+        __proto__: async$.ConnectionState.prototype,
+        [_name]: "ConnectionState.active",
+        index: 2
+      });
+    },
+    get C218() {
+      return C[218] = dart.constList([], widget_inspector._Location);
+    },
+    get C217() {
+      return C[217] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[218] || CT.C218,
+        [_Location_name]: null,
+        [_Location_column]: 21,
+        [_Location_line]: 273,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C221() {
+      return C[221] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "stream",
+        [_Location_column]: 9,
+        [_Location_line]: 78,
+        [_Location_file]: null
+      });
+    },
+    get C222() {
+      return C[222] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 9,
+        [_Location_line]: 79,
+        [_Location_file]: null
+      });
+    },
+    get C220() {
+      return C[220] = dart.constList([C[221] || CT.C221, C[222] || CT.C222], widget_inspector._Location);
+    },
+    get C219() {
+      return C[219] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[220] || CT.C220,
+        [_Location_name]: null,
+        [_Location_column]: 13,
+        [_Location_line]: 77,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    },
+    get C225() {
+      return C[225] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "body",
+        [_Location_column]: 7,
+        [_Location_line]: 77,
+        [_Location_file]: null
+      });
+    },
+    get C224() {
+      return C[224] = dart.constList([C[225] || CT.C225], widget_inspector._Location);
+    },
+    get C223() {
+      return C[223] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[224] || CT.C224,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 76,
+        [_Location_file]: "file:///G:/flutter_app/bilibili/lib/page/index/recommend_page.dart"
+      });
+    }
+  }, false);
+  var C = Array(226).fill(void 0);
+  var I = ["package:bilibili/page/index/recommend_page.dart"];
+  recommend_page.RecommendPage = class RecommendPage extends framework.StatefulWidget {
+    createState() {
+      return new recommend_page._RecommendPageState.new();
+    }
+  };
+  (recommend_page.RecommendPage.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    recommend_page.RecommendPage.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = recommend_page.RecommendPage.prototype;
+  dart.addTypeTests(recommend_page.RecommendPage);
+  dart.addTypeCaches(recommend_page.RecommendPage);
+  dart.setMethodSignature(recommend_page.RecommendPage, () => ({
+    __proto__: dart.getMethods(recommend_page.RecommendPage.__proto__),
+    createState: dart.fnType(recommend_page._RecommendPageState, [])
+  }));
+  dart.setLibraryUri(recommend_page.RecommendPage, I[0]);
+  var ___RecommendPageState__streamController = dart.privateName(recommend_page, "_#_RecommendPageState#_streamController");
+  var _scrollController = dart.privateName(recommend_page, "_scrollController");
+  var _streamController = dart.privateName(recommend_page, "_streamController");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  var _name = dart.privateName(async$, "_name");
+  const State_AutomaticKeepAliveClientMixin$36 = class State_AutomaticKeepAliveClientMixin extends framework.State$(recommend_page.RecommendPage) {};
+  (State_AutomaticKeepAliveClientMixin$36.new = function() {
+    automatic_keep_alive.AutomaticKeepAliveClientMixin$(recommend_page.RecommendPage)[dart.mixinNew].call(this);
+    State_AutomaticKeepAliveClientMixin$36.__proto__.new.call(this);
+  }).prototype = State_AutomaticKeepAliveClientMixin$36.prototype;
+  dart.applyMixin(State_AutomaticKeepAliveClientMixin$36, automatic_keep_alive.AutomaticKeepAliveClientMixin$(recommend_page.RecommendPage));
+  recommend_page._RecommendPageState = class _RecommendPageState extends State_AutomaticKeepAliveClientMixin$36 {
+    get wantKeepAlive() {
+      return true;
+    }
+    get [_streamController]() {
+      let t0;
+      t0 = this[___RecommendPageState__streamController];
+      return t0 == null ? this[___RecommendPageState__streamController] = async.StreamController.broadcast() : t0;
+    }
+    set [_streamController](t0) {
+      this[___RecommendPageState__streamController] = t0;
+    }
+    initState() {
+      super.initState();
+      this[_streamController].add("loading");
+      this.getData();
+      this[_scrollController].addListener(dart.fn(() => {
+        if (this[_scrollController].position.pixels >= this[_scrollController].position.maxScrollExtent - flutter_screenutil['SizeExtension|get#w'](100)) {
+          if (this.isRequest === true) {
+            return;
+          }
+          core.print("到底了");
+          this.isRequest = true;
+          this.getDataUp();
+        }
+      }, T.VoidTovoid()));
+    }
+    getData() {
+      return async.async(dart.dynamic, (function* getData() {
+        let res = (yield http.HttpRequest.getInstance().get(api.Api.recommend));
+        let a = recommend_model.RecommendModel.fromJson(T.MapOfString$dynamic().as(convert.jsonDecode(res)));
+        let b = T.JSArrayOfItems().of([]);
+        b[$addAll](dart.nullCheck(dart.nullCheck(a.data).items));
+        b[$addAll](this.recommendData);
+        this.recommendData[$clear]();
+        this.recommendData[$addAll](b);
+        this[_streamController].add(this.recommendData);
+        yield http.HttpRequest.getInstance().get(api.Api.test);
+      }).bind(this));
+    }
+    getDataUp() {
+      return async.async(dart.void, (function* getDataUp() {
+        let res = (yield http.HttpRequest.getInstance().get(api.Api.recommend));
+        let a = recommend_model.RecommendModel.fromJson(T.MapOfString$dynamic().as(convert.jsonDecode(res)));
+        this.recommendData[$addAll](dart.nullCheck(dart.nullCheck(a.data).items));
+        this[_streamController].add(this.recommendData);
+        this.isRequest = false;
+      }).bind(this));
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({body: new async$.StreamBuilder.new({stream: this[_streamController].stream, builder: dart.fn((context, snapshot) => {
+            switch (snapshot.connectionState) {
+              case C[6] || CT.C6:
+              {
+                return new basic.Center.new({child: new progress_indicator.CircularProgressIndicator.new({color: theme.Theme.of(context).primaryColor, $creationLocationd_0dea112b090073317d4: C[0] || CT.C0}), $creationLocationd_0dea112b090073317d4: C[3] || CT.C3});
+                break;
+              }
+              case C[216] || CT.C216:
+              {
+                if (dart.equals(snapshot.data, "loading")) {
+                  return new progress_indicator.CircularProgressIndicator.new({color: theme.Theme.of(context).primaryColor, $creationLocationd_0dea112b090073317d4: C[7] || CT.C7});
+                } else {
+                  return new container.Container.new({padding: new edge_insets.EdgeInsets.only({left: flutter_screenutil['SizeExtension|get#w'](12)}), margin: new edge_insets.EdgeInsets.only({bottom: flutter_screenutil['SizeExtension|get#w'](250)}), height: flutter_screenutil['SizeExtension|get#w'](800), color: new ui.Color.fromRGBO(0, 0, 0, 0.02), child: new refresh_indicator.RefreshIndicator.new({color: theme.Theme.of(context).primaryColor, child: new scroll_view.ListView.new({scrollDirection: basic_types.Axis.vertical, controller: this[_scrollController], children: T.JSArrayOfWidget().of([new basic.Wrap.new({direction: basic_types.Axis.horizontal, spacing: flutter_screenutil['SizeExtension|get#w'](10), runSpacing: flutter_screenutil['SizeExtension|get#w'](10), children: this.recommendData[$map](framework.Widget, dart.fn(e => new material.Material.new({color: colors.Colors.white, child: new ink_decoration.Ink.new({color: colors.Colors.white, child: new ink_well.InkWell.new({onLongPress: dart.fn(() => {
+                                    bottom_sheet.showModalBottomSheet(dart.dynamic, {context: context, builder: dart.fn(context => new container.Container.new({height: flutter_screenutil['SizeExtension|get#h'](330), padding: new edge_insets.EdgeInsets.all(flutter_screenutil['SizeExtension|get#w'](10)), child: new scroll_view.ListView.new({children: dart.nullCheck(e.threePointV2)[$map](framework.Widget, dart.fn(e => {
+                                            if (e.type === "watch_later") {
+                                              return new basic.Row.new({children: T.JSArrayOfWidget().of([new extend_img.ExtenedImage.new({width: flutter_screenutil['SizeExtension|get#w'](20), height: flutter_screenutil['SizeExtension|get#w'](20), img: dart.nullCheck(e.icon), notCircle: false, $creationLocationd_0dea112b090073317d4: C[10] || CT.C10}), new basic.SizedBox.new({width: flutter_screenutil['SizeExtension|get#w'](20), $creationLocationd_0dea112b090073317d4: C[16] || CT.C16}), new text.Text.new(dart.nullCheck(e.title), {$creationLocationd_0dea112b090073317d4: C[19] || CT.C19})]), $creationLocationd_0dea112b090073317d4: C[22] || CT.C22});
+                                            } else if (e.type === "feedback") {
+                                              return new basic.Column.new({children: T.JSArrayOfWidget().of([new basic.Row.new({children: T.JSArrayOfWidget().of([new text.Text.new(dart.nullCheck(e.title), {$creationLocationd_0dea112b090073317d4: C[25] || CT.C25}), new basic.SizedBox.new({width: flutter_screenutil['SizeExtension|get#w'](8), $creationLocationd_0dea112b090073317d4: C[28] || CT.C28}), new text.Text.new("(选择后将优化首页此类内容)", {$creationLocationd_0dea112b090073317d4: C[31] || CT.C31})]), $creationLocationd_0dea112b090073317d4: C[34] || CT.C34})]), $creationLocationd_0dea112b090073317d4: C[37] || CT.C37});
+                                            } else {
+                                              return new basic.Center.new({child: new text.Text.new("不感兴趣", {$creationLocationd_0dea112b090073317d4: C[40] || CT.C40}), $creationLocationd_0dea112b090073317d4: C[43] || CT.C43});
+                                            }
+                                          }, T.Three_point_v2ToRenderObjectWidget()))[$toList](), $creationLocationd_0dea112b090073317d4: C[46] || CT.C46}), $creationLocationd_0dea112b090073317d4: C[49] || CT.C49}), T.BuildContextToContainer())});
+                                  }, T.VoidTovoid()), child: new container.Container.new({clipBehavior: ui.Clip.antiAlias, width: flutter_screenutil['SizeExtension|get#w'](170), decoration: new box_decoration.BoxDecoration.new({borderRadius: new border_radius.BorderRadius.circular(flutter_screenutil['SizeExtension|get#w'](10))}), child: new basic.Column.new({children: T.JSArrayOfWidget().of([new basic.Stack.new({children: T.JSArrayOfWidget().of([new extend_img.ExtenedImage.new({width: flutter_screenutil['SizeExtension|get#w'](180), height: flutter_screenutil['SizeExtension|get#w'](106), img: dart.nullCheck(e.cover), notCircle: true, $creationLocationd_0dea112b090073317d4: C[54] || CT.C54}), new basic.Positioned.new({bottom: 0.0, left: 0.0, right: 0.0, child: new container.Container.new({padding: new edge_insets.EdgeInsets.all(flutter_screenutil['SizeExtension|get#w'](8)), child: new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceBetween, children: T.JSArrayOfWidget().of([new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceBetween, children: T.JSArrayOfWidget().of([new basic.Row.new({children: T.JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.live_tv_outlined, {size: flutter_screenutil['SizeExtension|get#sp'](14), color: colors.Colors.white, $creationLocationd_0dea112b090073317d4: C[60] || CT.C60}), new basic.SizedBox.new({width: flutter_screenutil['SizeExtension|get#w'](3), $creationLocationd_0dea112b090073317d4: C[65] || CT.C65}), new text.Text.new(dart.nullCheck(e.coverLeftText1), {style: new text_style.TextStyle.new({fontSize: flutter_screenutil['SizeExtension|get#sp'](12), color: colors.Colors.white}), $creationLocationd_0dea112b090073317d4: C[68] || CT.C68})]), $creationLocationd_0dea112b090073317d4: C[72] || CT.C72}), new basic.SizedBox.new({width: flutter_screenutil['SizeExtension|get#w'](8), $creationLocationd_0dea112b090073317d4: C[75] || CT.C75}), new basic.Row.new({children: T.JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.message_outlined, {size: flutter_screenutil['SizeExtension|get#sp'](12), color: colors.Colors.white, $creationLocationd_0dea112b090073317d4: C[78] || CT.C78}), new basic.SizedBox.new({width: flutter_screenutil['SizeExtension|get#w'](3), $creationLocationd_0dea112b090073317d4: C[83] || CT.C83}), new text.Text.new(dart.nullCheck(e.coverLeftText2), {style: new text_style.TextStyle.new({fontSize: flutter_screenutil['SizeExtension|get#sp'](12), color: colors.Colors.white}), $creationLocationd_0dea112b090073317d4: C[86] || CT.C86})]), $creationLocationd_0dea112b090073317d4: C[90] || CT.C90})]), $creationLocationd_0dea112b090073317d4: C[93] || CT.C93}), new text.Text.new(dart.nullCheck(e.coverRightText), {style: new text_style.TextStyle.new({fontSize: flutter_screenutil['SizeExtension|get#sp'](12), color: colors.Colors.white}), $creationLocationd_0dea112b090073317d4: C[97] || CT.C97})]), $creationLocationd_0dea112b090073317d4: C[101] || CT.C101}), $creationLocationd_0dea112b090073317d4: C[105] || CT.C105}), $creationLocationd_0dea112b090073317d4: C[109] || CT.C109})]), $creationLocationd_0dea112b090073317d4: C[115] || CT.C115}), new container.Container.new({height: flutter_screenutil['SizeExtension|get#sp'](42), alignment: alignment.Alignment.topLeft, padding: new edge_insets.EdgeInsets.only({left: flutter_screenutil['SizeExtension|get#w'](3), right: flutter_screenutil['SizeExtension|get#w'](3), top: flutter_screenutil['SizeExtension|get#w'](1), bottom: flutter_screenutil['SizeExtension|get#w'](1)}), child: new text.Text.new(dart.nullCheck(e.title), {maxLines: 2, overflow: paragraph.TextOverflow.ellipsis, style: new text_style.TextStyle.new({fontSize: flutter_screenutil['SizeExtension|get#sp'](13)}), $creationLocationd_0dea112b090073317d4: C[118] || CT.C118}), $creationLocationd_0dea112b090073317d4: C[124] || CT.C124}), new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.spaceBetween, children: T.JSArrayOfWidget().of([new basic.Row.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({width: flutter_screenutil['SizeExtension|get#w'](8), $creationLocationd_0dea112b090073317d4: C[130] || CT.C130}), new container.Container.new({decoration: new box_decoration.BoxDecoration.new({border: box_border.Border.all({color: colors.Colors.black26}), borderRadius: new border_radius.BorderRadius.circular(flutter_screenutil['SizeExtension|get#w'](3))}), child: new text.Text.new("UP", {style: new text_style.TextStyle.new({fontSize: flutter_screenutil['SizeExtension|get#sp'](12), color: colors.Colors.black38}), $creationLocationd_0dea112b090073317d4: C[133] || CT.C133}), $creationLocationd_0dea112b090073317d4: C[137] || CT.C137}), new basic.SizedBox.new({width: flutter_screenutil['SizeExtension|get#w'](8), $creationLocationd_0dea112b090073317d4: C[141] || CT.C141}), new container.Container.new({width: flutter_screenutil['SizeExtension|get#w'](110), child: new text.Text.new(dart.nullCheck(dart.nullCheck(e.args).upName), {maxLines: 1, overflow: paragraph.TextOverflow.ellipsis, style: new text_style.TextStyle.new({fontSize: flutter_screenutil['SizeExtension|get#sp'](12), color: colors.Colors.black38}), $creationLocationd_0dea112b090073317d4: C[144] || CT.C144}), $creationLocationd_0dea112b090073317d4: C[150] || CT.C150})]), $creationLocationd_0dea112b090073317d4: C[154] || CT.C154}), new icon.Icon.new(icons.Icons.more_vert, {color: colors.Colors.black38, $creationLocationd_0dea112b090073317d4: C[157] || CT.C157})]), $creationLocationd_0dea112b090073317d4: C[161] || CT.C161})]), $creationLocationd_0dea112b090073317d4: C[165] || CT.C165}), $creationLocationd_0dea112b090073317d4: C[168] || CT.C168}), $creationLocationd_0dea112b090073317d4: C[174] || CT.C174}), $creationLocationd_0dea112b090073317d4: C[178] || CT.C178}), $creationLocationd_0dea112b090073317d4: C[182] || CT.C182}), T.ItemsToMaterial()))[$toList](), $creationLocationd_0dea112b090073317d4: C[186] || CT.C186}), new basic.Center.new({child: new progress_indicator.CircularProgressIndicator.new({strokeWidth: 1.0, color: theme.Theme.of(context).primaryColor, $creationLocationd_0dea112b090073317d4: C[192] || CT.C192}), $creationLocationd_0dea112b090073317d4: C[196] || CT.C196})]), $creationLocationd_0dea112b090073317d4: C[199] || CT.C199}), onRefresh: dart.bind(this, 'getData'), $creationLocationd_0dea112b090073317d4: C[204] || CT.C204}), $creationLocationd_0dea112b090073317d4: C[209] || CT.C209});
+                }
+              }
+              default:
+              {
+                return new progress_indicator.CircularProgressIndicator.new({$creationLocationd_0dea112b090073317d4: C[217] || CT.C217});
+              }
+            }
+          }, T.BuildContextAndAsyncSnapshotOfObjectNToWidget()), $creationLocationd_0dea112b090073317d4: C[219] || CT.C219}), $creationLocationd_0dea112b090073317d4: C[223] || CT.C223});
+    }
+  };
+  (recommend_page._RecommendPageState.new = function() {
+    this.recommendData = T.JSArrayOfItems().of([]);
+    this[___RecommendPageState__streamController] = null;
+    this[_scrollController] = new scroll_controller.ScrollController.new();
+    this.isRequest = false;
+    recommend_page._RecommendPageState.__proto__.new.call(this);
+    ;
+  }).prototype = recommend_page._RecommendPageState.prototype;
+  dart.addTypeTests(recommend_page._RecommendPageState);
+  dart.addTypeCaches(recommend_page._RecommendPageState);
+  dart.setMethodSignature(recommend_page._RecommendPageState, () => ({
+    __proto__: dart.getMethods(recommend_page._RecommendPageState.__proto__),
+    getData: dart.fnType(async.Future, []),
+    getDataUp: dart.fnType(dart.void, [])
+  }));
+  dart.setGetterSignature(recommend_page._RecommendPageState, () => ({
+    __proto__: dart.getGetters(recommend_page._RecommendPageState.__proto__),
+    wantKeepAlive: core.bool,
+    [_streamController]: async.StreamController
+  }));
+  dart.setSetterSignature(recommend_page._RecommendPageState, () => ({
+    __proto__: dart.getSetters(recommend_page._RecommendPageState.__proto__),
+    [_streamController]: async.StreamController
+  }));
+  dart.setLibraryUri(recommend_page._RecommendPageState, I[0]);
+  dart.setFieldSignature(recommend_page._RecommendPageState, () => ({
+    __proto__: dart.getFields(recommend_page._RecommendPageState.__proto__),
+    recommendData: dart.fieldType(core.List$(recommend_model.Items)),
+    [___RecommendPageState__streamController]: dart.fieldType(dart.nullable(async.StreamController)),
+    [_scrollController]: dart.fieldType(scroll_controller.ScrollController),
+    isRequest: dart.fieldType(core.bool)
+  }));
+  dart.trackLibraries("packages/bilibili/page/index/recommend_page.dart", {
+    "package:bilibili/page/index/recommend_page.dart": recommend_page
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["recommend_page.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAeuC;IAAqB;;;QAFtC;;AAAQ,gEAAW,GAAG;;EAAC;;;;;;;;;;;;;;;;;;;;;;;;;AAQjB;IAAI;;;AAIR;0EAAqC;IAAW;;AAAhD;IAAgD;;AAQnD,MAAX;AAC0B,MAAhC,AAAkB,4BAAI;AACb,MAAT;AAYE,MAVF,AAAkB,oCAAY;AAC5B,YAAI,AAAkB,AAAS,AAAO,2CAClC,AAAkB,AAAS,AAAgB,mDAAM,0CAAJ;AAC/C,cAAI,AAAU,mBAAG;AACf;;AAEU,UAAZ,WAAM;AACU,UAAhB,iBAAY;AACD,UAAX;;;IAGN;;AAGc;AACL,mBAAM,MAAkB,AAAc,mCAAQ;AACtC,gBAAmB,mEAAS,mBAAW,GAAG;AAC7C,gBAAI;AACQ,QAAxB,AAAE,CAAD,UAAqB,eAAP,AAAE,eAAR,AAAE,CAAD;AACa,QAAvB,AAAE,CAAD,UAAQ;AACY,QAArB,AAAc;AACS,QAAvB,AAAc,4BAAO,CAAC;AACc,QAApC,AAAkB,4BAAI;AAEuB,QAA7C,MAAkB,AAAc,mCAAQ;MAC1C;;;AAGc;AACL,mBAAM,MAAkB,AAAc,mCAAQ;AACtC,gBAAmB,mEAAS,mBAAW,GAAG;AACrB,QAApC,AAAc,4BAAoB,eAAP,AAAE,eAAR,AAAE,CAAD;AACc,QAApC,AAAkB,4BAAI;AACL,QAAjB,iBAAY;MACd;;UAG0B;AACxB,YAAO,kCACC,sCACI,AAAkB,yCACjB,SAAC,SAAS;AACjB,oBAAQ,AAAS,QAAD;;;AAEZ,sBAAO,8BACE,6DACM,AAAY,eAAT,OAAO;AAGzB;;;;AAEA,oBAAiB,YAAd,AAAS,QAAD,OAAS;AAClB,wBAAO,8DACM,AAAY,eAAT,OAAO;;AAGvB,wBAAO,uCACe,uCAAc,0CAAH,eACZ,yCAAiB,0CAAJ,gBACpB,0CAAJ,aACK,sBAAS,GAAG,GAAG,GAAG,cACxB,mDACQ,AAAY,eAAT,OAAO,uBAChB,+CACiB,uCACV,mCACF,wBACR,+BACc,sCACJ,0CAAH,iBACM,0CAAH,eACF,AAAc,AAqJrB,2CArJiC,QAAC,KAC5B,kCACS,4BACP,mCACS,4BACP,uCACQ;AA0CR,oCAxCH,0DACW,OAAO,WACP,QAAC,WACD,qCACO,0CAAJ,eACY,+BAAO,0CAAH,aACjB,wCACmB,AAAE,AA4BvB,eA5BO,AAAE,CAAD,uCAA2B,QAAC;AAErC,gDAAG,AAAE,AAAK,CAAN,UAAS;AACX,oDAAO,8BACK,wBACR,wCAAuB,0CAAH,aAAgB,0CAAH,UAAgB,eAAN,AAAE,CAAD,mBAAmB,kEAC/D,+BAAmB,0CAAH,gEAChB,kBAAY,eAAP,AAAE,CAAD;kDAGN,KAAG,AAAE,AAAK,CAAN,UAAS;AAEjB,oDAAO,iCACK,wBACR,6BACY,wBACR,kBAAY,eAAP,AAAE,CAAD,qEACV,+BAAkB,0CAAF,+DAChB,kBAAK;;AAMT,oDAAO,8BACE,kBAAK;;;6DAUrB,2CACQ,0BACR,0CAAJ,kBACK,oDAEiB,wCAAY,0CAAH,eAU/B,gCACK,wBAER,+BACY,wBACR,wCAAwB,0CAAJ,cAAmB,0CAAJ,WAAmB,eAAP,AAAE,CAAD,oBAAmB,iEAEnE,kCACU,WACF,YACC,YACA,sCACe,+BAAM,0CAAF,YACjB,sCACgC,+CAC7B,wBACR,sCACuC,+CAC3B,wBAER,6BACY,wBACR,kBAAW,qCAA0B,2CAAH,YAAoB,gFACtD,+BAAkB,0CAAF,+DAChB,kBAAqB,eAAhB,AAAE,CAAD,0BAAyB,wCAAuB,2CAAH,YAAoB,+IAG3E,+BAAkB,0CAAF,+DAEhB,6BACY,wBACR,kBAAW,qCAA0B,2CAAH,YAAoB,gFACtD,+BAAkB,0CAAF,+DAChB,kBAAqB,eAAhB,AAAE,CAAD,0BAAyB,wCAAuB,2CAAH,YAAoB,4MAK/E,kBAAqB,eAAhB,AAAE,CAAD,0BAAyB,wCAAuB,2CAAH,YAAoB,0UAQjF,qCACa,2CAAH,gBACa,sCACD,uCAAY,0CAAF,WAAc,0CAAF,SAAY,0CAAF,YAAc,0CAAF,aACzD,kBAAY,eAAP,AAAE,CAAD,oBAAkB,aAAyB,wCAAgB,wCAAuB,2CAAH,iIAG9F,sCACuC,+CAC3B,wBACR,6BACY,wBACR,+BAAkB,0CAAF,iEAChB,yCACU,8CACK,8BACC,uCAEW,wCAAW,0CAAF,cAE/B,kBAAK,cAAa,wCAAuB,2CAAH,YAAoB,mJAEnE,+BAAkB,0CAAF,iEAChB,oCACa,0CAAJ,aACA,kBAAmB,eAAR,AAAE,eAAR,AAAE,CAAD,2BAAyB,aAAyB,wCAAiB,wCAAuB,2CAAH,YAAoB,kNAI1H,kBAAW,+BAAyB,qiBAWlD,6BACS,mEACQ,YACA,AAAY,eAAT,OAAO,8NAKlB;;;;;AAKhB,sBAAO;;;;IAKlB;;;IA9PY,qBAAgB;oDAEN;IAEL,0BAAwB;IAEpC,iBAAY;;;EAyPnB","file":"../../../../../packages/bilibili/page/index/recommend_page.dart.lib.js"}');
+  // Exports:
+  return {
+    page__index__recommend_page: recommend_page
+  };
+}));
+
+//# sourceMappingURL=recommend_page.dart.lib.js.map

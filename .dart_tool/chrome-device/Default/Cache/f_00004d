@@ -1,0 +1,1036 @@
+define(['dart_sdk'], (function load__packages__bilibili__model__recommend_model_dart(dart_sdk) {
+  'use strict';
+  const core = dart_sdk.core;
+  const convert = dart_sdk.convert;
+  const _js_helper = dart_sdk._js_helper;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  var recommend_model = Object.create(dart.library);
+  var $_get = dartx._get;
+  var $add = dartx.add;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    intN: () => (T.intN = dart.constFn(dart.nullable(core.int)))(),
+    StringN: () => (T.StringN = dart.constFn(dart.nullable(core.String)))(),
+    MapOfString$dynamic: () => (T.MapOfString$dynamic = dart.constFn(core.Map$(core.String, dart.dynamic)))(),
+    IdentityMapOfString$dynamic: () => (T.IdentityMapOfString$dynamic = dart.constFn(_js_helper.IdentityMap$(core.String, dart.dynamic)))(),
+    JSArrayOfItems: () => (T.JSArrayOfItems = dart.constFn(_interceptors.JSArray$(recommend_model.Items)))(),
+    JSArrayOfThree_point_v2: () => (T.JSArrayOfThree_point_v2 = dart.constFn(_interceptors.JSArray$(recommend_model.Three_point_v2)))(),
+    JSArrayOfDislike_reasons: () => (T.JSArrayOfDislike_reasons = dart.constFn(_interceptors.JSArray$(recommend_model.Dislike_reasons)))(),
+    JSArrayOfFeedbacks: () => (T.JSArrayOfFeedbacks = dart.constFn(_interceptors.JSArray$(recommend_model.Feedbacks)))(),
+    ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
+    boolN: () => (T.boolN = dart.constFn(dart.nullable(core.bool)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  var I = ["package:bilibili/model/recommend_model.dart"];
+  var code$ = dart.privateName(recommend_model, "RecommendModel.code");
+  var message$ = dart.privateName(recommend_model, "RecommendModel.message");
+  var ttl$ = dart.privateName(recommend_model, "RecommendModel.ttl");
+  var data$ = dart.privateName(recommend_model, "RecommendModel.data");
+  recommend_model.RecommendModel = class RecommendModel extends core.Object {
+    get code() {
+      return this[code$];
+    }
+    set code(value) {
+      this[code$] = value;
+    }
+    get message() {
+      return this[message$];
+    }
+    set message(value) {
+      this[message$] = value;
+    }
+    get ttl() {
+      return this[ttl$];
+    }
+    set ttl(value) {
+      this[ttl$] = value;
+    }
+    get data() {
+      return this[data$];
+    }
+    set data(value) {
+      this[data$] = value;
+    }
+    static fromJson(jsonRes) {
+      return new recommend_model.RecommendModel.new({code: recommend_model.asT(T.intN(), jsonRes[$_get]("code")), message: recommend_model.asT(T.StringN(), jsonRes[$_get]("message")), ttl: recommend_model.asT(T.intN(), jsonRes[$_get]("ttl")), data: jsonRes[$_get]("data") == null ? null : recommend_model.Data.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), jsonRes[$_get]("data"))))});
+    }
+    toString() {
+      return convert.jsonEncode(this);
+    }
+    toJson() {
+      return new (T.IdentityMapOfString$dynamic()).from(["code", this.code, "message", this.message, "ttl", this.ttl, "data", this.data]);
+    }
+    clone() {
+      return recommend_model.RecommendModel.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), convert.jsonDecode(convert.jsonEncode(this)))));
+    }
+  };
+  (recommend_model.RecommendModel.new = function(opts) {
+    let code = opts && 'code' in opts ? opts.code : null;
+    let message = opts && 'message' in opts ? opts.message : null;
+    let ttl = opts && 'ttl' in opts ? opts.ttl : null;
+    let data = opts && 'data' in opts ? opts.data : null;
+    this[code$] = code;
+    this[message$] = message;
+    this[ttl$] = ttl;
+    this[data$] = data;
+    ;
+  }).prototype = recommend_model.RecommendModel.prototype;
+  dart.addTypeTests(recommend_model.RecommendModel);
+  dart.addTypeCaches(recommend_model.RecommendModel);
+  dart.setMethodSignature(recommend_model.RecommendModel, () => ({
+    __proto__: dart.getMethods(recommend_model.RecommendModel.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), []),
+    clone: dart.fnType(recommend_model.RecommendModel, [])
+  }));
+  dart.setLibraryUri(recommend_model.RecommendModel, I[0]);
+  dart.setFieldSignature(recommend_model.RecommendModel, () => ({
+    __proto__: dart.getFields(recommend_model.RecommendModel.__proto__),
+    code: dart.fieldType(dart.nullable(core.int)),
+    message: dart.fieldType(dart.nullable(core.String)),
+    ttl: dart.fieldType(dart.nullable(core.int)),
+    data: dart.fieldType(dart.nullable(recommend_model.Data))
+  }));
+  dart.defineExtensionMethods(recommend_model.RecommendModel, ['toString']);
+  var items$ = dart.privateName(recommend_model, "Data.items");
+  var config$ = dart.privateName(recommend_model, "Data.config");
+  recommend_model.Data = class Data extends core.Object {
+    get items() {
+      return this[items$];
+    }
+    set items(value) {
+      this[items$] = value;
+    }
+    get config() {
+      return this[config$];
+    }
+    set config(value) {
+      this[config$] = value;
+    }
+    static fromJson(jsonRes) {
+      let items = core.List.is(jsonRes[$_get]("items")) ? T.JSArrayOfItems().of([]) : null;
+      if (items != null) {
+        for (let item of core.Iterable.as(dart.nullCheck(jsonRes[$_get]("items")))) {
+          if (item != null) {
+            items[$add](recommend_model.Items.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), item))));
+          }
+        }
+      }
+      return new recommend_model.Data.new({items: items, config: jsonRes[$_get]("config") == null ? null : recommend_model.Config.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), jsonRes[$_get]("config"))))});
+    }
+    toString() {
+      return convert.jsonEncode(this);
+    }
+    toJson() {
+      return new (T.IdentityMapOfString$dynamic()).from(["items", this.items, "config", this.config]);
+    }
+    clone() {
+      return recommend_model.Data.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), convert.jsonDecode(convert.jsonEncode(this)))));
+    }
+  };
+  (recommend_model.Data.new = function(opts) {
+    let items = opts && 'items' in opts ? opts.items : null;
+    let config = opts && 'config' in opts ? opts.config : null;
+    this[items$] = items;
+    this[config$] = config;
+    ;
+  }).prototype = recommend_model.Data.prototype;
+  dart.addTypeTests(recommend_model.Data);
+  dart.addTypeCaches(recommend_model.Data);
+  dart.setMethodSignature(recommend_model.Data, () => ({
+    __proto__: dart.getMethods(recommend_model.Data.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), []),
+    clone: dart.fnType(recommend_model.Data, [])
+  }));
+  dart.setLibraryUri(recommend_model.Data, I[0]);
+  dart.setFieldSignature(recommend_model.Data, () => ({
+    __proto__: dart.getFields(recommend_model.Data.__proto__),
+    items: dart.fieldType(dart.nullable(core.List$(recommend_model.Items))),
+    config: dart.fieldType(dart.nullable(recommend_model.Config))
+  }));
+  dart.defineExtensionMethods(recommend_model.Data, ['toString']);
+  var cardType$ = dart.privateName(recommend_model, "Items.cardType");
+  var cardGoto$ = dart.privateName(recommend_model, "Items.cardGoto");
+  var goto$ = dart.privateName(recommend_model, "Items.goto");
+  var param$ = dart.privateName(recommend_model, "Items.param");
+  var cover$ = dart.privateName(recommend_model, "Items.cover");
+  var title$ = dart.privateName(recommend_model, "Items.title");
+  var uri$ = dart.privateName(recommend_model, "Items.uri");
+  var threePoint$ = dart.privateName(recommend_model, "Items.threePoint");
+  var args$ = dart.privateName(recommend_model, "Items.args");
+  var playerArgs$ = dart.privateName(recommend_model, "Items.playerArgs");
+  var idx$ = dart.privateName(recommend_model, "Items.idx");
+  var threePointV2$ = dart.privateName(recommend_model, "Items.threePointV2");
+  var coverLeftText1$ = dart.privateName(recommend_model, "Items.coverLeftText1");
+  var coverLeftIcon1$ = dart.privateName(recommend_model, "Items.coverLeftIcon1");
+  var coverLeft1ContentDescription$ = dart.privateName(recommend_model, "Items.coverLeft1ContentDescription");
+  var coverLeftText2$ = dart.privateName(recommend_model, "Items.coverLeftText2");
+  var coverLeftIcon2$ = dart.privateName(recommend_model, "Items.coverLeftIcon2");
+  var coverLeft2ContentDescription$ = dart.privateName(recommend_model, "Items.coverLeft2ContentDescription");
+  var coverRightText$ = dart.privateName(recommend_model, "Items.coverRightText");
+  var coverRightContentDescription$ = dart.privateName(recommend_model, "Items.coverRightContentDescription");
+  var descButton$ = dart.privateName(recommend_model, "Items.descButton");
+  var canPlay$ = dart.privateName(recommend_model, "Items.canPlay");
+  recommend_model.Items = class Items extends core.Object {
+    get cardType() {
+      return this[cardType$];
+    }
+    set cardType(value) {
+      this[cardType$] = value;
+    }
+    get cardGoto() {
+      return this[cardGoto$];
+    }
+    set cardGoto(value) {
+      this[cardGoto$] = value;
+    }
+    get goto() {
+      return this[goto$];
+    }
+    set goto(value) {
+      this[goto$] = value;
+    }
+    get param() {
+      return this[param$];
+    }
+    set param(value) {
+      this[param$] = value;
+    }
+    get cover() {
+      return this[cover$];
+    }
+    set cover(value) {
+      this[cover$] = value;
+    }
+    get title() {
+      return this[title$];
+    }
+    set title(value) {
+      this[title$] = value;
+    }
+    get uri() {
+      return this[uri$];
+    }
+    set uri(value) {
+      this[uri$] = value;
+    }
+    get threePoint() {
+      return this[threePoint$];
+    }
+    set threePoint(value) {
+      this[threePoint$] = value;
+    }
+    get args() {
+      return this[args$];
+    }
+    set args(value) {
+      this[args$] = value;
+    }
+    get playerArgs() {
+      return this[playerArgs$];
+    }
+    set playerArgs(value) {
+      this[playerArgs$] = value;
+    }
+    get idx() {
+      return this[idx$];
+    }
+    set idx(value) {
+      this[idx$] = value;
+    }
+    get threePointV2() {
+      return this[threePointV2$];
+    }
+    set threePointV2(value) {
+      this[threePointV2$] = value;
+    }
+    get coverLeftText1() {
+      return this[coverLeftText1$];
+    }
+    set coverLeftText1(value) {
+      this[coverLeftText1$] = value;
+    }
+    get coverLeftIcon1() {
+      return this[coverLeftIcon1$];
+    }
+    set coverLeftIcon1(value) {
+      this[coverLeftIcon1$] = value;
+    }
+    get coverLeft1ContentDescription() {
+      return this[coverLeft1ContentDescription$];
+    }
+    set coverLeft1ContentDescription(value) {
+      this[coverLeft1ContentDescription$] = value;
+    }
+    get coverLeftText2() {
+      return this[coverLeftText2$];
+    }
+    set coverLeftText2(value) {
+      this[coverLeftText2$] = value;
+    }
+    get coverLeftIcon2() {
+      return this[coverLeftIcon2$];
+    }
+    set coverLeftIcon2(value) {
+      this[coverLeftIcon2$] = value;
+    }
+    get coverLeft2ContentDescription() {
+      return this[coverLeft2ContentDescription$];
+    }
+    set coverLeft2ContentDescription(value) {
+      this[coverLeft2ContentDescription$] = value;
+    }
+    get coverRightText() {
+      return this[coverRightText$];
+    }
+    set coverRightText(value) {
+      this[coverRightText$] = value;
+    }
+    get coverRightContentDescription() {
+      return this[coverRightContentDescription$];
+    }
+    set coverRightContentDescription(value) {
+      this[coverRightContentDescription$] = value;
+    }
+    get descButton() {
+      return this[descButton$];
+    }
+    set descButton(value) {
+      this[descButton$] = value;
+    }
+    get canPlay() {
+      return this[canPlay$];
+    }
+    set canPlay(value) {
+      this[canPlay$] = value;
+    }
+    static fromJson(jsonRes) {
+      let threePointV2 = core.List.is(jsonRes[$_get]("three_point_v2")) ? T.JSArrayOfThree_point_v2().of([]) : null;
+      if (threePointV2 != null) {
+        for (let item of core.Iterable.as(dart.nullCheck(jsonRes[$_get]("three_point_v2")))) {
+          if (item != null) {
+            threePointV2[$add](recommend_model.Three_point_v2.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), item))));
+          }
+        }
+      }
+      return new recommend_model.Items.new({cardType: recommend_model.asT(T.StringN(), jsonRes[$_get]("card_type")), cardGoto: recommend_model.asT(T.StringN(), jsonRes[$_get]("card_goto")), goto: recommend_model.asT(T.StringN(), jsonRes[$_get]("goto")), param: recommend_model.asT(T.StringN(), jsonRes[$_get]("param")), cover: recommend_model.asT(T.StringN(), jsonRes[$_get]("cover")), title: recommend_model.asT(T.StringN(), jsonRes[$_get]("title")), uri: recommend_model.asT(T.StringN(), jsonRes[$_get]("uri")), threePoint: jsonRes[$_get]("three_point") == null ? null : recommend_model.Three_point.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), jsonRes[$_get]("three_point")))), args: jsonRes[$_get]("args") == null ? null : recommend_model.Args.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), jsonRes[$_get]("args")))), playerArgs: jsonRes[$_get]("player_args") == null ? null : recommend_model.Player_args.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), jsonRes[$_get]("player_args")))), idx: recommend_model.asT(T.intN(), jsonRes[$_get]("idx")), threePointV2: threePointV2, coverLeftText1: recommend_model.asT(T.StringN(), jsonRes[$_get]("cover_left_text_1")), coverLeftIcon1: recommend_model.asT(T.intN(), jsonRes[$_get]("cover_left_icon_1")), coverLeft1ContentDescription: recommend_model.asT(T.StringN(), jsonRes[$_get]("cover_left_1_content_description")), coverLeftText2: recommend_model.asT(T.StringN(), jsonRes[$_get]("cover_left_text_2")), coverLeftIcon2: recommend_model.asT(T.intN(), jsonRes[$_get]("cover_left_icon_2")), coverLeft2ContentDescription: recommend_model.asT(T.StringN(), jsonRes[$_get]("cover_left_2_content_description")), coverRightText: recommend_model.asT(T.StringN(), jsonRes[$_get]("cover_right_text")), coverRightContentDescription: recommend_model.asT(T.StringN(), jsonRes[$_get]("cover_right_content_description")), descButton: jsonRes[$_get]("desc_button") == null ? null : recommend_model.Desc_button.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), jsonRes[$_get]("desc_button")))), canPlay: recommend_model.asT(T.intN(), jsonRes[$_get]("can_play"))});
+    }
+    toString() {
+      return convert.jsonEncode(this);
+    }
+    toJson() {
+      return new (T.IdentityMapOfString$dynamic()).from(["card_type", this.cardType, "card_goto", this.cardGoto, "goto", this.goto, "param", this.param, "cover", this.cover, "title", this.title, "uri", this.uri, "three_point", this.threePoint, "args", this.args, "player_args", this.playerArgs, "idx", this.idx, "three_point_v2", this.threePointV2, "cover_left_text_1", this.coverLeftText1, "cover_left_icon_1", this.coverLeftIcon1, "cover_left_1_content_description", this.coverLeft1ContentDescription, "cover_left_text_2", this.coverLeftText2, "cover_left_icon_2", this.coverLeftIcon2, "cover_left_2_content_description", this.coverLeft2ContentDescription, "cover_right_text", this.coverRightText, "cover_right_content_description", this.coverRightContentDescription, "desc_button", this.descButton, "can_play", this.canPlay]);
+    }
+    clone() {
+      return recommend_model.Items.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), convert.jsonDecode(convert.jsonEncode(this)))));
+    }
+  };
+  (recommend_model.Items.new = function(opts) {
+    let cardType = opts && 'cardType' in opts ? opts.cardType : null;
+    let cardGoto = opts && 'cardGoto' in opts ? opts.cardGoto : null;
+    let goto = opts && 'goto' in opts ? opts.goto : null;
+    let param = opts && 'param' in opts ? opts.param : null;
+    let cover = opts && 'cover' in opts ? opts.cover : null;
+    let title = opts && 'title' in opts ? opts.title : null;
+    let uri = opts && 'uri' in opts ? opts.uri : null;
+    let threePoint = opts && 'threePoint' in opts ? opts.threePoint : null;
+    let args = opts && 'args' in opts ? opts.args : null;
+    let playerArgs = opts && 'playerArgs' in opts ? opts.playerArgs : null;
+    let idx = opts && 'idx' in opts ? opts.idx : null;
+    let threePointV2 = opts && 'threePointV2' in opts ? opts.threePointV2 : null;
+    let coverLeftText1 = opts && 'coverLeftText1' in opts ? opts.coverLeftText1 : null;
+    let coverLeftIcon1 = opts && 'coverLeftIcon1' in opts ? opts.coverLeftIcon1 : null;
+    let coverLeft1ContentDescription = opts && 'coverLeft1ContentDescription' in opts ? opts.coverLeft1ContentDescription : null;
+    let coverLeftText2 = opts && 'coverLeftText2' in opts ? opts.coverLeftText2 : null;
+    let coverLeftIcon2 = opts && 'coverLeftIcon2' in opts ? opts.coverLeftIcon2 : null;
+    let coverLeft2ContentDescription = opts && 'coverLeft2ContentDescription' in opts ? opts.coverLeft2ContentDescription : null;
+    let coverRightText = opts && 'coverRightText' in opts ? opts.coverRightText : null;
+    let coverRightContentDescription = opts && 'coverRightContentDescription' in opts ? opts.coverRightContentDescription : null;
+    let descButton = opts && 'descButton' in opts ? opts.descButton : null;
+    let canPlay = opts && 'canPlay' in opts ? opts.canPlay : null;
+    this[cardType$] = cardType;
+    this[cardGoto$] = cardGoto;
+    this[goto$] = goto;
+    this[param$] = param;
+    this[cover$] = cover;
+    this[title$] = title;
+    this[uri$] = uri;
+    this[threePoint$] = threePoint;
+    this[args$] = args;
+    this[playerArgs$] = playerArgs;
+    this[idx$] = idx;
+    this[threePointV2$] = threePointV2;
+    this[coverLeftText1$] = coverLeftText1;
+    this[coverLeftIcon1$] = coverLeftIcon1;
+    this[coverLeft1ContentDescription$] = coverLeft1ContentDescription;
+    this[coverLeftText2$] = coverLeftText2;
+    this[coverLeftIcon2$] = coverLeftIcon2;
+    this[coverLeft2ContentDescription$] = coverLeft2ContentDescription;
+    this[coverRightText$] = coverRightText;
+    this[coverRightContentDescription$] = coverRightContentDescription;
+    this[descButton$] = descButton;
+    this[canPlay$] = canPlay;
+    ;
+  }).prototype = recommend_model.Items.prototype;
+  dart.addTypeTests(recommend_model.Items);
+  dart.addTypeCaches(recommend_model.Items);
+  dart.setMethodSignature(recommend_model.Items, () => ({
+    __proto__: dart.getMethods(recommend_model.Items.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), []),
+    clone: dart.fnType(recommend_model.Items, [])
+  }));
+  dart.setLibraryUri(recommend_model.Items, I[0]);
+  dart.setFieldSignature(recommend_model.Items, () => ({
+    __proto__: dart.getFields(recommend_model.Items.__proto__),
+    cardType: dart.fieldType(dart.nullable(core.String)),
+    cardGoto: dart.fieldType(dart.nullable(core.String)),
+    goto: dart.fieldType(dart.nullable(core.String)),
+    param: dart.fieldType(dart.nullable(core.String)),
+    cover: dart.fieldType(dart.nullable(core.String)),
+    title: dart.fieldType(dart.nullable(core.String)),
+    uri: dart.fieldType(dart.nullable(core.String)),
+    threePoint: dart.fieldType(dart.nullable(recommend_model.Three_point)),
+    args: dart.fieldType(dart.nullable(recommend_model.Args)),
+    playerArgs: dart.fieldType(dart.nullable(recommend_model.Player_args)),
+    idx: dart.fieldType(dart.nullable(core.int)),
+    threePointV2: dart.fieldType(dart.nullable(core.List$(recommend_model.Three_point_v2))),
+    coverLeftText1: dart.fieldType(dart.nullable(core.String)),
+    coverLeftIcon1: dart.fieldType(dart.nullable(core.int)),
+    coverLeft1ContentDescription: dart.fieldType(dart.nullable(core.String)),
+    coverLeftText2: dart.fieldType(dart.nullable(core.String)),
+    coverLeftIcon2: dart.fieldType(dart.nullable(core.int)),
+    coverLeft2ContentDescription: dart.fieldType(dart.nullable(core.String)),
+    coverRightText: dart.fieldType(dart.nullable(core.String)),
+    coverRightContentDescription: dart.fieldType(dart.nullable(core.String)),
+    descButton: dart.fieldType(dart.nullable(recommend_model.Desc_button)),
+    canPlay: dart.fieldType(dart.nullable(core.int))
+  }));
+  dart.defineExtensionMethods(recommend_model.Items, ['toString']);
+  var dislikeReasons$ = dart.privateName(recommend_model, "Three_point.dislikeReasons");
+  var feedbacks$ = dart.privateName(recommend_model, "Three_point.feedbacks");
+  var watchLater$ = dart.privateName(recommend_model, "Three_point.watchLater");
+  recommend_model.Three_point = class Three_point extends core.Object {
+    get dislikeReasons() {
+      return this[dislikeReasons$];
+    }
+    set dislikeReasons(value) {
+      this[dislikeReasons$] = value;
+    }
+    get feedbacks() {
+      return this[feedbacks$];
+    }
+    set feedbacks(value) {
+      this[feedbacks$] = value;
+    }
+    get watchLater() {
+      return this[watchLater$];
+    }
+    set watchLater(value) {
+      this[watchLater$] = value;
+    }
+    static fromJson(jsonRes) {
+      let dislikeReasons = core.List.is(jsonRes[$_get]("dislike_reasons")) ? T.JSArrayOfDislike_reasons().of([]) : null;
+      if (dislikeReasons != null) {
+        for (let item of core.Iterable.as(dart.nullCheck(jsonRes[$_get]("dislike_reasons")))) {
+          if (item != null) {
+            dislikeReasons[$add](recommend_model.Dislike_reasons.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), item))));
+          }
+        }
+      }
+      let feedbacks = core.List.is(jsonRes[$_get]("feedbacks")) ? T.JSArrayOfFeedbacks().of([]) : null;
+      if (feedbacks != null) {
+        for (let item of core.Iterable.as(dart.nullCheck(jsonRes[$_get]("feedbacks")))) {
+          if (item != null) {
+            feedbacks[$add](recommend_model.Feedbacks.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), item))));
+          }
+        }
+      }
+      return new recommend_model.Three_point.new({dislikeReasons: dislikeReasons, feedbacks: feedbacks, watchLater: recommend_model.asT(T.intN(), jsonRes[$_get]("watch_later"))});
+    }
+    toString() {
+      return convert.jsonEncode(this);
+    }
+    toJson() {
+      return new (T.IdentityMapOfString$dynamic()).from(["dislike_reasons", this.dislikeReasons, "feedbacks", this.feedbacks, "watch_later", this.watchLater]);
+    }
+    clone() {
+      return recommend_model.Three_point.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), convert.jsonDecode(convert.jsonEncode(this)))));
+    }
+  };
+  (recommend_model.Three_point.new = function(opts) {
+    let dislikeReasons = opts && 'dislikeReasons' in opts ? opts.dislikeReasons : null;
+    let feedbacks = opts && 'feedbacks' in opts ? opts.feedbacks : null;
+    let watchLater = opts && 'watchLater' in opts ? opts.watchLater : null;
+    this[dislikeReasons$] = dislikeReasons;
+    this[feedbacks$] = feedbacks;
+    this[watchLater$] = watchLater;
+    ;
+  }).prototype = recommend_model.Three_point.prototype;
+  dart.addTypeTests(recommend_model.Three_point);
+  dart.addTypeCaches(recommend_model.Three_point);
+  dart.setMethodSignature(recommend_model.Three_point, () => ({
+    __proto__: dart.getMethods(recommend_model.Three_point.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), []),
+    clone: dart.fnType(recommend_model.Three_point, [])
+  }));
+  dart.setLibraryUri(recommend_model.Three_point, I[0]);
+  dart.setFieldSignature(recommend_model.Three_point, () => ({
+    __proto__: dart.getFields(recommend_model.Three_point.__proto__),
+    dislikeReasons: dart.fieldType(dart.nullable(core.List$(recommend_model.Dislike_reasons))),
+    feedbacks: dart.fieldType(dart.nullable(core.List$(recommend_model.Feedbacks))),
+    watchLater: dart.fieldType(dart.nullable(core.int))
+  }));
+  dart.defineExtensionMethods(recommend_model.Three_point, ['toString']);
+  var id$ = dart.privateName(recommend_model, "Dislike_reasons.id");
+  var name$ = dart.privateName(recommend_model, "Dislike_reasons.name");
+  var toast$ = dart.privateName(recommend_model, "Dislike_reasons.toast");
+  recommend_model.Dislike_reasons = class Dislike_reasons extends core.Object {
+    get id() {
+      return this[id$];
+    }
+    set id(value) {
+      this[id$] = value;
+    }
+    get name() {
+      return this[name$];
+    }
+    set name(value) {
+      this[name$] = value;
+    }
+    get toast() {
+      return this[toast$];
+    }
+    set toast(value) {
+      this[toast$] = value;
+    }
+    static fromJson(jsonRes) {
+      return new recommend_model.Dislike_reasons.new({id: recommend_model.asT(T.intN(), jsonRes[$_get]("id")), name: recommend_model.asT(T.StringN(), jsonRes[$_get]("name")), toast: recommend_model.asT(T.StringN(), jsonRes[$_get]("toast"))});
+    }
+    toString() {
+      return convert.jsonEncode(this);
+    }
+    toJson() {
+      return new (T.IdentityMapOfString$dynamic()).from(["id", this.id, "name", this.name, "toast", this.toast]);
+    }
+    clone() {
+      return recommend_model.Dislike_reasons.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), convert.jsonDecode(convert.jsonEncode(this)))));
+    }
+  };
+  (recommend_model.Dislike_reasons.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let name = opts && 'name' in opts ? opts.name : null;
+    let toast = opts && 'toast' in opts ? opts.toast : null;
+    this[id$] = id;
+    this[name$] = name;
+    this[toast$] = toast;
+    ;
+  }).prototype = recommend_model.Dislike_reasons.prototype;
+  dart.addTypeTests(recommend_model.Dislike_reasons);
+  dart.addTypeCaches(recommend_model.Dislike_reasons);
+  dart.setMethodSignature(recommend_model.Dislike_reasons, () => ({
+    __proto__: dart.getMethods(recommend_model.Dislike_reasons.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), []),
+    clone: dart.fnType(recommend_model.Dislike_reasons, [])
+  }));
+  dart.setLibraryUri(recommend_model.Dislike_reasons, I[0]);
+  dart.setFieldSignature(recommend_model.Dislike_reasons, () => ({
+    __proto__: dart.getFields(recommend_model.Dislike_reasons.__proto__),
+    id: dart.fieldType(dart.nullable(core.int)),
+    name: dart.fieldType(dart.nullable(core.String)),
+    toast: dart.fieldType(dart.nullable(core.String))
+  }));
+  dart.defineExtensionMethods(recommend_model.Dislike_reasons, ['toString']);
+  var id$0 = dart.privateName(recommend_model, "Feedbacks.id");
+  var name$0 = dart.privateName(recommend_model, "Feedbacks.name");
+  var toast$0 = dart.privateName(recommend_model, "Feedbacks.toast");
+  recommend_model.Feedbacks = class Feedbacks extends core.Object {
+    get id() {
+      return this[id$0];
+    }
+    set id(value) {
+      this[id$0] = value;
+    }
+    get name() {
+      return this[name$0];
+    }
+    set name(value) {
+      this[name$0] = value;
+    }
+    get toast() {
+      return this[toast$0];
+    }
+    set toast(value) {
+      this[toast$0] = value;
+    }
+    static fromJson(jsonRes) {
+      return new recommend_model.Feedbacks.new({id: recommend_model.asT(T.intN(), jsonRes[$_get]("id")), name: recommend_model.asT(T.StringN(), jsonRes[$_get]("name")), toast: recommend_model.asT(T.StringN(), jsonRes[$_get]("toast"))});
+    }
+    toString() {
+      return convert.jsonEncode(this);
+    }
+    toJson() {
+      return new (T.IdentityMapOfString$dynamic()).from(["id", this.id, "name", this.name, "toast", this.toast]);
+    }
+    clone() {
+      return recommend_model.Feedbacks.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), convert.jsonDecode(convert.jsonEncode(this)))));
+    }
+  };
+  (recommend_model.Feedbacks.new = function(opts) {
+    let id = opts && 'id' in opts ? opts.id : null;
+    let name = opts && 'name' in opts ? opts.name : null;
+    let toast = opts && 'toast' in opts ? opts.toast : null;
+    this[id$0] = id;
+    this[name$0] = name;
+    this[toast$0] = toast;
+    ;
+  }).prototype = recommend_model.Feedbacks.prototype;
+  dart.addTypeTests(recommend_model.Feedbacks);
+  dart.addTypeCaches(recommend_model.Feedbacks);
+  dart.setMethodSignature(recommend_model.Feedbacks, () => ({
+    __proto__: dart.getMethods(recommend_model.Feedbacks.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), []),
+    clone: dart.fnType(recommend_model.Feedbacks, [])
+  }));
+  dart.setLibraryUri(recommend_model.Feedbacks, I[0]);
+  dart.setFieldSignature(recommend_model.Feedbacks, () => ({
+    __proto__: dart.getFields(recommend_model.Feedbacks.__proto__),
+    id: dart.fieldType(dart.nullable(core.int)),
+    name: dart.fieldType(dart.nullable(core.String)),
+    toast: dart.fieldType(dart.nullable(core.String))
+  }));
+  dart.defineExtensionMethods(recommend_model.Feedbacks, ['toString']);
+  var upId$ = dart.privateName(recommend_model, "Args.upId");
+  var upName$ = dart.privateName(recommend_model, "Args.upName");
+  var rid$ = dart.privateName(recommend_model, "Args.rid");
+  var rname$ = dart.privateName(recommend_model, "Args.rname");
+  var tid$ = dart.privateName(recommend_model, "Args.tid");
+  var tname$ = dart.privateName(recommend_model, "Args.tname");
+  var aid$ = dart.privateName(recommend_model, "Args.aid");
+  recommend_model.Args = class Args extends core.Object {
+    get upId() {
+      return this[upId$];
+    }
+    set upId(value) {
+      this[upId$] = value;
+    }
+    get upName() {
+      return this[upName$];
+    }
+    set upName(value) {
+      this[upName$] = value;
+    }
+    get rid() {
+      return this[rid$];
+    }
+    set rid(value) {
+      this[rid$] = value;
+    }
+    get rname() {
+      return this[rname$];
+    }
+    set rname(value) {
+      this[rname$] = value;
+    }
+    get tid() {
+      return this[tid$];
+    }
+    set tid(value) {
+      this[tid$] = value;
+    }
+    get tname() {
+      return this[tname$];
+    }
+    set tname(value) {
+      this[tname$] = value;
+    }
+    get aid() {
+      return this[aid$];
+    }
+    set aid(value) {
+      this[aid$] = value;
+    }
+    static fromJson(jsonRes) {
+      return new recommend_model.Args.new({upId: recommend_model.asT(T.intN(), jsonRes[$_get]("up_id")), upName: recommend_model.asT(T.StringN(), jsonRes[$_get]("up_name")), rid: recommend_model.asT(T.intN(), jsonRes[$_get]("rid")), rname: recommend_model.asT(T.StringN(), jsonRes[$_get]("rname")), tid: recommend_model.asT(T.intN(), jsonRes[$_get]("tid")), tname: recommend_model.asT(T.StringN(), jsonRes[$_get]("tname")), aid: recommend_model.asT(T.intN(), jsonRes[$_get]("aid"))});
+    }
+    toString() {
+      return convert.jsonEncode(this);
+    }
+    toJson() {
+      return new (T.IdentityMapOfString$dynamic()).from(["up_id", this.upId, "up_name", this.upName, "rid", this.rid, "rname", this.rname, "tid", this.tid, "tname", this.tname, "aid", this.aid]);
+    }
+    clone() {
+      return recommend_model.Args.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), convert.jsonDecode(convert.jsonEncode(this)))));
+    }
+  };
+  (recommend_model.Args.new = function(opts) {
+    let upId = opts && 'upId' in opts ? opts.upId : null;
+    let upName = opts && 'upName' in opts ? opts.upName : null;
+    let rid = opts && 'rid' in opts ? opts.rid : null;
+    let rname = opts && 'rname' in opts ? opts.rname : null;
+    let tid = opts && 'tid' in opts ? opts.tid : null;
+    let tname = opts && 'tname' in opts ? opts.tname : null;
+    let aid = opts && 'aid' in opts ? opts.aid : null;
+    this[upId$] = upId;
+    this[upName$] = upName;
+    this[rid$] = rid;
+    this[rname$] = rname;
+    this[tid$] = tid;
+    this[tname$] = tname;
+    this[aid$] = aid;
+    ;
+  }).prototype = recommend_model.Args.prototype;
+  dart.addTypeTests(recommend_model.Args);
+  dart.addTypeCaches(recommend_model.Args);
+  dart.setMethodSignature(recommend_model.Args, () => ({
+    __proto__: dart.getMethods(recommend_model.Args.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), []),
+    clone: dart.fnType(recommend_model.Args, [])
+  }));
+  dart.setLibraryUri(recommend_model.Args, I[0]);
+  dart.setFieldSignature(recommend_model.Args, () => ({
+    __proto__: dart.getFields(recommend_model.Args.__proto__),
+    upId: dart.fieldType(dart.nullable(core.int)),
+    upName: dart.fieldType(dart.nullable(core.String)),
+    rid: dart.fieldType(dart.nullable(core.int)),
+    rname: dart.fieldType(dart.nullable(core.String)),
+    tid: dart.fieldType(dart.nullable(core.int)),
+    tname: dart.fieldType(dart.nullable(core.String)),
+    aid: dart.fieldType(dart.nullable(core.int))
+  }));
+  dart.defineExtensionMethods(recommend_model.Args, ['toString']);
+  var aid$0 = dart.privateName(recommend_model, "Player_args.aid");
+  var cid$ = dart.privateName(recommend_model, "Player_args.cid");
+  var type$ = dart.privateName(recommend_model, "Player_args.type");
+  var duration$ = dart.privateName(recommend_model, "Player_args.duration");
+  recommend_model.Player_args = class Player_args extends core.Object {
+    get aid() {
+      return this[aid$0];
+    }
+    set aid(value) {
+      this[aid$0] = value;
+    }
+    get cid() {
+      return this[cid$];
+    }
+    set cid(value) {
+      this[cid$] = value;
+    }
+    get type() {
+      return this[type$];
+    }
+    set type(value) {
+      this[type$] = value;
+    }
+    get duration() {
+      return this[duration$];
+    }
+    set duration(value) {
+      this[duration$] = value;
+    }
+    static fromJson(jsonRes) {
+      return new recommend_model.Player_args.new({aid: recommend_model.asT(T.intN(), jsonRes[$_get]("aid")), cid: recommend_model.asT(T.intN(), jsonRes[$_get]("cid")), type: recommend_model.asT(T.StringN(), jsonRes[$_get]("type")), duration: recommend_model.asT(T.intN(), jsonRes[$_get]("duration"))});
+    }
+    toString() {
+      return convert.jsonEncode(this);
+    }
+    toJson() {
+      return new (T.IdentityMapOfString$dynamic()).from(["aid", this.aid, "cid", this.cid, "type", this.type, "duration", this.duration]);
+    }
+    clone() {
+      return recommend_model.Player_args.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), convert.jsonDecode(convert.jsonEncode(this)))));
+    }
+  };
+  (recommend_model.Player_args.new = function(opts) {
+    let aid = opts && 'aid' in opts ? opts.aid : null;
+    let cid = opts && 'cid' in opts ? opts.cid : null;
+    let type = opts && 'type' in opts ? opts.type : null;
+    let duration = opts && 'duration' in opts ? opts.duration : null;
+    this[aid$0] = aid;
+    this[cid$] = cid;
+    this[type$] = type;
+    this[duration$] = duration;
+    ;
+  }).prototype = recommend_model.Player_args.prototype;
+  dart.addTypeTests(recommend_model.Player_args);
+  dart.addTypeCaches(recommend_model.Player_args);
+  dart.setMethodSignature(recommend_model.Player_args, () => ({
+    __proto__: dart.getMethods(recommend_model.Player_args.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), []),
+    clone: dart.fnType(recommend_model.Player_args, [])
+  }));
+  dart.setLibraryUri(recommend_model.Player_args, I[0]);
+  dart.setFieldSignature(recommend_model.Player_args, () => ({
+    __proto__: dart.getFields(recommend_model.Player_args.__proto__),
+    aid: dart.fieldType(dart.nullable(core.int)),
+    cid: dart.fieldType(dart.nullable(core.int)),
+    type: dart.fieldType(dart.nullable(core.String)),
+    duration: dart.fieldType(dart.nullable(core.int))
+  }));
+  dart.defineExtensionMethods(recommend_model.Player_args, ['toString']);
+  var title$0 = dart.privateName(recommend_model, "Three_point_v2.title");
+  var type$0 = dart.privateName(recommend_model, "Three_point_v2.type");
+  var icon$ = dart.privateName(recommend_model, "Three_point_v2.icon");
+  recommend_model.Three_point_v2 = class Three_point_v2 extends core.Object {
+    get title() {
+      return this[title$0];
+    }
+    set title(value) {
+      this[title$0] = value;
+    }
+    get type() {
+      return this[type$0];
+    }
+    set type(value) {
+      this[type$0] = value;
+    }
+    get icon() {
+      return this[icon$];
+    }
+    set icon(value) {
+      this[icon$] = value;
+    }
+    static fromJson(jsonRes) {
+      return new recommend_model.Three_point_v2.new({title: recommend_model.asT(T.StringN(), jsonRes[$_get]("title")), type: recommend_model.asT(T.StringN(), jsonRes[$_get]("type")), icon: recommend_model.asT(T.StringN(), jsonRes[$_get]("icon"))});
+    }
+    toString() {
+      return convert.jsonEncode(this);
+    }
+    toJson() {
+      return new (T.IdentityMapOfString$dynamic()).from(["title", this.title, "type", this.type, "icon", this.icon]);
+    }
+    clone() {
+      return recommend_model.Three_point_v2.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), convert.jsonDecode(convert.jsonEncode(this)))));
+    }
+  };
+  (recommend_model.Three_point_v2.new = function(opts) {
+    let title = opts && 'title' in opts ? opts.title : null;
+    let type = opts && 'type' in opts ? opts.type : null;
+    let icon = opts && 'icon' in opts ? opts.icon : null;
+    this[title$0] = title;
+    this[type$0] = type;
+    this[icon$] = icon;
+    ;
+  }).prototype = recommend_model.Three_point_v2.prototype;
+  dart.addTypeTests(recommend_model.Three_point_v2);
+  dart.addTypeCaches(recommend_model.Three_point_v2);
+  dart.setMethodSignature(recommend_model.Three_point_v2, () => ({
+    __proto__: dart.getMethods(recommend_model.Three_point_v2.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), []),
+    clone: dart.fnType(recommend_model.Three_point_v2, [])
+  }));
+  dart.setLibraryUri(recommend_model.Three_point_v2, I[0]);
+  dart.setFieldSignature(recommend_model.Three_point_v2, () => ({
+    __proto__: dart.getFields(recommend_model.Three_point_v2.__proto__),
+    title: dart.fieldType(dart.nullable(core.String)),
+    type: dart.fieldType(dart.nullable(core.String)),
+    icon: dart.fieldType(dart.nullable(core.String))
+  }));
+  dart.defineExtensionMethods(recommend_model.Three_point_v2, ['toString']);
+  var text$ = dart.privateName(recommend_model, "Desc_button.text");
+  var uri$0 = dart.privateName(recommend_model, "Desc_button.uri");
+  var event$ = dart.privateName(recommend_model, "Desc_button.event");
+  var type$1 = dart.privateName(recommend_model, "Desc_button.type");
+  var eventV2$ = dart.privateName(recommend_model, "Desc_button.eventV2");
+  recommend_model.Desc_button = class Desc_button extends core.Object {
+    get text() {
+      return this[text$];
+    }
+    set text(value) {
+      this[text$] = value;
+    }
+    get uri() {
+      return this[uri$0];
+    }
+    set uri(value) {
+      this[uri$0] = value;
+    }
+    get event() {
+      return this[event$];
+    }
+    set event(value) {
+      this[event$] = value;
+    }
+    get type() {
+      return this[type$1];
+    }
+    set type(value) {
+      this[type$1] = value;
+    }
+    get eventV2() {
+      return this[eventV2$];
+    }
+    set eventV2(value) {
+      this[eventV2$] = value;
+    }
+    static fromJson(jsonRes) {
+      return new recommend_model.Desc_button.new({text: recommend_model.asT(T.StringN(), jsonRes[$_get]("text")), uri: recommend_model.asT(T.StringN(), jsonRes[$_get]("uri")), event: recommend_model.asT(T.StringN(), jsonRes[$_get]("event")), type: recommend_model.asT(T.intN(), jsonRes[$_get]("type")), eventV2: recommend_model.asT(T.StringN(), jsonRes[$_get]("event_v2"))});
+    }
+    toString() {
+      return convert.jsonEncode(this);
+    }
+    toJson() {
+      return new (T.IdentityMapOfString$dynamic()).from(["text", this.text, "uri", this.uri, "event", this.event, "type", this.type, "event_v2", this.eventV2]);
+    }
+    clone() {
+      return recommend_model.Desc_button.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), convert.jsonDecode(convert.jsonEncode(this)))));
+    }
+  };
+  (recommend_model.Desc_button.new = function(opts) {
+    let text = opts && 'text' in opts ? opts.text : null;
+    let uri = opts && 'uri' in opts ? opts.uri : null;
+    let event = opts && 'event' in opts ? opts.event : null;
+    let type = opts && 'type' in opts ? opts.type : null;
+    let eventV2 = opts && 'eventV2' in opts ? opts.eventV2 : null;
+    this[text$] = text;
+    this[uri$0] = uri;
+    this[event$] = event;
+    this[type$1] = type;
+    this[eventV2$] = eventV2;
+    ;
+  }).prototype = recommend_model.Desc_button.prototype;
+  dart.addTypeTests(recommend_model.Desc_button);
+  dart.addTypeCaches(recommend_model.Desc_button);
+  dart.setMethodSignature(recommend_model.Desc_button, () => ({
+    __proto__: dart.getMethods(recommend_model.Desc_button.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), []),
+    clone: dart.fnType(recommend_model.Desc_button, [])
+  }));
+  dart.setLibraryUri(recommend_model.Desc_button, I[0]);
+  dart.setFieldSignature(recommend_model.Desc_button, () => ({
+    __proto__: dart.getFields(recommend_model.Desc_button.__proto__),
+    text: dart.fieldType(dart.nullable(core.String)),
+    uri: dart.fieldType(dart.nullable(core.String)),
+    event: dart.fieldType(dart.nullable(core.String)),
+    type: dart.fieldType(dart.nullable(core.int)),
+    eventV2: dart.fieldType(dart.nullable(core.String))
+  }));
+  dart.defineExtensionMethods(recommend_model.Desc_button, ['toString']);
+  var column$ = dart.privateName(recommend_model, "Config.column");
+  var autoplayCard$ = dart.privateName(recommend_model, "Config.autoplayCard");
+  var feedCleanAbtest$ = dart.privateName(recommend_model, "Config.feedCleanAbtest");
+  var homeTransferTest$ = dart.privateName(recommend_model, "Config.homeTransferTest");
+  var autoRefreshTime$ = dart.privateName(recommend_model, "Config.autoRefreshTime");
+  var showInlineDanmaku$ = dart.privateName(recommend_model, "Config.showInlineDanmaku");
+  var toast$1 = dart.privateName(recommend_model, "Config.toast");
+  var isBackToHomepage$ = dart.privateName(recommend_model, "Config.isBackToHomepage");
+  recommend_model.Config = class Config extends core.Object {
+    get column() {
+      return this[column$];
+    }
+    set column(value) {
+      this[column$] = value;
+    }
+    get autoplayCard() {
+      return this[autoplayCard$];
+    }
+    set autoplayCard(value) {
+      this[autoplayCard$] = value;
+    }
+    get feedCleanAbtest() {
+      return this[feedCleanAbtest$];
+    }
+    set feedCleanAbtest(value) {
+      this[feedCleanAbtest$] = value;
+    }
+    get homeTransferTest() {
+      return this[homeTransferTest$];
+    }
+    set homeTransferTest(value) {
+      this[homeTransferTest$] = value;
+    }
+    get autoRefreshTime() {
+      return this[autoRefreshTime$];
+    }
+    set autoRefreshTime(value) {
+      this[autoRefreshTime$] = value;
+    }
+    get showInlineDanmaku() {
+      return this[showInlineDanmaku$];
+    }
+    set showInlineDanmaku(value) {
+      this[showInlineDanmaku$] = value;
+    }
+    get toast() {
+      return this[toast$1];
+    }
+    set toast(value) {
+      this[toast$1] = value;
+    }
+    get isBackToHomepage() {
+      return this[isBackToHomepage$];
+    }
+    set isBackToHomepage(value) {
+      this[isBackToHomepage$] = value;
+    }
+    static fromJson(jsonRes) {
+      return new recommend_model.Config.new({column: recommend_model.asT(T.intN(), jsonRes[$_get]("column")), autoplayCard: recommend_model.asT(T.intN(), jsonRes[$_get]("autoplay_card")), feedCleanAbtest: recommend_model.asT(T.intN(), jsonRes[$_get]("feed_clean_abtest")), homeTransferTest: recommend_model.asT(T.intN(), jsonRes[$_get]("home_transfer_test")), autoRefreshTime: recommend_model.asT(T.intN(), jsonRes[$_get]("auto_refresh_time")), showInlineDanmaku: recommend_model.asT(T.intN(), jsonRes[$_get]("show_inline_danmaku")), toast: recommend_model.asT(T.ObjectN(), jsonRes[$_get]("toast")), isBackToHomepage: recommend_model.asT(T.boolN(), jsonRes[$_get]("is_back_to_homepage"))});
+    }
+    toString() {
+      return convert.jsonEncode(this);
+    }
+    toJson() {
+      return new (T.IdentityMapOfString$dynamic()).from(["column", this.column, "autoplay_card", this.autoplayCard, "feed_clean_abtest", this.feedCleanAbtest, "home_transfer_test", this.homeTransferTest, "auto_refresh_time", this.autoRefreshTime, "show_inline_danmaku", this.showInlineDanmaku, "toast", this.toast, "is_back_to_homepage", this.isBackToHomepage]);
+    }
+    clone() {
+      return recommend_model.Config.fromJson(dart.nullCheck(recommend_model.asT(T.MapOfString$dynamic(), convert.jsonDecode(convert.jsonEncode(this)))));
+    }
+  };
+  (recommend_model.Config.new = function(opts) {
+    let column = opts && 'column' in opts ? opts.column : null;
+    let autoplayCard = opts && 'autoplayCard' in opts ? opts.autoplayCard : null;
+    let feedCleanAbtest = opts && 'feedCleanAbtest' in opts ? opts.feedCleanAbtest : null;
+    let homeTransferTest = opts && 'homeTransferTest' in opts ? opts.homeTransferTest : null;
+    let autoRefreshTime = opts && 'autoRefreshTime' in opts ? opts.autoRefreshTime : null;
+    let showInlineDanmaku = opts && 'showInlineDanmaku' in opts ? opts.showInlineDanmaku : null;
+    let toast = opts && 'toast' in opts ? opts.toast : null;
+    let isBackToHomepage = opts && 'isBackToHomepage' in opts ? opts.isBackToHomepage : null;
+    this[column$] = column;
+    this[autoplayCard$] = autoplayCard;
+    this[feedCleanAbtest$] = feedCleanAbtest;
+    this[homeTransferTest$] = homeTransferTest;
+    this[autoRefreshTime$] = autoRefreshTime;
+    this[showInlineDanmaku$] = showInlineDanmaku;
+    this[toast$1] = toast;
+    this[isBackToHomepage$] = isBackToHomepage;
+    ;
+  }).prototype = recommend_model.Config.prototype;
+  dart.addTypeTests(recommend_model.Config);
+  dart.addTypeCaches(recommend_model.Config);
+  dart.setMethodSignature(recommend_model.Config, () => ({
+    __proto__: dart.getMethods(recommend_model.Config.__proto__),
+    toJson: dart.fnType(core.Map$(core.String, dart.dynamic), []),
+    clone: dart.fnType(recommend_model.Config, [])
+  }));
+  dart.setLibraryUri(recommend_model.Config, I[0]);
+  dart.setFieldSignature(recommend_model.Config, () => ({
+    __proto__: dart.getFields(recommend_model.Config.__proto__),
+    column: dart.fieldType(dart.nullable(core.int)),
+    autoplayCard: dart.fieldType(dart.nullable(core.int)),
+    feedCleanAbtest: dart.fieldType(dart.nullable(core.int)),
+    homeTransferTest: dart.fieldType(dart.nullable(core.int)),
+    autoRefreshTime: dart.fieldType(dart.nullable(core.int)),
+    showInlineDanmaku: dart.fieldType(dart.nullable(core.int)),
+    toast: dart.fieldType(dart.nullable(core.Object)),
+    isBackToHomepage: dart.fieldType(dart.nullable(core.bool))
+  }));
+  dart.defineExtensionMethods(recommend_model.Config, ['toString']);
+  recommend_model.asT = function asT(T, value) {
+    if (T.is(value)) {
+      return value;
+    }
+    return null;
+  };
+  dart.trackLibraries("packages/bilibili/model/recommend_model.dart", {
+    "package:bilibili/model/recommend_model.dart": recommend_model
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["recommend_model.dart"],"names":[],"mappings":"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","file":"../../../../packages/bilibili/model/recommend_model.dart.lib.js"}');
+  // Exports:
+  return {
+    model__recommend_model: recommend_model
+  };
+}));
+
+//# sourceMappingURL=recommend_model.dart.lib.js.map

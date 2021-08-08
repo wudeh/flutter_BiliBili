@@ -1,0 +1,444 @@
+define(['dart_sdk', 'packages/video_player_platform_interface/method_channel_video_player.dart', 'packages/flutter/src/widgets/platform_view.dart', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/services/system_channels.dart'], (function load__packages__video_player_web__video_player_web_dart(dart_sdk, packages__video_player_platform_interface__method_channel_video_player$46dart, packages__flutter__src__widgets__platform_view$46dart, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__services__system_channels$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const _js_helper = dart_sdk._js_helper;
+  const async = dart_sdk.async;
+  const _internal = dart_sdk._internal;
+  const ui = dart_sdk.ui;
+  const html = dart_sdk.html;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const video_player_platform_interface = packages__video_player_platform_interface__method_channel_video_player$46dart.video_player_platform_interface;
+  const platform_view = packages__flutter__src__widgets__platform_view$46dart.src__widgets__platform_view;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const message_codec = packages__flutter__src__services__system_channels$46dart.src__services__message_codec;
+  var video_player_web = Object.create(dart.library);
+  var $_get = dartx._get;
+  var $remove = dartx.remove;
+  var $values = dartx.values;
+  var $forEach = dartx.forEach;
+  var $clear = dartx.clear;
+  var $isNotEmpty = dartx.isNotEmpty;
+  var $_set = dartx._set;
+  var $src = dartx.src;
+  var $autoplay = dartx.autoplay;
+  var $controls = dartx.controls;
+  var $border = dartx.border;
+  var $style = dartx.style;
+  var $height = dartx.height;
+  var $width = dartx.width;
+  var $setAttribute = dartx.setAttribute;
+  var $onCanPlay = dartx.onCanPlay;
+  var $onCanPlayThrough = dartx.onCanPlayThrough;
+  var $onPlaying = dartx.onPlaying;
+  var $onWaiting = dartx.onWaiting;
+  var $onError = dartx.onError;
+  var $code = dartx.code;
+  var $onEnded = dartx.onEnded;
+  var $buffered = dartx.buffered;
+  var $play = dartx.play;
+  var $name = dartx.name;
+  var $loop = dartx.loop;
+  var $muted = dartx.muted;
+  var $volume = dartx.volume;
+  var $playbackRate = dartx.playbackRate;
+  var $currentTime = dartx.currentTime;
+  var $toDouble = dartx.toDouble;
+  var $round = dartx.round;
+  var $duration = dartx.duration;
+  var $videoWidth = dartx.videoWidth;
+  var $videoHeight = dartx.videoHeight;
+  var $removeAttribute = dartx.removeAttribute;
+  var $length = dartx.length;
+  var $start = dartx.start;
+  var $end = dartx.end;
+  var $add = dartx.add;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    IdentityMapOfint$_VideoPlayer: () => (T.IdentityMapOfint$_VideoPlayer = dart.constFn(_js_helper.IdentityMap$(core.int, video_player_web._VideoPlayer)))(),
+    _VideoPlayerTovoid: () => (T._VideoPlayerTovoid = dart.constFn(dart.fnType(dart.void, [video_player_web._VideoPlayer])))(),
+    VoidToString: () => (T.VoidToString = dart.constFn(dart.fnType(core.String, [])))(),
+    StringTodynamic: () => (T.StringTodynamic = dart.constFn(dart.fnType(dart.dynamic, [core.String])))(),
+    FutureOfint: () => (T.FutureOfint = dart.constFn(async.Future$(core.int)))(),
+    FutureOfvoid: () => (T.FutureOfvoid = dart.constFn(async.Future$(dart.void)))(),
+    StreamControllerOfVideoEvent: () => (T.StreamControllerOfVideoEvent = dart.constFn(async.StreamController$(video_player_platform_interface.VideoEvent)))(),
+    intToVideoElement: () => (T.intToVideoElement = dart.constFn(dart.fnType(html.VideoElement, [core.int])))(),
+    dynamicTovoid: () => (T.dynamicTovoid = dart.constFn(dart.fnType(dart.void, [dart.dynamic])))(),
+    EventTovoid: () => (T.EventTovoid = dart.constFn(dart.fnType(dart.void, [html.Event])))(),
+    dynamicToNull: () => (T.dynamicToNull = dart.constFn(dart.fnType(core.Null, [dart.dynamic])))(),
+    ObjectTobool: () => (T.ObjectTobool = dart.constFn(dart.fnType(core.bool, [core.Object])))(),
+    JSArrayOfDurationRange: () => (T.JSArrayOfDurationRange = dart.constFn(_interceptors.JSArray$(video_player_platform_interface.DurationRange)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: video_player_platform_interface.DataSourceType.prototype,
+        [_name]: "DataSourceType.network",
+        index: 1
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: video_player_platform_interface.DataSourceType.prototype,
+        [_name]: "DataSourceType.asset",
+        index: 0
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: video_player_platform_interface.DataSourceType.prototype,
+        [_name]: "DataSourceType.file",
+        index: 2
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "viewType",
+        [_Location_column]: 28,
+        [_Location_line]: 149,
+        [_Location_file]: null
+      });
+    },
+    get C4() {
+      return C[4] = dart.constList([C[5] || CT.C5], widget_inspector._Location);
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[4] || CT.C4,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 149,
+        [_Location_file]: "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/video_player_web-2.0.2/lib/video_player_web.dart"
+      });
+    },
+    get C6() {
+      return C[6] = dart.constMap(core.int, core.String, [1, "MEDIA_ERR_ABORTED", 2, "MEDIA_ERR_NETWORK", 3, "MEDIA_ERR_DECODE", 4, "MEDIA_ERR_SRC_NOT_SUPPORTED"]);
+    },
+    get C7() {
+      return C[7] = dart.constMap(core.int, core.String, [1, "The user canceled the fetching of the video.", 2, "A network error occurred while fetching the video, despite having previously been available.", 3, "An error occurred while trying to decode the video, despite having previously been determined to be usable.", 4, "The video has been found to be unsuitable (missing or in a format not supported by your browser)."]);
+    }
+  }, false);
+  var C = Array(8).fill(void 0);
+  var I = [
+    "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/video_player_web-2.0.2/lib/video_player_web.dart",
+    "package:video_player_web/video_player_web.dart"
+  ];
+  var _videoPlayers = dart.privateName(video_player_web, "_videoPlayers");
+  var _textureCounter = dart.privateName(video_player_web, "_textureCounter");
+  var _disposeAllPlayers = dart.privateName(video_player_web, "_disposeAllPlayers");
+  var _name = dart.privateName(video_player_platform_interface, "_name");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  video_player_web.VideoPlayerPlugin = class VideoPlayerPlugin extends video_player_platform_interface.VideoPlayerPlatform {
+    static registerWith(registrar) {
+      video_player_platform_interface.VideoPlayerPlatform.instance = new video_player_web.VideoPlayerPlugin.new();
+    }
+    init() {
+      return async.async(dart.void, (function* init() {
+        return this[_disposeAllPlayers]();
+      }).bind(this));
+    }
+    dispose(textureId) {
+      return async.async(dart.void, (function* dispose() {
+        dart.nullCheck(this[_videoPlayers][$_get](textureId)).dispose();
+        this[_videoPlayers][$remove](textureId);
+        return null;
+      }).bind(this));
+    }
+    [_disposeAllPlayers]() {
+      this[_videoPlayers][$values][$forEach](dart.fn(videoPlayer => videoPlayer.dispose(), T._VideoPlayerTovoid()));
+      this[_videoPlayers][$clear]();
+    }
+    create(dataSource) {
+      return async.async(core.int, (function* create() {
+        let t4;
+        let textureId = this[_textureCounter];
+        this[_textureCounter] = this[_textureCounter] + 1;
+        let uri = null;
+        function uri$35get() {
+          let t1;
+          t1 = uri;
+          return t1 == null ? dart.throw(new _internal.LateError.localNI("uri")) : t1;
+        }
+        dart.fn(uri$35get, T.VoidToString());
+        function uri$35set(t2) {
+          return uri = t2;
+        }
+        dart.fn(uri$35set, T.StringTodynamic());
+        switch (dataSource.sourceType) {
+          case C[0] || CT.C0:
+          {
+            uri$35set((t4 = dataSource.uri, t4 == null ? "" : t4));
+            break;
+          }
+          case C[1] || CT.C1:
+          {
+            let assetUrl = dart.nullCheck(dataSource.asset);
+            if (dataSource.package != null && dart.nullCheck(dataSource.package)[$isNotEmpty]) {
+              assetUrl = "packages/" + dart.str(dataSource.package) + "/" + assetUrl;
+            }
+            assetUrl = ui.webOnlyAssetManager.getAssetUrl(assetUrl);
+            uri$35set(assetUrl);
+            break;
+          }
+          case C[2] || CT.C2:
+          {
+            return T.FutureOfint().error(new core.UnimplementedError.new("web implementation of video_player cannot play local files"));
+          }
+        }
+        let player = new video_player_web._VideoPlayer.new({uri: uri$35get(), textureId: textureId});
+        player.initialize();
+        this[_videoPlayers][$_set](textureId, player);
+        return textureId;
+      }).bind(this));
+    }
+    setLooping(textureId, looping) {
+      return async.async(dart.void, (function* setLooping() {
+        return dart.nullCheck(this[_videoPlayers][$_get](textureId)).setLooping(looping);
+      }).bind(this));
+    }
+    play(textureId) {
+      return async.async(dart.void, (function* play() {
+        return dart.nullCheck(this[_videoPlayers][$_get](textureId)).play();
+      }).bind(this));
+    }
+    pause(textureId) {
+      return async.async(dart.void, (function* pause() {
+        return dart.nullCheck(this[_videoPlayers][$_get](textureId)).pause();
+      }).bind(this));
+    }
+    setVolume(textureId, volume) {
+      return async.async(dart.void, (function* setVolume() {
+        return dart.nullCheck(this[_videoPlayers][$_get](textureId)).setVolume(volume);
+      }).bind(this));
+    }
+    setPlaybackSpeed(textureId, speed) {
+      return async.async(dart.void, (function* setPlaybackSpeed() {
+        if (!(speed > 0)) dart.assertFailed(null, I[0], 126, 12, "speed > 0");
+        return dart.nullCheck(this[_videoPlayers][$_get](textureId)).setPlaybackSpeed(speed);
+      }).bind(this));
+    }
+    seekTo(textureId, position) {
+      return async.async(dart.void, (function* seekTo() {
+        return dart.nullCheck(this[_videoPlayers][$_get](textureId)).seekTo(position);
+      }).bind(this));
+    }
+    getPosition(textureId) {
+      return async.async(core.Duration, (function* getPosition() {
+        dart.nullCheck(this[_videoPlayers][$_get](textureId)).sendBufferingUpdate();
+        return dart.nullCheck(this[_videoPlayers][$_get](textureId)).getPosition();
+      }).bind(this));
+    }
+    videoEventsFor(textureId) {
+      return dart.nullCheck(this[_videoPlayers][$_get](textureId)).eventController.stream;
+    }
+    buildView(textureId) {
+      return new platform_view.HtmlElementView.new({viewType: "videoPlayer-" + dart.str(textureId), $creationLocationd_0dea112b090073317d4: C[3] || CT.C3});
+    }
+    setMixWithOthers(mixWithOthers) {
+      return T.FutureOfvoid().value();
+    }
+  };
+  (video_player_web.VideoPlayerPlugin.new = function() {
+    this[_videoPlayers] = new (T.IdentityMapOfint$_VideoPlayer()).new();
+    this[_textureCounter] = 1;
+    ;
+  }).prototype = video_player_web.VideoPlayerPlugin.prototype;
+  dart.addTypeTests(video_player_web.VideoPlayerPlugin);
+  dart.addTypeCaches(video_player_web.VideoPlayerPlugin);
+  dart.setMethodSignature(video_player_web.VideoPlayerPlugin, () => ({
+    __proto__: dart.getMethods(video_player_web.VideoPlayerPlugin.__proto__),
+    [_disposeAllPlayers]: dart.fnType(dart.void, []),
+    create: dart.fnType(async.Future$(core.int), [video_player_platform_interface.DataSource])
+  }));
+  dart.setLibraryUri(video_player_web.VideoPlayerPlugin, I[1]);
+  dart.setFieldSignature(video_player_web.VideoPlayerPlugin, () => ({
+    __proto__: dart.getFields(video_player_web.VideoPlayerPlugin.__proto__),
+    [_videoPlayers]: dart.fieldType(core.Map$(core.int, video_player_web._VideoPlayer)),
+    [_textureCounter]: dart.fieldType(core.int)
+  }));
+  var ___VideoPlayer_videoElement = dart.privateName(video_player_web, "_#_VideoPlayer#videoElement");
+  var _toDurationRange = dart.privateName(video_player_web, "_toDurationRange");
+  video_player_web._VideoPlayer = class _VideoPlayer extends core.Object {
+    get videoElement() {
+      let t4;
+      t4 = this[___VideoPlayer_videoElement];
+      return t4 == null ? dart.throw(new _internal.LateError.fieldNI("videoElement")) : t4;
+    }
+    set videoElement(t4) {
+      this[___VideoPlayer_videoElement] = t4;
+    }
+    setBuffering(buffering) {
+      if (this.isBuffering !== buffering) {
+        this.isBuffering = buffering;
+        this.eventController.add(new video_player_platform_interface.VideoEvent.new({eventType: this.isBuffering ? video_player_platform_interface.VideoEventType.bufferingStart : video_player_platform_interface.VideoEventType.bufferingEnd}));
+      }
+    }
+    initialize() {
+      let t5;
+      this.videoElement = (t5 = html.VideoElement.new(), (() => {
+        t5[$src] = this.uri;
+        t5[$autoplay] = false;
+        t5[$controls] = false;
+        t5[$style][$border] = "none";
+        t5[$style][$height] = "100%";
+        t5[$style][$width] = "100%";
+        return t5;
+      })());
+      this.videoElement[$setAttribute]("playsinline", "true");
+      this.videoElement[$setAttribute]("autoplay", "false");
+      ui.platformViewRegistry.registerViewFactory("videoPlayer-" + dart.str(this.textureId), dart.fn(viewId => this.videoElement, T.intToVideoElement()));
+      this.videoElement[$onCanPlay].listen(dart.fn(_ => {
+        if (!this.isInitialized) {
+          this.isInitialized = true;
+          this.sendInitialized();
+        }
+        this.setBuffering(false);
+      }, T.dynamicTovoid()));
+      this.videoElement[$onCanPlayThrough].listen(dart.fn(_ => {
+        this.setBuffering(false);
+      }, T.dynamicTovoid()));
+      this.videoElement[$onPlaying].listen(dart.fn(_ => {
+        this.setBuffering(false);
+      }, T.dynamicTovoid()));
+      this.videoElement[$onWaiting].listen(dart.fn(_ => {
+        this.setBuffering(true);
+        this.sendBufferingUpdate();
+      }, T.dynamicTovoid()));
+      this.videoElement[$onError].listen(dart.fn(_ => {
+        this.setBuffering(false);
+        let error = dart.nullCheck(this.videoElement.error);
+        this.eventController.addError(new message_codec.PlatformException.new({code: dart.nullCheck(video_player_web._kErrorValueToErrorName[$_get](error[$code])), message: error.message !== "" ? error.message : video_player_web._kDefaultErrorMessage, details: video_player_web._kErrorValueToErrorDescription[$_get](error[$code])}));
+      }, T.EventTovoid()));
+      this.videoElement[$onEnded].listen(dart.fn(_ => {
+        this.setBuffering(false);
+        this.eventController.add(new video_player_platform_interface.VideoEvent.new({eventType: video_player_platform_interface.VideoEventType.completed}));
+      }, T.dynamicTovoid()));
+    }
+    sendBufferingUpdate() {
+      this.eventController.add(new video_player_platform_interface.VideoEvent.new({buffered: this[_toDurationRange](this.videoElement[$buffered]), eventType: video_player_platform_interface.VideoEventType.bufferingUpdate}));
+    }
+    play() {
+      return this.videoElement[$play]().catchError(dart.fn(e => {
+        let exception = html.DomException.as(e);
+        this.eventController.addError(new message_codec.PlatformException.new({code: exception[$name], message: exception.message}));
+      }, T.dynamicToNull()), {test: dart.fn(e => html.DomException.is(e), T.ObjectTobool())});
+    }
+    pause() {
+      this.videoElement.pause();
+    }
+    setLooping(value) {
+      this.videoElement[$loop] = value;
+    }
+    setVolume(value) {
+      if (value > 0.0) {
+        this.videoElement[$muted] = false;
+      } else {
+        this.videoElement[$muted] = true;
+      }
+      this.videoElement[$volume] = value;
+    }
+    setPlaybackSpeed(speed) {
+      if (!(speed > 0)) dart.assertFailed(null, I[0], 280, 12, "speed > 0");
+      this.videoElement[$playbackRate] = speed;
+    }
+    seekTo(position) {
+      this.videoElement[$currentTime] = position.inMilliseconds[$toDouble]() / 1000;
+    }
+    getPosition() {
+      return new core.Duration.new({milliseconds: (this.videoElement[$currentTime] * 1000)[$round]()});
+    }
+    sendInitialized() {
+      this.eventController.add(new video_player_platform_interface.VideoEvent.new({eventType: video_player_platform_interface.VideoEventType.initialized, duration: new core.Duration.new({milliseconds: (this.videoElement[$duration] * 1000)[$round]()}), size: new ui.Size.new(this.videoElement[$videoWidth][$toDouble](), this.videoElement[$videoHeight][$toDouble]())}));
+    }
+    dispose() {
+      this.videoElement[$removeAttribute]("src");
+      this.videoElement.load();
+    }
+    [_toDurationRange](buffered) {
+      let durationRange = T.JSArrayOfDurationRange().of([]);
+      for (let i = 0; i < buffered[$length]; i = i + 1) {
+        durationRange[$add](new video_player_platform_interface.DurationRange.new(new core.Duration.new({milliseconds: (buffered[$start](i) * 1000)[$round]()}), new core.Duration.new({milliseconds: (buffered[$end](i) * 1000)[$round]()})));
+      }
+      return durationRange;
+    }
+  };
+  (video_player_web._VideoPlayer.new = function(opts) {
+    let uri = opts && 'uri' in opts ? opts.uri : null;
+    let textureId = opts && 'textureId' in opts ? opts.textureId : null;
+    this.eventController = T.StreamControllerOfVideoEvent().new();
+    this[___VideoPlayer_videoElement] = null;
+    this.isInitialized = false;
+    this.isBuffering = false;
+    this.uri = uri;
+    this.textureId = textureId;
+    ;
+  }).prototype = video_player_web._VideoPlayer.prototype;
+  dart.addTypeTests(video_player_web._VideoPlayer);
+  dart.addTypeCaches(video_player_web._VideoPlayer);
+  dart.setMethodSignature(video_player_web._VideoPlayer, () => ({
+    __proto__: dart.getMethods(video_player_web._VideoPlayer.__proto__),
+    setBuffering: dart.fnType(dart.void, [core.bool]),
+    initialize: dart.fnType(dart.void, []),
+    sendBufferingUpdate: dart.fnType(dart.void, []),
+    play: dart.fnType(async.Future$(dart.void), []),
+    pause: dart.fnType(dart.void, []),
+    setLooping: dart.fnType(dart.void, [core.bool]),
+    setVolume: dart.fnType(dart.void, [core.double]),
+    setPlaybackSpeed: dart.fnType(dart.void, [core.double]),
+    seekTo: dart.fnType(dart.void, [core.Duration]),
+    getPosition: dart.fnType(core.Duration, []),
+    sendInitialized: dart.fnType(dart.void, []),
+    dispose: dart.fnType(dart.void, []),
+    [_toDurationRange]: dart.fnType(core.List$(video_player_platform_interface.DurationRange), [html.TimeRanges])
+  }));
+  dart.setGetterSignature(video_player_web._VideoPlayer, () => ({
+    __proto__: dart.getGetters(video_player_web._VideoPlayer.__proto__),
+    videoElement: html.VideoElement
+  }));
+  dart.setSetterSignature(video_player_web._VideoPlayer, () => ({
+    __proto__: dart.getSetters(video_player_web._VideoPlayer.__proto__),
+    videoElement: html.VideoElement
+  }));
+  dart.setLibraryUri(video_player_web._VideoPlayer, I[1]);
+  dart.setFieldSignature(video_player_web._VideoPlayer, () => ({
+    __proto__: dart.getFields(video_player_web._VideoPlayer.__proto__),
+    eventController: dart.finalFieldType(async.StreamController$(video_player_platform_interface.VideoEvent)),
+    uri: dart.finalFieldType(core.String),
+    textureId: dart.finalFieldType(core.int),
+    [___VideoPlayer_videoElement]: dart.fieldType(dart.nullable(html.VideoElement)),
+    isInitialized: dart.fieldType(core.bool),
+    isBuffering: dart.fieldType(core.bool)
+  }));
+  dart.defineLazy(video_player_web, {
+    /*video_player_web._kErrorValueToErrorName*/get _kErrorValueToErrorName() {
+      return C[6] || CT.C6;
+    },
+    /*video_player_web._kErrorValueToErrorDescription*/get _kErrorValueToErrorDescription() {
+      return C[7] || CT.C7;
+    },
+    /*video_player_web._kDefaultErrorMessage*/get _kDefaultErrorMessage() {
+      return "No further diagnostic information can be determined or provided.";
+    }
+  }, false);
+  dart.trackLibraries("packages/video_player_web/video_player_web.dart", {
+    "package:video_player_web/video_player_web.dart": video_player_web
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["video_player_web.dart"],"names":[],"mappings":"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","file":"../../../../../../packages/video_player_web/video_player_web.dart.lib.js"}');
+  // Exports:
+  return {
+    video_player_web: video_player_web
+  };
+}));
+
+//# sourceMappingURL=video_player_web.dart.lib.js.map

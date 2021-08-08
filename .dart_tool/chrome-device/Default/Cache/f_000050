@@ -1,0 +1,1167 @@
+define(['dart_sdk', 'packages/flutter/src/widgets/widget_span.dart', 'packages/flutter/src/animation/animation_controller.dart', 'packages/flutter/src/material/icon_button.dart', 'packages/flutter/src/animation/listener_helpers.dart', 'packages/flutter/src/animation/curves.dart', 'packages/flutter/src/painting/basic_types.dart', 'packages/flutter/src/foundation/debug.dart', 'packages/flutter/src/painting/edge_insets.dart', 'packages/flutter/src/painting/alignment.dart', 'packages/flutter/src/material/progress_indicator.dart'], (function load__packages__flutter__src__material__refresh_indicator_dart(dart_sdk, packages__flutter__src__widgets__widget_span$46dart, packages__flutter__src__animation__animation_controller$46dart, packages__flutter__src__material__icon_button$46dart, packages__flutter__src__animation__listener_helpers$46dart, packages__flutter__src__animation__curves$46dart, packages__flutter__src__painting__basic_types$46dart, packages__flutter__src__foundation__debug$46dart, packages__flutter__src__painting__edge_insets$46dart, packages__flutter__src__painting__alignment$46dart, packages__flutter__src__material__progress_indicator$46dart) {
+  'use strict';
+  const core = dart_sdk.core;
+  const async = dart_sdk.async;
+  const ui = dart_sdk.ui;
+  const _internal = dart_sdk._internal;
+  const math = dart_sdk.math;
+  const _interceptors = dart_sdk._interceptors;
+  const dart = dart_sdk.dart;
+  const dartx = dart_sdk.dartx;
+  const scroll_notification = packages__flutter__src__widgets__widget_span$46dart.src__widgets__scroll_notification;
+  const framework = packages__flutter__src__widgets__widget_span$46dart.src__widgets__framework;
+  const notification_listener = packages__flutter__src__widgets__widget_span$46dart.src__widgets__notification_listener;
+  const overscroll_indicator = packages__flutter__src__widgets__widget_span$46dart.src__widgets__overscroll_indicator;
+  const widget_inspector = packages__flutter__src__widgets__widget_span$46dart.src__widgets__widget_inspector;
+  const basic = packages__flutter__src__widgets__widget_span$46dart.src__widgets__basic;
+  const transitions = packages__flutter__src__widgets__widget_span$46dart.src__widgets__transitions;
+  const container = packages__flutter__src__widgets__widget_span$46dart.src__widgets__container;
+  const ticker_provider = packages__flutter__src__widgets__widget_span$46dart.src__widgets__ticker_provider;
+  const animation_controller = packages__flutter__src__animation__animation_controller$46dart.src__animation__animation_controller;
+  const theme$ = packages__flutter__src__material__icon_button$46dart.src__material__theme;
+  const debug = packages__flutter__src__material__icon_button$46dart.src__material__debug;
+  const material_localizations = packages__flutter__src__material__icon_button$46dart.src__material__material_localizations;
+  const tween = packages__flutter__src__animation__listener_helpers$46dart.src__animation__tween;
+  const animation = packages__flutter__src__animation__listener_helpers$46dart.src__animation__animation;
+  const curves = packages__flutter__src__animation__curves$46dart.src__animation__curves;
+  const basic_types = packages__flutter__src__painting__basic_types$46dart.src__painting__basic_types;
+  const assertions = packages__flutter__src__foundation__debug$46dart.src__foundation__assertions;
+  const edge_insets = packages__flutter__src__painting__edge_insets$46dart.src__painting__edge_insets;
+  const alignment = packages__flutter__src__painting__alignment$46dart.src__painting__alignment;
+  const progress_indicator = packages__flutter__src__material__progress_indicator$46dart.src__material__progress_indicator;
+  var refresh_indicator = Object.create(dart.library);
+  var $clamp = dartx.clamp;
+  var $add = dartx.add;
+  dart._checkModuleNullSafetyMode(true);
+  var T = {
+    ScrollNotificationTobool: () => (T.ScrollNotificationTobool = dart.constFn(dart.fnType(core.bool, [scroll_notification.ScrollNotification])))(),
+    ColorN: () => (T.ColorN = dart.constFn(dart.nullable(ui.Color)))(),
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
+    FutureOfvoid: () => (T.FutureOfvoid = dart.constFn(async.Future$(dart.void)))(),
+    CompleterOfvoid: () => (T.CompleterOfvoid = dart.constFn(async.Completer$(dart.void)))(),
+    VoidTobool: () => (T.VoidTobool = dart.constFn(dart.fnType(core.bool, [])))(),
+    VoidToNull: () => (T.VoidToNull = dart.constFn(dart.fnType(core.Null, [])))(),
+    voidToNull: () => (T.voidToNull = dart.constFn(dart.fnType(core.Null, [dart.void])))(),
+    NotificationListenerOfScrollNotification: () => (T.NotificationListenerOfScrollNotification = dart.constFn(notification_listener.NotificationListener$(scroll_notification.ScrollNotification)))(),
+    NotificationListenerOfOverscrollIndicatorNotification: () => (T.NotificationListenerOfOverscrollIndicatorNotification = dart.constFn(notification_listener.NotificationListener$(overscroll_indicator.OverscrollIndicatorNotification)))(),
+    JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    WidgetN: () => (T.WidgetN = dart.constFn(dart.nullable(framework.Widget)))(),
+    BuildContextAndWidgetNToRefreshProgressIndicator: () => (T.BuildContextAndWidgetNToRefreshProgressIndicator = dart.constFn(dart.fnType(progress_indicator.RefreshProgressIndicator, [framework.BuildContext, T.WidgetN()])))(),
+    TweenOfdouble: () => (T.TweenOfdouble = dart.constFn(tween.Tween$(core.double)))()
+  };
+  const CT = Object.create({
+    _: () => (C, CT)
+  });
+  dart.defineLazy(CT, {
+    get C0() {
+      return C[0] = dart.const({
+        __proto__: refresh_indicator._RefreshIndicatorMode.prototype,
+        [_name$]: "_RefreshIndicatorMode.drag",
+        index: 0
+      });
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: refresh_indicator._RefreshIndicatorMode.prototype,
+        [_name$]: "_RefreshIndicatorMode.armed",
+        index: 1
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: refresh_indicator._RefreshIndicatorMode.prototype,
+        [_name$]: "_RefreshIndicatorMode.snap",
+        index: 2
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: refresh_indicator._RefreshIndicatorMode.prototype,
+        [_name$]: "_RefreshIndicatorMode.refresh",
+        index: 3
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: refresh_indicator._RefreshIndicatorMode.prototype,
+        [_name$]: "_RefreshIndicatorMode.done",
+        index: 4
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: refresh_indicator._RefreshIndicatorMode.prototype,
+        [_name$]: "_RefreshIndicatorMode.canceled",
+        index: 5
+      });
+    },
+    get C6() {
+      return C[6] = dart.constList([C[0] || CT.C0, C[1] || CT.C1, C[2] || CT.C2, C[3] || CT.C3, C[4] || CT.C4, C[5] || CT.C5], refresh_indicator._RefreshIndicatorMode);
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: refresh_indicator.RefreshIndicatorTriggerMode.prototype,
+        [_name$]: "RefreshIndicatorTriggerMode.anywhere",
+        index: 0
+      });
+    },
+    get C8() {
+      return C[8] = dart.const({
+        __proto__: refresh_indicator.RefreshIndicatorTriggerMode.prototype,
+        [_name$]: "RefreshIndicatorTriggerMode.onEdge",
+        index: 1
+      });
+    },
+    get C9() {
+      return C[9] = dart.constList([C[7] || CT.C7, C[8] || CT.C8], refresh_indicator.RefreshIndicatorTriggerMode);
+    },
+    get C10() {
+      return C[10] = dart.fn(scroll_notification.defaultScrollNotificationPredicate, T.ScrollNotificationTobool());
+    },
+    get C12() {
+      return C[12] = dart.const({
+        __proto__: curves._Linear.prototype
+      });
+    },
+    get C11() {
+      return C[11] = dart.const({
+        __proto__: curves.Interval.prototype,
+        [Interval_curve]: C[12] || CT.C12,
+        [Interval_end]: 0.6666666666666666,
+        [Interval_begin]: 0
+      });
+    },
+    get C13() {
+      return C[13] = dart.const({
+        __proto__: basic_types.AxisDirection.prototype,
+        [_name]: "AxisDirection.down",
+        index: 2
+      });
+    },
+    get C14() {
+      return C[14] = dart.const({
+        __proto__: basic_types.AxisDirection.prototype,
+        [_name]: "AxisDirection.up",
+        index: 0
+      });
+    },
+    get C15() {
+      return C[15] = dart.const({
+        __proto__: basic_types.AxisDirection.prototype,
+        [_name]: "AxisDirection.left",
+        index: 3
+      });
+    },
+    get C16() {
+      return C[16] = dart.const({
+        __proto__: basic_types.AxisDirection.prototype,
+        [_name]: "AxisDirection.right",
+        index: 1
+      });
+    },
+    get C19() {
+      return C[19] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onNotification",
+        [_Location_column]: 9,
+        [_Location_line]: 502,
+        [_Location_file]: null
+      });
+    },
+    get C20() {
+      return C[20] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 9,
+        [_Location_line]: 503,
+        [_Location_file]: null
+      });
+    },
+    get C18() {
+      return C[18] = dart.constList([C[19] || CT.C19, C[20] || CT.C20], widget_inspector._Location);
+    },
+    get C17() {
+      return C[17] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[18] || CT.C18,
+        [_Location_name]: null,
+        [_Location_column]: 14,
+        [_Location_line]: 501,
+        [_Location_file]: "file:///G:/flutter/packages/flutter/lib/src/material/refresh_indicator.dart"
+      });
+    },
+    get C23() {
+      return C[23] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "onNotification",
+        [_Location_column]: 7,
+        [_Location_line]: 500,
+        [_Location_file]: null
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 7,
+        [_Location_line]: 501,
+        [_Location_file]: null
+      });
+    },
+    get C22() {
+      return C[22] = dart.constList([C[23] || CT.C23, C[24] || CT.C24], widget_inspector._Location);
+    },
+    get C21() {
+      return C[21] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[22] || CT.C22,
+        [_Location_name]: null,
+        [_Location_column]: 26,
+        [_Location_line]: 499,
+        [_Location_file]: "file:///G:/flutter/packages/flutter/lib/src/material/refresh_indicator.dart"
+      });
+    },
+    get C27() {
+      return C[27] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "semanticsLabel",
+        [_Location_column]: 23,
+        [_Location_line]: 544,
+        [_Location_file]: null
+      });
+    },
+    get C28() {
+      return C[28] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "semanticsValue",
+        [_Location_column]: 23,
+        [_Location_line]: 545,
+        [_Location_file]: null
+      });
+    },
+    get C29() {
+      return C[29] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "value",
+        [_Location_column]: 23,
+        [_Location_line]: 546,
+        [_Location_file]: null
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "valueColor",
+        [_Location_column]: 23,
+        [_Location_line]: 547,
+        [_Location_file]: null
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "backgroundColor",
+        [_Location_column]: 23,
+        [_Location_line]: 548,
+        [_Location_file]: null
+      });
+    },
+    get C32() {
+      return C[32] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "strokeWidth",
+        [_Location_column]: 23,
+        [_Location_line]: 549,
+        [_Location_file]: null
+      });
+    },
+    get C26() {
+      return C[26] = dart.constList([C[27] || CT.C27, C[28] || CT.C28, C[29] || CT.C29, C[30] || CT.C30, C[31] || CT.C31, C[32] || CT.C32], widget_inspector._Location);
+    },
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[26] || CT.C26,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 543,
+        [_Location_file]: "file:///G:/flutter/packages/flutter/lib/src/material/refresh_indicator.dart"
+      });
+    },
+    get C35() {
+      return C[35] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "animation",
+        [_Location_column]: 19,
+        [_Location_line]: 541,
+        [_Location_file]: null
+      });
+    },
+    get C36() {
+      return C[36] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "builder",
+        [_Location_column]: 19,
+        [_Location_line]: 542,
+        [_Location_file]: null
+      });
+    },
+    get C34() {
+      return C[34] = dart.constList([C[35] || CT.C35, C[36] || CT.C36], widget_inspector._Location);
+    },
+    get C33() {
+      return C[33] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[34] || CT.C34,
+        [_Location_name]: null,
+        [_Location_column]: 24,
+        [_Location_line]: 540,
+        [_Location_file]: "file:///G:/flutter/packages/flutter/lib/src/material/refresh_indicator.dart"
+      });
+    },
+    get C39() {
+      return C[39] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "scale",
+        [_Location_column]: 17,
+        [_Location_line]: 539,
+        [_Location_file]: null
+      });
+    },
+    get C40() {
+      return C[40] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 17,
+        [_Location_line]: 540,
+        [_Location_file]: null
+      });
+    },
+    get C38() {
+      return C[38] = dart.constList([C[39] || CT.C39, C[40] || CT.C40], widget_inspector._Location);
+    },
+    get C37() {
+      return C[37] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[38] || CT.C38,
+        [_Location_name]: null,
+        [_Location_column]: 22,
+        [_Location_line]: 538,
+        [_Location_file]: "file:///G:/flutter/packages/flutter/lib/src/material/refresh_indicator.dart"
+      });
+    },
+    get C43() {
+      return C[43] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "padding",
+        [_Location_column]: 15,
+        [_Location_line]: 532,
+        [_Location_file]: null
+      });
+    },
+    get C44() {
+      return C[44] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "alignment",
+        [_Location_column]: 15,
+        [_Location_line]: 535,
+        [_Location_file]: null
+      });
+    },
+    get C45() {
+      return C[45] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 15,
+        [_Location_line]: 538,
+        [_Location_file]: null
+      });
+    },
+    get C42() {
+      return C[42] = dart.constList([C[43] || CT.C43, C[44] || CT.C44, C[45] || CT.C45], widget_inspector._Location);
+    },
+    get C41() {
+      return C[41] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[42] || CT.C42,
+        [_Location_name]: null,
+        [_Location_column]: 20,
+        [_Location_line]: 531,
+        [_Location_file]: "file:///G:/flutter/packages/flutter/lib/src/material/refresh_indicator.dart"
+      });
+    },
+    get C48() {
+      return C[48] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "axisAlignment",
+        [_Location_column]: 13,
+        [_Location_line]: 529,
+        [_Location_file]: null
+      });
+    },
+    get C49() {
+      return C[49] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "sizeFactor",
+        [_Location_column]: 13,
+        [_Location_line]: 530,
+        [_Location_file]: null
+      });
+    },
+    get C50() {
+      return C[50] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 13,
+        [_Location_line]: 531,
+        [_Location_file]: null
+      });
+    },
+    get C47() {
+      return C[47] = dart.constList([C[48] || CT.C48, C[49] || CT.C49, C[50] || CT.C50], widget_inspector._Location);
+    },
+    get C46() {
+      return C[46] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[47] || CT.C47,
+        [_Location_name]: null,
+        [_Location_column]: 18,
+        [_Location_line]: 528,
+        [_Location_file]: "file:///G:/flutter/packages/flutter/lib/src/material/refresh_indicator.dart"
+      });
+    },
+    get C53() {
+      return C[53] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "top",
+        [_Location_column]: 11,
+        [_Location_line]: 524,
+        [_Location_file]: null
+      });
+    },
+    get C54() {
+      return C[54] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "bottom",
+        [_Location_column]: 11,
+        [_Location_line]: 525,
+        [_Location_file]: null
+      });
+    },
+    get C55() {
+      return C[55] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "left",
+        [_Location_column]: 11,
+        [_Location_line]: 526,
+        [_Location_file]: null
+      });
+    },
+    get C56() {
+      return C[56] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "right",
+        [_Location_column]: 11,
+        [_Location_line]: 527,
+        [_Location_file]: null
+      });
+    },
+    get C57() {
+      return C[57] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "child",
+        [_Location_column]: 11,
+        [_Location_line]: 528,
+        [_Location_file]: null
+      });
+    },
+    get C52() {
+      return C[52] = dart.constList([C[53] || CT.C53, C[54] || CT.C54, C[55] || CT.C55, C[56] || CT.C56, C[57] || CT.C57], widget_inspector._Location);
+    },
+    get C51() {
+      return C[51] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[52] || CT.C52,
+        [_Location_name]: null,
+        [_Location_column]: 28,
+        [_Location_line]: 523,
+        [_Location_file]: "file:///G:/flutter/packages/flutter/lib/src/material/refresh_indicator.dart"
+      });
+    },
+    get C60() {
+      return C[60] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: null,
+        [_Location_name]: "children",
+        [_Location_column]: 7,
+        [_Location_line]: 521,
+        [_Location_file]: null
+      });
+    },
+    get C59() {
+      return C[59] = dart.constList([C[60] || CT.C60], widget_inspector._Location);
+    },
+    get C58() {
+      return C[58] = dart.const({
+        __proto__: widget_inspector._Location.prototype,
+        [_Location_parameterLocations]: C[59] || CT.C59,
+        [_Location_name]: null,
+        [_Location_column]: 12,
+        [_Location_line]: 520,
+        [_Location_file]: "file:///G:/flutter/packages/flutter/lib/src/material/refresh_indicator.dart"
+      });
+    },
+    get C61() {
+      return C[61] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 150000
+      });
+    },
+    get C62() {
+      return C[62] = dart.const({
+        __proto__: core.Duration.prototype,
+        [Duration__duration]: 200000
+      });
+    }
+  }, false);
+  var C = Array(63).fill(void 0);
+  var I = [
+    "package:flutter/src/material/refresh_indicator.dart",
+    "file:///G:/flutter/packages/flutter/lib/src/material/refresh_indicator.dart"
+  ];
+  var _name$ = dart.privateName(refresh_indicator, "_name");
+  refresh_indicator._RefreshIndicatorMode = class _RefreshIndicatorMode extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (refresh_indicator._RefreshIndicatorMode.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = refresh_indicator._RefreshIndicatorMode.prototype;
+  dart.addTypeTests(refresh_indicator._RefreshIndicatorMode);
+  dart.addTypeCaches(refresh_indicator._RefreshIndicatorMode);
+  dart.setLibraryUri(refresh_indicator._RefreshIndicatorMode, I[0]);
+  dart.setFieldSignature(refresh_indicator._RefreshIndicatorMode, () => ({
+    __proto__: dart.getFields(refresh_indicator._RefreshIndicatorMode.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(refresh_indicator._RefreshIndicatorMode, ['toString']);
+  refresh_indicator._RefreshIndicatorMode.drag = C[0] || CT.C0;
+  refresh_indicator._RefreshIndicatorMode.armed = C[1] || CT.C1;
+  refresh_indicator._RefreshIndicatorMode.snap = C[2] || CT.C2;
+  refresh_indicator._RefreshIndicatorMode.refresh = C[3] || CT.C3;
+  refresh_indicator._RefreshIndicatorMode.done = C[4] || CT.C4;
+  refresh_indicator._RefreshIndicatorMode.canceled = C[5] || CT.C5;
+  refresh_indicator._RefreshIndicatorMode.values = C[6] || CT.C6;
+  refresh_indicator.RefreshIndicatorTriggerMode = class RefreshIndicatorTriggerMode extends core.Object {
+    toString() {
+      return this[_name$];
+    }
+  };
+  (refresh_indicator.RefreshIndicatorTriggerMode.new = function(index, _name) {
+    this.index = index;
+    this[_name$] = _name;
+    ;
+  }).prototype = refresh_indicator.RefreshIndicatorTriggerMode.prototype;
+  dart.addTypeTests(refresh_indicator.RefreshIndicatorTriggerMode);
+  dart.addTypeCaches(refresh_indicator.RefreshIndicatorTriggerMode);
+  dart.setLibraryUri(refresh_indicator.RefreshIndicatorTriggerMode, I[0]);
+  dart.setFieldSignature(refresh_indicator.RefreshIndicatorTriggerMode, () => ({
+    __proto__: dart.getFields(refresh_indicator.RefreshIndicatorTriggerMode.__proto__),
+    index: dart.finalFieldType(core.int),
+    [_name$]: dart.finalFieldType(core.String)
+  }));
+  dart.defineExtensionMethods(refresh_indicator.RefreshIndicatorTriggerMode, ['toString']);
+  refresh_indicator.RefreshIndicatorTriggerMode.anywhere = C[7] || CT.C7;
+  refresh_indicator.RefreshIndicatorTriggerMode.onEdge = C[8] || CT.C8;
+  refresh_indicator.RefreshIndicatorTriggerMode.values = C[9] || CT.C9;
+  var child$ = dart.privateName(refresh_indicator, "RefreshIndicator.child");
+  var displacement$ = dart.privateName(refresh_indicator, "RefreshIndicator.displacement");
+  var edgeOffset$ = dart.privateName(refresh_indicator, "RefreshIndicator.edgeOffset");
+  var onRefresh$ = dart.privateName(refresh_indicator, "RefreshIndicator.onRefresh");
+  var color$ = dart.privateName(refresh_indicator, "RefreshIndicator.color");
+  var backgroundColor$ = dart.privateName(refresh_indicator, "RefreshIndicator.backgroundColor");
+  var notificationPredicate$ = dart.privateName(refresh_indicator, "RefreshIndicator.notificationPredicate");
+  var semanticsLabel$ = dart.privateName(refresh_indicator, "RefreshIndicator.semanticsLabel");
+  var semanticsValue$ = dart.privateName(refresh_indicator, "RefreshIndicator.semanticsValue");
+  var strokeWidth$ = dart.privateName(refresh_indicator, "RefreshIndicator.strokeWidth");
+  var triggerMode$ = dart.privateName(refresh_indicator, "RefreshIndicator.triggerMode");
+  refresh_indicator.RefreshIndicator = class RefreshIndicator extends framework.StatefulWidget {
+    get child() {
+      return this[child$];
+    }
+    set child(value) {
+      super.child = value;
+    }
+    get displacement() {
+      return this[displacement$];
+    }
+    set displacement(value) {
+      super.displacement = value;
+    }
+    get edgeOffset() {
+      return this[edgeOffset$];
+    }
+    set edgeOffset(value) {
+      super.edgeOffset = value;
+    }
+    get onRefresh() {
+      return this[onRefresh$];
+    }
+    set onRefresh(value) {
+      super.onRefresh = value;
+    }
+    get color() {
+      return this[color$];
+    }
+    set color(value) {
+      super.color = value;
+    }
+    get backgroundColor() {
+      return this[backgroundColor$];
+    }
+    set backgroundColor(value) {
+      super.backgroundColor = value;
+    }
+    get notificationPredicate() {
+      return this[notificationPredicate$];
+    }
+    set notificationPredicate(value) {
+      super.notificationPredicate = value;
+    }
+    get semanticsLabel() {
+      return this[semanticsLabel$];
+    }
+    set semanticsLabel(value) {
+      super.semanticsLabel = value;
+    }
+    get semanticsValue() {
+      return this[semanticsValue$];
+    }
+    set semanticsValue(value) {
+      super.semanticsValue = value;
+    }
+    get strokeWidth() {
+      return this[strokeWidth$];
+    }
+    set strokeWidth(value) {
+      super.strokeWidth = value;
+    }
+    get triggerMode() {
+      return this[triggerMode$];
+    }
+    set triggerMode(value) {
+      super.triggerMode = value;
+    }
+    createState() {
+      return new refresh_indicator.RefreshIndicatorState.new();
+    }
+  };
+  (refresh_indicator.RefreshIndicator.new = function(opts) {
+    let key = opts && 'key' in opts ? opts.key : null;
+    let child = opts && 'child' in opts ? opts.child : null;
+    let displacement = opts && 'displacement' in opts ? opts.displacement : 40;
+    let edgeOffset = opts && 'edgeOffset' in opts ? opts.edgeOffset : 0;
+    let onRefresh = opts && 'onRefresh' in opts ? opts.onRefresh : null;
+    let color = opts && 'color' in opts ? opts.color : null;
+    let backgroundColor = opts && 'backgroundColor' in opts ? opts.backgroundColor : null;
+    let notificationPredicate = opts && 'notificationPredicate' in opts ? opts.notificationPredicate : C[10] || CT.C10;
+    let semanticsLabel = opts && 'semanticsLabel' in opts ? opts.semanticsLabel : null;
+    let semanticsValue = opts && 'semanticsValue' in opts ? opts.semanticsValue : null;
+    let strokeWidth = opts && 'strokeWidth' in opts ? opts.strokeWidth : 2;
+    let triggerMode = opts && 'triggerMode' in opts ? opts.triggerMode : C[8] || CT.C8;
+    let $36creationLocationd_0dea112b090073317d4 = opts && '$creationLocationd_0dea112b090073317d4' in opts ? opts.$creationLocationd_0dea112b090073317d4 : null;
+    this[child$] = child;
+    this[displacement$] = displacement;
+    this[edgeOffset$] = edgeOffset;
+    this[onRefresh$] = onRefresh;
+    this[color$] = color;
+    this[backgroundColor$] = backgroundColor;
+    this[notificationPredicate$] = notificationPredicate;
+    this[semanticsLabel$] = semanticsLabel;
+    this[semanticsValue$] = semanticsValue;
+    this[strokeWidth$] = strokeWidth;
+    this[triggerMode$] = triggerMode;
+    if (!(child !== null)) dart.assertFailed(null, I[1], 125, 15, "child != null");
+    if (!(onRefresh !== null)) dart.assertFailed(null, I[1], 126, 15, "onRefresh != null");
+    if (!(notificationPredicate !== null)) dart.assertFailed(null, I[1], 127, 15, "notificationPredicate != null");
+    if (!(strokeWidth !== null)) dart.assertFailed(null, I[1], 128, 15, "strokeWidth != null");
+    if (!(triggerMode !== null)) dart.assertFailed(null, I[1], 129, 15, "triggerMode != null");
+    refresh_indicator.RefreshIndicator.__proto__.new.call(this, {key: key, $creationLocationd_0dea112b090073317d4: $36creationLocationd_0dea112b090073317d4});
+    ;
+  }).prototype = refresh_indicator.RefreshIndicator.prototype;
+  dart.addTypeTests(refresh_indicator.RefreshIndicator);
+  dart.addTypeCaches(refresh_indicator.RefreshIndicator);
+  dart.setMethodSignature(refresh_indicator.RefreshIndicator, () => ({
+    __proto__: dart.getMethods(refresh_indicator.RefreshIndicator.__proto__),
+    createState: dart.fnType(refresh_indicator.RefreshIndicatorState, [])
+  }));
+  dart.setLibraryUri(refresh_indicator.RefreshIndicator, I[0]);
+  dart.setFieldSignature(refresh_indicator.RefreshIndicator, () => ({
+    __proto__: dart.getFields(refresh_indicator.RefreshIndicator.__proto__),
+    child: dart.finalFieldType(framework.Widget),
+    displacement: dart.finalFieldType(core.double),
+    edgeOffset: dart.finalFieldType(core.double),
+    onRefresh: dart.finalFieldType(dart.fnType(async.Future$(dart.void), [])),
+    color: dart.finalFieldType(dart.nullable(ui.Color)),
+    backgroundColor: dart.finalFieldType(dart.nullable(ui.Color)),
+    notificationPredicate: dart.finalFieldType(dart.fnType(core.bool, [scroll_notification.ScrollNotification])),
+    semanticsLabel: dart.finalFieldType(dart.nullable(core.String)),
+    semanticsValue: dart.finalFieldType(dart.nullable(core.String)),
+    strokeWidth: dart.finalFieldType(core.double),
+    triggerMode: dart.finalFieldType(refresh_indicator.RefreshIndicatorTriggerMode)
+  }));
+  var __RefreshIndicatorState__positionController = dart.privateName(refresh_indicator, "_#RefreshIndicatorState#_positionController");
+  var __RefreshIndicatorState__scaleController = dart.privateName(refresh_indicator, "_#RefreshIndicatorState#_scaleController");
+  var __RefreshIndicatorState__positionFactor = dart.privateName(refresh_indicator, "_#RefreshIndicatorState#_positionFactor");
+  var __RefreshIndicatorState__scaleFactor = dart.privateName(refresh_indicator, "_#RefreshIndicatorState#_scaleFactor");
+  var __RefreshIndicatorState__value = dart.privateName(refresh_indicator, "_#RefreshIndicatorState#_value");
+  var __RefreshIndicatorState__valueColor = dart.privateName(refresh_indicator, "_#RefreshIndicatorState#_valueColor");
+  var _mode = dart.privateName(refresh_indicator, "_mode");
+  var __RefreshIndicatorState__pendingRefreshFuture = dart.privateName(refresh_indicator, "_#RefreshIndicatorState#_pendingRefreshFuture");
+  var _isIndicatorAtTop = dart.privateName(refresh_indicator, "_isIndicatorAtTop");
+  var _dragOffset = dart.privateName(refresh_indicator, "_dragOffset");
+  var _positionController = dart.privateName(refresh_indicator, "_positionController");
+  var _scaleController = dart.privateName(refresh_indicator, "_scaleController");
+  var _positionFactor = dart.privateName(refresh_indicator, "_positionFactor");
+  var _scaleFactor = dart.privateName(refresh_indicator, "_scaleFactor");
+  var _value = dart.privateName(refresh_indicator, "_value");
+  var _valueColor = dart.privateName(refresh_indicator, "_valueColor");
+  var _pendingRefreshFuture = dart.privateName(refresh_indicator, "_pendingRefreshFuture");
+  var Interval_curve = dart.privateName(curves, "Interval.curve");
+  var Interval_end = dart.privateName(curves, "Interval.end");
+  var Interval_begin = dart.privateName(curves, "Interval.begin");
+  var _start = dart.privateName(refresh_indicator, "_start");
+  var _shouldStart = dart.privateName(refresh_indicator, "_shouldStart");
+  var _name = dart.privateName(basic_types, "_name");
+  var _dismiss = dart.privateName(refresh_indicator, "_dismiss");
+  var _checkDragOffset = dart.privateName(refresh_indicator, "_checkDragOffset");
+  var _show = dart.privateName(refresh_indicator, "_show");
+  var _handleScrollNotification = dart.privateName(refresh_indicator, "_handleScrollNotification");
+  var _handleGlowNotification = dart.privateName(refresh_indicator, "_handleGlowNotification");
+  var _Location_parameterLocations = dart.privateName(widget_inspector, "_Location.parameterLocations");
+  var _Location_name = dart.privateName(widget_inspector, "_Location.name");
+  var _Location_column = dart.privateName(widget_inspector, "_Location.column");
+  var _Location_line = dart.privateName(widget_inspector, "_Location.line");
+  var _Location_file = dart.privateName(widget_inspector, "_Location.file");
+  const State_TickerProviderStateMixin$36 = class State_TickerProviderStateMixin extends framework.State$(refresh_indicator.RefreshIndicator) {};
+  (State_TickerProviderStateMixin$36.new = function() {
+    ticker_provider.TickerProviderStateMixin$(refresh_indicator.RefreshIndicator)[dart.mixinNew].call(this);
+    State_TickerProviderStateMixin$36.__proto__.new.call(this);
+  }).prototype = State_TickerProviderStateMixin$36.prototype;
+  dart.applyMixin(State_TickerProviderStateMixin$36, ticker_provider.TickerProviderStateMixin$(refresh_indicator.RefreshIndicator));
+  refresh_indicator.RefreshIndicatorState = class RefreshIndicatorState extends State_TickerProviderStateMixin$36 {
+    get [_positionController]() {
+      let t0;
+      t0 = this[__RefreshIndicatorState__positionController];
+      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("_positionController")) : t0;
+    }
+    set [_positionController](t0) {
+      this[__RefreshIndicatorState__positionController] = t0;
+    }
+    get [_scaleController]() {
+      let t1;
+      t1 = this[__RefreshIndicatorState__scaleController];
+      return t1 == null ? dart.throw(new _internal.LateError.fieldNI("_scaleController")) : t1;
+    }
+    set [_scaleController](t1) {
+      this[__RefreshIndicatorState__scaleController] = t1;
+    }
+    get [_positionFactor]() {
+      let t2;
+      t2 = this[__RefreshIndicatorState__positionFactor];
+      return t2 == null ? dart.throw(new _internal.LateError.fieldNI("_positionFactor")) : t2;
+    }
+    set [_positionFactor](t2) {
+      this[__RefreshIndicatorState__positionFactor] = t2;
+    }
+    get [_scaleFactor]() {
+      let t3;
+      t3 = this[__RefreshIndicatorState__scaleFactor];
+      return t3 == null ? dart.throw(new _internal.LateError.fieldNI("_scaleFactor")) : t3;
+    }
+    set [_scaleFactor](t3) {
+      this[__RefreshIndicatorState__scaleFactor] = t3;
+    }
+    get [_value]() {
+      let t4;
+      t4 = this[__RefreshIndicatorState__value];
+      return t4 == null ? dart.throw(new _internal.LateError.fieldNI("_value")) : t4;
+    }
+    set [_value](t4) {
+      this[__RefreshIndicatorState__value] = t4;
+    }
+    get [_valueColor]() {
+      let t5;
+      t5 = this[__RefreshIndicatorState__valueColor];
+      return t5 == null ? dart.throw(new _internal.LateError.fieldNI("_valueColor")) : t5;
+    }
+    set [_valueColor](t5) {
+      this[__RefreshIndicatorState__valueColor] = t5;
+    }
+    get [_pendingRefreshFuture]() {
+      let t6;
+      t6 = this[__RefreshIndicatorState__pendingRefreshFuture];
+      return t6 == null ? dart.throw(new _internal.LateError.fieldNI("_pendingRefreshFuture")) : t6;
+    }
+    set [_pendingRefreshFuture](t6) {
+      this[__RefreshIndicatorState__pendingRefreshFuture] = t6;
+    }
+    initState() {
+      super.initState();
+      this[_positionController] = new animation_controller.AnimationController.new({vsync: this});
+      this[_positionFactor] = this[_positionController].drive(core.double, refresh_indicator.RefreshIndicatorState._kDragSizeFactorLimitTween);
+      this[_value] = this[_positionController].drive(core.double, refresh_indicator.RefreshIndicatorState._threeQuarterTween);
+      this[_scaleController] = new animation_controller.AnimationController.new({vsync: this});
+      this[_scaleFactor] = this[_scaleController].drive(core.double, refresh_indicator.RefreshIndicatorState._oneToZeroTween);
+    }
+    didChangeDependencies() {
+      let t7, t7$;
+      let theme = theme$.Theme.of(this.context);
+      this[_valueColor] = this[_positionController].drive(T.ColorN(), new tween.ColorTween.new({begin: (t7 = this.widget.color, t7 == null ? theme.colorScheme.primary : t7).withOpacity(0.0), end: (t7$ = this.widget.color, t7$ == null ? theme.colorScheme.primary : t7$).withOpacity(1.0)}).chain(new tween.CurveTween.new({curve: C[11] || CT.C11})));
+      super.didChangeDependencies();
+    }
+    didUpdateWidget(oldWidget) {
+      let t7, t7$;
+      refresh_indicator.RefreshIndicator.as(oldWidget);
+      super.didUpdateWidget(oldWidget);
+      if (!dart.equals(oldWidget.color, this.widget.color)) {
+        let theme = theme$.Theme.of(this.context);
+        this[_valueColor] = this[_positionController].drive(T.ColorN(), new tween.ColorTween.new({begin: (t7 = this.widget.color, t7 == null ? theme.colorScheme.primary : t7).withOpacity(0.0), end: (t7$ = this.widget.color, t7$ == null ? theme.colorScheme.primary : t7$).withOpacity(1.0)}).chain(new tween.CurveTween.new({curve: C[11] || CT.C11})));
+      }
+    }
+    dispose() {
+      this[_positionController].dispose();
+      this[_scaleController].dispose();
+      super.dispose();
+    }
+    [_shouldStart](notification) {
+      return (scroll_notification.ScrollStartNotification.is(notification) && notification.dragDetails != null || scroll_notification.ScrollUpdateNotification.is(notification) && notification.dragDetails != null && this.widget.triggerMode === refresh_indicator.RefreshIndicatorTriggerMode.anywhere) && notification.metrics.extentBefore === 0.0 && this[_mode] == null && this[_start](notification.metrics.axisDirection);
+    }
+    [_handleScrollNotification](notification) {
+      let t8, t7;
+      if (!(t7 = this.widget, t8 = notification, t7.notificationPredicate(t8))) return false;
+      if (this[_shouldStart](notification)) {
+        this.setState(dart.fn(() => {
+          this[_mode] = refresh_indicator._RefreshIndicatorMode.drag;
+        }, T.VoidTovoid()));
+        return false;
+      }
+      let indicatorAtTopNow = null;
+      switch (notification.metrics.axisDirection) {
+        case C[13] || CT.C13:
+        {
+          indicatorAtTopNow = true;
+          break;
+        }
+        case C[14] || CT.C14:
+        {
+          indicatorAtTopNow = false;
+          break;
+        }
+        case C[15] || CT.C15:
+        case C[16] || CT.C16:
+        {
+          indicatorAtTopNow = null;
+          break;
+        }
+      }
+      if (indicatorAtTopNow != this[_isIndicatorAtTop]) {
+        if (this[_mode] === refresh_indicator._RefreshIndicatorMode.drag || this[_mode] === refresh_indicator._RefreshIndicatorMode.armed) this[_dismiss](refresh_indicator._RefreshIndicatorMode.canceled);
+      } else if (scroll_notification.ScrollUpdateNotification.is(notification)) {
+        if (this[_mode] === refresh_indicator._RefreshIndicatorMode.drag || this[_mode] === refresh_indicator._RefreshIndicatorMode.armed) {
+          if (notification.metrics.extentBefore > 0.0) {
+            this[_dismiss](refresh_indicator._RefreshIndicatorMode.canceled);
+          } else {
+            this[_dragOffset] = dart.nullCheck(this[_dragOffset]) - dart.nullCheck(notification.scrollDelta);
+            this[_checkDragOffset](notification.metrics.viewportDimension);
+          }
+        }
+        if (this[_mode] === refresh_indicator._RefreshIndicatorMode.armed && notification.dragDetails == null) {
+          this[_show]();
+        }
+      } else if (scroll_notification.OverscrollNotification.is(notification)) {
+        if (this[_mode] === refresh_indicator._RefreshIndicatorMode.drag || this[_mode] === refresh_indicator._RefreshIndicatorMode.armed) {
+          this[_dragOffset] = dart.nullCheck(this[_dragOffset]) - notification.overscroll;
+          this[_checkDragOffset](notification.metrics.viewportDimension);
+        }
+      } else if (scroll_notification.ScrollEndNotification.is(notification)) {
+        switch (this[_mode]) {
+          case C[1] || CT.C1:
+          {
+            this[_show]();
+            break;
+          }
+          case C[0] || CT.C0:
+          {
+            this[_dismiss](refresh_indicator._RefreshIndicatorMode.canceled);
+            break;
+          }
+          default:
+          {
+            break;
+          }
+        }
+      }
+      return false;
+    }
+    [_handleGlowNotification](notification) {
+      if (notification.depth !== 0 || !notification.leading) return false;
+      if (this[_mode] === refresh_indicator._RefreshIndicatorMode.drag) {
+        notification.disallowGlow();
+        return true;
+      }
+      return false;
+    }
+    [_start](direction) {
+      if (!(this[_mode] == null)) dart.assertFailed(null, I[1], 368, 12, "_mode == null");
+      if (!(this[_isIndicatorAtTop] == null)) dart.assertFailed(null, I[1], 369, 12, "_isIndicatorAtTop == null");
+      if (!(this[_dragOffset] == null)) dart.assertFailed(null, I[1], 370, 12, "_dragOffset == null");
+      switch (direction) {
+        case C[13] || CT.C13:
+        {
+          this[_isIndicatorAtTop] = true;
+          break;
+        }
+        case C[14] || CT.C14:
+        {
+          this[_isIndicatorAtTop] = false;
+          break;
+        }
+        case C[15] || CT.C15:
+        case C[16] || CT.C16:
+        {
+          this[_isIndicatorAtTop] = null;
+          return false;
+        }
+      }
+      this[_dragOffset] = 0.0;
+      this[_scaleController].value = 0.0;
+      this[_positionController].value = 0.0;
+      return true;
+    }
+    [_checkDragOffset](containerExtent) {
+      if (!(this[_mode] === refresh_indicator._RefreshIndicatorMode.drag || this[_mode] === refresh_indicator._RefreshIndicatorMode.armed)) dart.assertFailed(null, I[1], 391, 12, "_mode == _RefreshIndicatorMode.drag || _mode == _RefreshIndicatorMode.armed");
+      let newValue = dart.nullCheck(this[_dragOffset]) / (containerExtent * 0.25);
+      if (this[_mode] === refresh_indicator._RefreshIndicatorMode.armed) newValue = math.max(core.double, newValue, 1.0 / 1.5);
+      this[_positionController].value = newValue[$clamp](0.0, 1.0);
+      if (this[_mode] === refresh_indicator._RefreshIndicatorMode.drag && dart.nullCheck(this[_valueColor].value).alpha === 255) this[_mode] = refresh_indicator._RefreshIndicatorMode.armed;
+    }
+    [_dismiss](newMode) {
+      return async.async(dart.void, (function* _dismiss() {
+        yield T.FutureOfvoid().value();
+        if (!(newMode === refresh_indicator._RefreshIndicatorMode.canceled || newMode === refresh_indicator._RefreshIndicatorMode.done)) dart.assertFailed(null, I[1], 406, 12, "newMode == _RefreshIndicatorMode.canceled || newMode == _RefreshIndicatorMode.done");
+        this.setState(dart.fn(() => {
+          this[_mode] = newMode;
+        }, T.VoidTovoid()));
+        switch (this[_mode]) {
+          case C[4] || CT.C4:
+          {
+            yield this[_scaleController].animateTo(1.0, {duration: refresh_indicator._kIndicatorScaleDuration});
+            break;
+          }
+          case C[5] || CT.C5:
+          {
+            yield this[_positionController].animateTo(0.0, {duration: refresh_indicator._kIndicatorScaleDuration});
+            break;
+          }
+          default:
+          {
+            if (!false) dart.assertFailed(null, I[1], 418, 16, "false");
+          }
+        }
+        if (this.mounted && this[_mode] === newMode) {
+          this[_dragOffset] = null;
+          this[_isIndicatorAtTop] = null;
+          this.setState(dart.fn(() => {
+            this[_mode] = null;
+          }, T.VoidTovoid()));
+        }
+      }).bind(this));
+    }
+    [_show]() {
+      if (!(this[_mode] !== refresh_indicator._RefreshIndicatorMode.refresh)) dart.assertFailed(null, I[1], 430, 12, "_mode != _RefreshIndicatorMode.refresh");
+      if (!(this[_mode] !== refresh_indicator._RefreshIndicatorMode.snap)) dart.assertFailed(null, I[1], 431, 12, "_mode != _RefreshIndicatorMode.snap");
+      let completer = T.CompleterOfvoid().new();
+      this[_pendingRefreshFuture] = completer.future;
+      this[_mode] = refresh_indicator._RefreshIndicatorMode.snap;
+      this[_positionController].animateTo(1.0 / 1.5, {duration: refresh_indicator._kIndicatorSnapDuration}).then(dart.void, dart.fn(value => {
+        if (this.mounted && this[_mode] === refresh_indicator._RefreshIndicatorMode.snap) {
+          if (!(this.widget.onRefresh !== null)) dart.assertFailed(null, I[1], 439, 18, "widget.onRefresh != null");
+          this.setState(dart.fn(() => {
+            this[_mode] = refresh_indicator._RefreshIndicatorMode.refresh;
+          }, T.VoidTovoid()));
+          let refreshResult = this.widget.onRefresh();
+          if (!dart.fn(() => {
+            if (refreshResult === null) assertions.FlutterError.reportError(new assertions.FlutterErrorDetails.new({exception: assertions.FlutterError.new("The onRefresh callback returned null.\n" + "The RefreshIndicator onRefresh callback must return a Future."), context: new assertions.ErrorDescription.new("when calling onRefresh"), library: "material library"}));
+            return true;
+          }, T.VoidTobool())()) dart.assertFailed(null, I[1], 446, 18, "() {\r\n            if (refreshResult == null)\r\n              FlutterError.reportError(FlutterErrorDetails(\r\n                exception: FlutterError(\r\n                  'The onRefresh callback returned null.\\n'\r\n                  'The RefreshIndicator onRefresh callback must return a Future.',\r\n                ),\r\n                context: ErrorDescription('when calling onRefresh'),\r\n                library: 'material library',\r\n              ));\r\n            return true;\r\n          }()");
+          if (refreshResult === null) return;
+          refreshResult.whenComplete(dart.fn(() => {
+            if (this.mounted && this[_mode] === refresh_indicator._RefreshIndicatorMode.refresh) {
+              completer.complete();
+              this[_dismiss](refresh_indicator._RefreshIndicatorMode.done);
+            }
+          }, T.VoidToNull()));
+        }
+      }, T.voidToNull()));
+    }
+    show(opts) {
+      let atTop = opts && 'atTop' in opts ? opts.atTop : true;
+      if (this[_mode] !== refresh_indicator._RefreshIndicatorMode.refresh && this[_mode] !== refresh_indicator._RefreshIndicatorMode.snap) {
+        if (this[_mode] == null) this[_start](atTop ? basic_types.AxisDirection.down : basic_types.AxisDirection.up);
+        this[_show]();
+      }
+      return this[_pendingRefreshFuture];
+    }
+    build(context) {
+      if (!debug.debugCheckHasMaterialLocalizations(context)) dart.assertFailed(null, I[1], 498, 12, "debugCheckHasMaterialLocalizations(context)");
+      let child = new (T.NotificationListenerOfScrollNotification()).new({onNotification: dart.bind(this, _handleScrollNotification), child: new (T.NotificationListenerOfOverscrollIndicatorNotification()).new({onNotification: dart.bind(this, _handleGlowNotification), child: this.widget.child, $creationLocationd_0dea112b090073317d4: C[17] || CT.C17}), $creationLocationd_0dea112b090073317d4: C[21] || CT.C21});
+      if (!dart.fn(() => {
+        if (this[_mode] == null) {
+          if (!(this[_dragOffset] == null)) dart.assertFailed(null, I[1], 508, 16, "_dragOffset == null");
+          if (!(this[_isIndicatorAtTop] == null)) dart.assertFailed(null, I[1], 509, 16, "_isIndicatorAtTop == null");
+        } else {
+          if (!(this[_dragOffset] != null)) dart.assertFailed(null, I[1], 511, 16, "_dragOffset != null");
+          if (!(this[_isIndicatorAtTop] != null)) dart.assertFailed(null, I[1], 512, 16, "_isIndicatorAtTop != null");
+        }
+        return true;
+      }, T.VoidTobool())()) dart.assertFailed(null, I[1], 506, 12, "() {\r\n      if (_mode == null) {\r\n        assert(_dragOffset == null);\r\n        assert(_isIndicatorAtTop == null);\r\n      } else {\r\n        assert(_dragOffset != null);\r\n        assert(_isIndicatorAtTop != null);\r\n      }\r\n      return true;\r\n    }()");
+      let showIndeterminateIndicator = this[_mode] === refresh_indicator._RefreshIndicatorMode.refresh || this[_mode] === refresh_indicator._RefreshIndicatorMode.done;
+      return new basic.Stack.new({children: (() => {
+          let t7 = T.JSArrayOfWidget().of([child]);
+          if (this[_mode] != null) t7[$add](new basic.Positioned.new({top: dart.nullCheck(this[_isIndicatorAtTop]) ? this.widget.edgeOffset : null, bottom: !dart.nullCheck(this[_isIndicatorAtTop]) ? this.widget.edgeOffset : null, left: 0.0, right: 0.0, child: new transitions.SizeTransition.new({axisAlignment: dart.nullCheck(this[_isIndicatorAtTop]) ? 1.0 : -1.0, sizeFactor: this[_positionFactor], child: new container.Container.new({padding: dart.nullCheck(this[_isIndicatorAtTop]) ? new edge_insets.EdgeInsets.only({top: this.widget.displacement}) : new edge_insets.EdgeInsets.only({bottom: this.widget.displacement}), alignment: dart.nullCheck(this[_isIndicatorAtTop]) ? alignment.Alignment.topCenter : alignment.Alignment.bottomCenter, child: new transitions.ScaleTransition.new({scale: this[_scaleFactor], child: new transitions.AnimatedBuilder.new({animation: this[_positionController], builder: dart.fn((context, child) => {
+                      let t8;
+                      return new progress_indicator.RefreshProgressIndicator.new({semanticsLabel: (t8 = this.widget.semanticsLabel, t8 == null ? material_localizations.MaterialLocalizations.of(context).refreshIndicatorSemanticLabel : t8), semanticsValue: this.widget.semanticsValue, value: showIndeterminateIndicator ? null : this[_value].value, valueColor: this[_valueColor], backgroundColor: this.widget.backgroundColor, strokeWidth: this.widget.strokeWidth, $creationLocationd_0dea112b090073317d4: C[25] || CT.C25});
+                    }, T.BuildContextAndWidgetNToRefreshProgressIndicator()), $creationLocationd_0dea112b090073317d4: C[33] || CT.C33}), $creationLocationd_0dea112b090073317d4: C[37] || CT.C37}), $creationLocationd_0dea112b090073317d4: C[41] || CT.C41}), $creationLocationd_0dea112b090073317d4: C[46] || CT.C46}), $creationLocationd_0dea112b090073317d4: C[51] || CT.C51}));
+          return t7;
+        })(), $creationLocationd_0dea112b090073317d4: C[58] || CT.C58});
+    }
+  };
+  (refresh_indicator.RefreshIndicatorState.new = function() {
+    this[__RefreshIndicatorState__positionController] = null;
+    this[__RefreshIndicatorState__scaleController] = null;
+    this[__RefreshIndicatorState__positionFactor] = null;
+    this[__RefreshIndicatorState__scaleFactor] = null;
+    this[__RefreshIndicatorState__value] = null;
+    this[__RefreshIndicatorState__valueColor] = null;
+    this[_mode] = null;
+    this[__RefreshIndicatorState__pendingRefreshFuture] = null;
+    this[_isIndicatorAtTop] = null;
+    this[_dragOffset] = null;
+    refresh_indicator.RefreshIndicatorState.__proto__.new.call(this);
+    ;
+  }).prototype = refresh_indicator.RefreshIndicatorState.prototype;
+  dart.addTypeTests(refresh_indicator.RefreshIndicatorState);
+  dart.addTypeCaches(refresh_indicator.RefreshIndicatorState);
+  dart.setMethodSignature(refresh_indicator.RefreshIndicatorState, () => ({
+    __proto__: dart.getMethods(refresh_indicator.RefreshIndicatorState.__proto__),
+    [_shouldStart]: dart.fnType(core.bool, [scroll_notification.ScrollNotification]),
+    [_handleScrollNotification]: dart.fnType(core.bool, [scroll_notification.ScrollNotification]),
+    [_handleGlowNotification]: dart.fnType(core.bool, [overscroll_indicator.OverscrollIndicatorNotification]),
+    [_start]: dart.fnType(core.bool, [basic_types.AxisDirection]),
+    [_checkDragOffset]: dart.fnType(dart.void, [core.double]),
+    [_dismiss]: dart.fnType(async.Future$(dart.void), [refresh_indicator._RefreshIndicatorMode]),
+    [_show]: dart.fnType(dart.void, []),
+    show: dart.fnType(async.Future$(dart.void), [], {atTop: core.bool}, {}),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setGetterSignature(refresh_indicator.RefreshIndicatorState, () => ({
+    __proto__: dart.getGetters(refresh_indicator.RefreshIndicatorState.__proto__),
+    [_positionController]: animation_controller.AnimationController,
+    [_scaleController]: animation_controller.AnimationController,
+    [_positionFactor]: animation.Animation$(core.double),
+    [_scaleFactor]: animation.Animation$(core.double),
+    [_value]: animation.Animation$(core.double),
+    [_valueColor]: animation.Animation$(dart.nullable(ui.Color)),
+    [_pendingRefreshFuture]: async.Future$(dart.void)
+  }));
+  dart.setSetterSignature(refresh_indicator.RefreshIndicatorState, () => ({
+    __proto__: dart.getSetters(refresh_indicator.RefreshIndicatorState.__proto__),
+    [_positionController]: animation_controller.AnimationController,
+    [_scaleController]: animation_controller.AnimationController,
+    [_positionFactor]: animation.Animation$(core.double),
+    [_scaleFactor]: animation.Animation$(core.double),
+    [_value]: animation.Animation$(core.double),
+    [_valueColor]: animation.Animation$(dart.nullable(ui.Color)),
+    [_pendingRefreshFuture]: async.Future$(dart.void)
+  }));
+  dart.setLibraryUri(refresh_indicator.RefreshIndicatorState, I[0]);
+  dart.setFieldSignature(refresh_indicator.RefreshIndicatorState, () => ({
+    __proto__: dart.getFields(refresh_indicator.RefreshIndicatorState.__proto__),
+    [__RefreshIndicatorState__positionController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
+    [__RefreshIndicatorState__scaleController]: dart.fieldType(dart.nullable(animation_controller.AnimationController)),
+    [__RefreshIndicatorState__positionFactor]: dart.fieldType(dart.nullable(animation.Animation$(core.double))),
+    [__RefreshIndicatorState__scaleFactor]: dart.fieldType(dart.nullable(animation.Animation$(core.double))),
+    [__RefreshIndicatorState__value]: dart.fieldType(dart.nullable(animation.Animation$(core.double))),
+    [__RefreshIndicatorState__valueColor]: dart.fieldType(dart.nullable(animation.Animation$(dart.nullable(ui.Color)))),
+    [_mode]: dart.fieldType(dart.nullable(refresh_indicator._RefreshIndicatorMode)),
+    [__RefreshIndicatorState__pendingRefreshFuture]: dart.fieldType(dart.nullable(async.Future$(dart.void))),
+    [_isIndicatorAtTop]: dart.fieldType(dart.nullable(core.bool)),
+    [_dragOffset]: dart.fieldType(dart.nullable(core.double))
+  }));
+  dart.defineLazy(refresh_indicator.RefreshIndicatorState, {
+    /*refresh_indicator.RefreshIndicatorState._threeQuarterTween*/get _threeQuarterTween() {
+      return new (T.TweenOfdouble()).new({begin: 0.0, end: 0.75});
+    },
+    /*refresh_indicator.RefreshIndicatorState._kDragSizeFactorLimitTween*/get _kDragSizeFactorLimitTween() {
+      return new (T.TweenOfdouble()).new({begin: 0.0, end: 1.5});
+    },
+    /*refresh_indicator.RefreshIndicatorState._oneToZeroTween*/get _oneToZeroTween() {
+      return new (T.TweenOfdouble()).new({begin: 1.0, end: 0.0});
+    }
+  }, false);
+  var Duration__duration = dart.privateName(core, "Duration._duration");
+  dart.defineLazy(refresh_indicator, {
+    /*refresh_indicator._kDragContainerExtentPercentage*/get _kDragContainerExtentPercentage() {
+      return 0.25;
+    },
+    /*refresh_indicator._kDragSizeFactorLimit*/get _kDragSizeFactorLimit() {
+      return 1.5;
+    },
+    /*refresh_indicator._kIndicatorSnapDuration*/get _kIndicatorSnapDuration() {
+      return C[61] || CT.C61;
+    },
+    /*refresh_indicator._kIndicatorScaleDuration*/get _kIndicatorScaleDuration() {
+      return C[62] || CT.C62;
+    }
+  }, false);
+  dart.trackLibraries("packages/flutter/src/material/refresh_indicator.dart", {
+    "package:flutter/src/material/refresh_indicator.dart": refresh_indicator
+  }, {
+  }, '{"version":3,"sourceRoot":"","sources":["refresh_indicator.dart"],"names":[],"mappings":"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","file":"../../../../../../packages/flutter/src/material/refresh_indicator.dart.lib.js"}');
+  // Exports:
+  return {
+    src__material__refresh_indicator: refresh_indicator
+  };
+}));
+
+//# sourceMappingURL=refresh_indicator.dart.lib.js.map
