@@ -1,11 +1,13 @@
 import 'dart:convert';
 
 import 'package:bilibili/http/http.dart';
+import 'package:chewie/chewie.dart';
 import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:chewie_audio/chewie_audio.dart';
 
 class VideoPage extends StatefulWidget {
   final aid;
@@ -19,20 +21,42 @@ class VideoPage extends StatefulWidget {
 class _VideoPageState extends State<VideoPage> {
 
    late VideoPlayerController _controller;
+   late VideoPlayerController _audioController;
+
+  // late ChewieController _chewieController;
+
+   
 
     String url = '';
+
+  late String audioUrl;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     _controller = VideoPlayerController.network(
+        'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true))
+      ..initialize().then((_) {
+        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+        setState(() {});
+      });
+    _audioController = VideoPlayerController.network(
         'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4')
       ..initialize().then((_) {
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {});
       });
     getUrl();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _controller.dispose();
+    _audioController.dispose();
+    // player.dispose();
   }
 
 
@@ -50,22 +74,54 @@ class _VideoPageState extends State<VideoPage> {
     String aa = await HttpRequest.getInstance().get(url);
     var bb = jsonDecode(aa);
     String cc =  bb['data']['dash']['video'][0]['base_url'];
-    print(bb['data']['dash']);
+    // print(bb['data']['dash']);
+    // print(bb['data']['dash']['audio']);
     url = cc;
-    _controller.dispose();
-    _controller = VideoPlayerController.network(url)
-      ..initialize().then((_) {
-        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-        setState(() {});
+    _controller = VideoPlayerController.network(url,videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true))..initialize().then((value){
+      setState(() {
+        
       });
-    _controller.addListener(() {
-      setState(() {});
     });
+    // await _controller.initialize();
+    _controller.addListener(() {
+          setState(() {
+            print('刷新刷新');
+          });
+        });
+    audioUrl = bb['data']['dash']['audio'][0]['base_url'];
+    _audioController = VideoPlayerController.network(audioUrl)..initialize().then((value){
+      setState(() {
+        
+      });
+    });
+    _audioController.addListener(() {
+          setState(() {
+            print('audio刷新刷新');
+          });
+        });
+    
   }
 
+  // 控制音频和视频播放 暂停
+  playOrStop() async {
+      if(_audioController.value.isPlaying) {
+        await _audioController.pause();
+        await _controller.pause();
+        
+      }else {
+        await _audioController.play();
+        await _controller.play();
+        
+      }
+  }
 
   @override
   Widget build(BuildContext context) {
+    // final chewieController = ChewieController(
+    //   videoPlayerController: _controller,
+    //   autoPlay: false,
+    //   looping: true,
+    // );
     return Material(
       child: Scaffold(
         body: CustomScrollView(
@@ -75,22 +131,18 @@ class _VideoPageState extends State<VideoPage> {
                 alignment: Alignment.bottomCenter,
                 children: [
                   _controller.value.isInitialized
-                    ? AspectRatio(
-                        aspectRatio: _controller.value.aspectRatio,
-                        child: VideoPlayer(_controller),
-                      )
-                    : Container(),
+              ? AspectRatio(
+                  aspectRatio: _controller.value.aspectRatio,
+                  child: VideoPlayer(_controller),
+                )
+              : Container(),
+                  
                   Row(
                     children: [
                       // 暂停播放图标
                       InkWell(
                           onTap: () {
-                            setState(() {
-                              // _controller.
-                              _controller.value.isPlaying
-                                  ? _controller.pause()
-                                  : _controller.play();
-                            });
+                            playOrStop();
                           },
                           child: Icon(
                             _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
@@ -112,7 +164,7 @@ class _VideoPageState extends State<VideoPage> {
                   ) 
                 ], 
               )
-            ),
+            )
           ], 
         ),
       ), 

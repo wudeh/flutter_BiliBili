@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "G:\\flutter_app\\bilibili\\build\\url_launcher\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+            "outputFile": "G:\\flutter_app\\flutter_BiliBili\\build\\url_launcher\\intermediates\\res\\merged\\debug\\values-v21\\values-v21.xml",
             "map": [
                 {
                     "source": "C:\\Users\\竹子梢头\\.gradle\\caches\\transforms-2\\files-2.1\\2e94107f30f39be366a17347c2bf100b\\core-1.1.0\\res\\values-v21\\values-v21.xml",
@@ -17,7 +17,7 @@
             ]
         },
         {
-            "outputFile": "G:\\flutter_app\\bilibili\\build\\url_launcher\\intermediates\\res\\merged\\debug\\values-v21\\values-v21.xml",
+            "outputFile": "G:\\flutter_app\\flutter_BiliBili\\build\\url_launcher\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
             "map": [
                 {
                     "source": "C:\\Users\\竹子梢头\\.gradle\\caches\\transforms-2\\files-2.1\\2e94107f30f39be366a17347c2bf100b\\core-1.1.0\\res\\values-v21\\values-v21.xml",

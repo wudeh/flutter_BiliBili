@@ -37,6 +37,8 @@ dependencies:
   crypto: any
   fluro: any
   just_audio: any
+  chewie: any
+  chewie_audio: any
 
 dev_dependencies:
   flutter_test:

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "G:\\flutter_app\\bilibili\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "G:\\flutter_app\\flutter_BiliBili\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\竹子梢头\\.gradle\\caches\\transforms-2\\files-2.1\\d5c4acb4b33d118bef3f5c1a30d2f61d\\media-1.2.0-alpha03\\res\\values\\values.xml",
@@ -18,25 +18,6 @@
                         "startOffsets": "187,276,405,4211,4833,6214,6390,6512,6774,6969",
                         "endColumns": "88,70,72,61,59,65,121,60,65,66",
                         "endOffsets": "271,342,473,4268,4888,6275,6507,6568,6835,7031"
-                    }
-                },
-                {
-                    "source": "G:\\flutter_app\\bilibili\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "176,830",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "472,996"
-                    },
-                    "to": {
-                        "startLines": "88,93",
-                        "startColumns": "4,4",
-                        "startOffsets": "5430,5727",
-                        "endLines": "92,95",
-                        "endColumns": "12,12",
-                        "endOffsets": "5722,5891"
                     }
                 },
                 {
@@ -73,6 +54,25 @@
                         "startOffsets": "4963,5037,5104,5169,5260",
                         "endColumns": "73,66,64,90,98",
                         "endOffsets": "5032,5099,5164,5255,5354"
+                    }
+                },
+                {
+                    "source": "G:\\flutter_app\\flutter_BiliBili\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "176,830",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "472,996"
+                    },
+                    "to": {
+                        "startLines": "88,93",
+                        "startColumns": "4,4",
+                        "startOffsets": "5430,5727",
+                        "endLines": "92,95",
+                        "endColumns": "12,12",
+                        "endOffsets": "5722,5891"
                     }
                 }
             ]

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "G:\\flutter_app\\bilibili\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "G:\\flutter_app\\flutter_BiliBili\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "G:\\flutter_app\\bilibili\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "G:\\flutter_app\\flutter_BiliBili\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

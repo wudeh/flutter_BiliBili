@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "G:\\flutter_app\\bilibili\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "G:\\flutter_app\\flutter_BiliBili\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
                     "source": "C:\\Users\\竹子梢头\\.gradle\\caches\\transforms-2\\files-2.1\\d5c4acb4b33d118bef3f5c1a30d2f61d\\media-1.2.0-alpha03\\res\\values-v24\\values-v24.xml",

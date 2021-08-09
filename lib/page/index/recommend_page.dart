@@ -20,6 +20,7 @@ class RecommendPage extends StatefulWidget {
 
 class _RecommendPageState extends State<RecommendPage>
     with AutomaticKeepAliveClientMixin {
+  
   @override
   bool get wantKeepAlive => true;
 

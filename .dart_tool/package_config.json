@@ -32,6 +32,18 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "chewie",
+      "rootUri": "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/chewie-1.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.13"
+    },
+    {
+      "name": "chewie_audio",
+      "rootUri": "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/chewie_audio-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "clock",
       "rootUri": "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/clock-1.1.0",
       "packageUri": "lib/",
@@ -182,6 +194,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "nested",
+      "rootUri": "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/nested-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "oktoast",
       "rootUri": "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/oktoast-3.1.1",
       "packageUri": "lib/",
@@ -244,6 +262,12 @@
     {
       "name": "process",
       "rootUri": "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/process-4.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/provider-5.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -368,6 +392,36 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "wakelock",
+      "rootUri": "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/wakelock-0.5.3+3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "wakelock_macos",
+      "rootUri": "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/wakelock_macos-0.1.0+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "wakelock_platform_interface",
+      "rootUri": "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/wakelock_platform_interface-0.2.1+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "wakelock_web",
+      "rootUri": "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/wakelock_web-0.2.0+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "wakelock_windows",
+      "rootUri": "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/wakelock_windows-0.1.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "win32",
       "rootUri": "file:///G:/flutter/.pub-cache/hosted/mirrors.sjtug.sjtu.edu.cn%2547dart-pub/win32-2.2.5",
       "packageUri": "lib/",
@@ -386,7 +440,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-08-08T11:01:36.014861Z",
+  "generated": "2021-08-08T14:24:11.937054Z",
   "generator": "pub",
   "generatorVersion": "2.13.4"
 }
