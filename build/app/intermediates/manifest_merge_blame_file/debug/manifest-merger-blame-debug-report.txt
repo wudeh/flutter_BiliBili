@@ -31,88 +31,110 @@
 20-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:14:5-65
 20-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:14:22-62
 21
-22    <application
-22-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:15:4-53:19
-23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-23-->[androidx.core:core:1.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2e94107f30f39be366a17347c2bf100b\core-1.1.0\AndroidManifest.xml:24:18-86
-24        android:debuggable="true"
-25        android:icon="@mipmap/ic_launcher"
-25-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:18:9-43
-26        android:label="bilibili"
-26-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:16:9-33
-27        android:usesCleartextTraffic="true" >
-27-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:17:9-44
-28        <activity
-28-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:19:9-47:20
-29            android:name="com.example.bilibili.MainActivity"
-29-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:20:13-41
-30            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-30-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:23:13-163
-31            android:hardwareAccelerated="true"
-31-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:24:13-47
-32            android:launchMode="singleTop"
-32-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:21:13-43
-33            android:theme="@style/LaunchTheme"
-33-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:22:13-47
-34            android:windowSoftInputMode="adjustResize" >
-34-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:25:13-55
-35
-36            <!--
-37                 Specifies an Android theme to apply to this Activity as soon as
-38                 the Android process has started. This theme is visible to the user
-39                 while the Flutter UI initializes. After that, this theme continues
-40                 to determine the Window background behind the Flutter UI.
-41            -->
-42            <meta-data
-42-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:30:13-33:17
-43                android:name="io.flutter.embedding.android.NormalTheme"
-43-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:31:15-70
-44                android:resource="@style/NormalTheme" />
-44-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:32:15-52
-45            <!--
-46                 Displays an Android View that continues showing the launch screen
-47                 Drawable until Flutter paints its first frame, then this splash
-48                 screen fades out. A splash screen is useful to avoid any visual
-49                 gap between the end of Android's launch screen and the painting of
-50                 Flutter's first frame.
-51            -->
-52            <meta-data
-52-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:39:13-42:17
-53                android:name="io.flutter.embedding.android.SplashScreenDrawable"
-53-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:40:15-79
-54                android:resource="@drawable/launch_background" />
-54-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:41:15-61
-55
-56            <intent-filter>
-56-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:43:13-46:29
-57                <action android:name="android.intent.action.MAIN" />
-57-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:44:17-68
-57-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:44:25-66
-58
-59                <category android:name="android.intent.category.LAUNCHER" />
-59-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:45:17-76
-59-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:45:27-74
-60            </intent-filter>
-61        </activity>
-62        <!--
-63             Don't delete the meta-data below.
-64             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-65        -->
-66        <meta-data
-66-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:50:9-52:33
-67            android:name="flutterEmbedding"
-67-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:51:13-44
-68            android:value="2" />
-68-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:52:13-30
-69
-70        <activity
-70-->[:url_launcher] G:\flutter_app\flutter_BiliBili\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
-71            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-71-->[:url_launcher] G:\flutter_app\flutter_BiliBili\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
-72            android:exported="false"
-72-->[:url_launcher] G:\flutter_app\flutter_BiliBili\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
-73            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-73-->[:url_launcher] G:\flutter_app\flutter_BiliBili\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
-74    </application>
-75
-76</manifest>
+22    <queries>
+22-->[androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:24:5-34:15
+23        <intent>
+23-->[androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:25:9-27:18
+24            <action android:name="android.media.browse.MediaBrowserService" />
+24-->[androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:26:13-79
+24-->[androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:26:21-76
+25        </intent>
+26        <intent>
+26-->[androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:28:9-30:18
+27            <action android:name="androidx.media2.session.MediaSessionService" />
+27-->[androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:29:13-82
+27-->[androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:29:21-79
+28        </intent>
+29        <intent>
+29-->[androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:31:9-33:18
+30            <action android:name="androidx.media2.session.MediaLibraryService" />
+30-->[androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:32:13-82
+30-->[androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:32:21-79
+31        </intent>
+32    </queries>
+33
+34    <application
+34-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:15:4-53:19
+35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+35-->[androidx.core:core:1.3.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\a69d6fcd21e670073cd9cab171299398\core-1.3.0\AndroidManifest.xml:24:18-86
+36        android:debuggable="true"
+37        android:icon="@mipmap/ic_launcher"
+37-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:18:9-43
+38        android:label="哔哩哔哩"
+38-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:16:9-29
+39        android:usesCleartextTraffic="true" >
+39-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:17:9-44
+40        <activity
+40-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:19:9-47:20
+41            android:name="com.example.bilibili.MainActivity"
+41-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:20:13-41
+42            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+42-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:23:13-163
+43            android:hardwareAccelerated="true"
+43-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:24:13-47
+44            android:launchMode="singleTop"
+44-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:21:13-43
+45            android:theme="@style/LaunchTheme"
+45-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:22:13-47
+46            android:windowSoftInputMode="adjustResize" >
+46-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:25:13-55
+47
+48            <!--
+49                 Specifies an Android theme to apply to this Activity as soon as
+50                 the Android process has started. This theme is visible to the user
+51                 while the Flutter UI initializes. After that, this theme continues
+52                 to determine the Window background behind the Flutter UI.
+53            -->
+54            <meta-data
+54-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:30:13-33:17
+55                android:name="io.flutter.embedding.android.NormalTheme"
+55-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:31:15-70
+56                android:resource="@style/NormalTheme" />
+56-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:32:15-52
+57            <!--
+58                 Displays an Android View that continues showing the launch screen
+59                 Drawable until Flutter paints its first frame, then this splash
+60                 screen fades out. A splash screen is useful to avoid any visual
+61                 gap between the end of Android's launch screen and the painting of
+62                 Flutter's first frame.
+63            -->
+64            <meta-data
+64-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:39:13-42:17
+65                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+65-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:40:15-79
+66                android:resource="@drawable/launch_background" />
+66-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:41:15-61
+67
+68            <intent-filter>
+68-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:43:13-46:29
+69                <action android:name="android.intent.action.MAIN" />
+69-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:44:17-68
+69-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:44:25-66
+70
+71                <category android:name="android.intent.category.LAUNCHER" />
+71-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:45:17-76
+71-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:45:27-74
+72            </intent-filter>
+73        </activity>
+74        <!--
+75             Don't delete the meta-data below.
+76             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+77        -->
+78        <meta-data
+78-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:50:9-52:33
+79            android:name="flutterEmbedding"
+79-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:51:13-44
+80            android:value="2" />
+80-->G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:52:13-30
+81
+82        <activity
+82-->[:url_launcher] G:\flutter_app\flutter_BiliBili\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-11:74
+83            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+83-->[:url_launcher] G:\flutter_app\flutter_BiliBili\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
+84            android:exported="false"
+84-->[:url_launcher] G:\flutter_app\flutter_BiliBili\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:10:13-37
+85            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+85-->[:url_launcher] G:\flutter_app\flutter_BiliBili\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
+86    </application>
+87
+88</manifest>

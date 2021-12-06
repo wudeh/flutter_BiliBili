@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oktoast/oktoast.dart';
-import './page/index/index.dart';
+import 'page/home/index.dart';
 import './route/application.dart';
 import 'package:fluro/fluro.dart';
 import './route/routes.dart';
@@ -91,7 +91,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: currentPage,
+      body: IndexedStack(
+        index: currentIndex,
+        children: tabPages,
+      ),
       bottomNavigationBar: Container(
         height: 50.w,
         color: Colors.white70,
@@ -172,10 +175,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 40.w,
                     height: 40.w,
                     decoration: BoxDecoration(
-                        color: Color.fromRGBO(251, 114, 153, 1),
-                        borderRadius: BorderRadius.circular(10.w)),
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.circular(15.w)),
                     child: Center(
-                      child: Icon(Icons.close, color: Colors.white),
+                      child: Icon(Icons.add, color: Colors.white),
                     ),
                   ),
                 ],

@@ -11,6 +11,8 @@ attr fontStyle
 attr fontVariationSettings
 attr fontWeight
 attr ttcIndex
+color androidx_core_ripple_material_light
+color androidx_core_secondary_text_default_material_light
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color

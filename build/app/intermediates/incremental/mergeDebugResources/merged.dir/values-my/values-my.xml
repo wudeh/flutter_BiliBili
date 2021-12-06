@@ -5,5 +5,5 @@
     <string msgid="6034272287948142298" name="play_button_content_description">"ဖွင့်ရန်"</string>
     <string msgid="17824442457643717" name="skip_to_next_item_button_content_description">"နောက်တစ်ခုသို့ ကျော်ရန်"</string>
     <string msgid="7233771088610629683" name="skip_to_previous_item_button_content_description">"ပြီးခဲ့သည့်တစ်ခုသို့ ပြန်သွားရန်"</string>
-    <string msgid="8106346172024741305" name="status_bar_notification_info_overflow">"၉၉၉+"</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"၉၉၉+"</string>
 </resources>

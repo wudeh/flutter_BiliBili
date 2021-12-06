@@ -13,7 +13,7 @@
     <!-- 访问照相机 -->
     <uses-permission android:name="android.permission.CAMERA" />
    <application
-        android:label="bilibili"
+        android:label="哔哩哔哩"
         android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
         <activity
