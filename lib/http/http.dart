@@ -25,11 +25,11 @@ class HttpRequest {
       //响应流上前后两次接受到数据的间隔，单位为毫秒。
       // receiveTimeout: 15000,
       //Http请求头.
-      headers: {"user-agent": "Mozilla/5.0 BiliDroid/6310200 (bbcallen@gmail.com) tv.danmaku.bili/6310200 (Linux; U; Android 10; zh_CN; ONEPLUS A6000; Build/QKQ1.190716.003; Cronet/81.0.4044.156)"},
+      // headers: {"user-agent": "Mozilla/5.0 BiliDroid/6310200 (bbcallen@gmail.com) tv.danmaku.bili/6310200 (Linux; U; Android 10; zh_CN; ONEPLUS A6000; Build/QKQ1.190716.003; Cronet/81.0.4044.156)"},
       //请求的Content-Type，默认值是[ContentType.json]. 也可以用ContentType.parse("application/x-www-form-urlencoded")
       contentType: 'application/json',
       //表示期望以那种格式(方式)接受响应数据。接受四种类型 `json`, `stream`, `plain`, `bytes`. 默认值是 `json`,
-      responseType: ResponseType.json,
+      // responseType: ResponseType.json,
     );
     dio.options = options;
     // 为空才赋值

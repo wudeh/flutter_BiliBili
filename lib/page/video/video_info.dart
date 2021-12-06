@@ -4,6 +4,7 @@ import 'package:bilibili/http/http.dart';
 import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 
+// 视频简介信息序列化会出错，暂时不弄
 class VideoInfo extends StatefulWidget {
   final aid;
 

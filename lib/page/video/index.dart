@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:bilibili/http/http.dart';
+import 'package:bilibili/model/video_url_model.dart';
 import 'package:chewie/chewie.dart';
 import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ import 'package:chewie_audio/chewie_audio.dart';
 import 'package:extended_nested_scroll_view/extended_nested_scroll_view.dart';
 import './video_info.dart';
 import './comment.dart';
+import './video_service.dart';
 
 class VideoPage extends StatefulWidget {
   final aid;
@@ -29,15 +31,16 @@ class _VideoPageState extends State<VideoPage>
 
   late TabController _tabController;
 
+  // 视频流地址
   String url = '';
+  // 音频流地址
+  String audioUrl = "";
 
   // 视频简介需要的信息
   var info;
 
   // 评论数量
   int commentNum = 0;
-
-  late String audioUrl;
 
   @override
   void initState() {
@@ -46,17 +49,9 @@ class _VideoPageState extends State<VideoPage>
     _tabController = new TabController(vsync: this, length: 2);
     _controller = VideoPlayerController.network(
         'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
-        videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true))
-      ..initialize().then((_) {
-        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-        setState(() {});
-      });
+        videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true));
     _audioController = VideoPlayerController.network(
-        'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4')
-      ..initialize().then((_) {
-        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-        setState(() {});
-      });
+        'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4');
     getUrl();
     _getVideoDetail();
   }
@@ -73,22 +68,9 @@ class _VideoPageState extends State<VideoPage>
 
   // 获取视频地址
   void getUrl() async {
-    print(widget.aid);
-    print(widget.cid);
-    String appserct = "aHRmhWMLkdeMuILqORnYZocwMBpMEOdt";
-    String path = "https://app.bilibili.com/x/playurl";
-    int ts = DateTime.now().millisecondsSinceEpoch;
-    String data =
-        "actionkey=appkey&aid=${widget.aid}&appkey=iVGUTjsxvpLeuDCf&build=5490400&buvid=XZF9F55FE566C57599024A397F5F160E74DBE&cid=${widget.cid}&device=android&expire=0&fnval=16&fnver=0&force_host=0&fourk=0&from_spmid=tm.recommend.0.0&mid=0&mobi_app=android&otype=json&platform=android&qn=32&spmid=main.ugc-video-detail.0.0&ts=$ts";
-    String sign = md5.convert(utf8.encode(data + appserct)).toString();
-    String url = "$path?$data&sign=$sign";
-
-    Map<String, dynamic> aa = await HttpRequest.getInstance().get(url);
+    VideoUrlModel aa = await VideoService.getUrl(widget.aid, widget.cid);
     var bb = aa;
-    String cc = bb['data']['dash']['video'][0]['base_url'];
-    // print(bb['data']['dash']);
-    // print(bb['data']['dash']['audio']);
-    url = cc;
+    url = bb.data!.dash!.video![0].baseUrl!;
     _controller = VideoPlayerController.network(url,
         videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true))
       ..initialize().then((value) {
@@ -99,14 +81,18 @@ class _VideoPageState extends State<VideoPage>
       setState(() {
         // print(_controller.value.aspectRatio);
       });
+      // 如果视频没播放，音频也要暂停
+      // if (!_controller.value.isBuffering) Stop();
     });
-    audioUrl = bb['data']['dash']['audio'][0]['base_url'];
+    audioUrl = bb.data!.dash!.audio![0].baseUrl!;
     _audioController = VideoPlayerController.network(audioUrl)
       ..initialize().then((value) {
         setState(() {});
       });
     _audioController.addListener(() {
       setState(() {});
+      // 如果视频没播放，音频也要暂停
+      // if (!_audioController.value.isBuffering) Stop();
     });
     print("============这是查找用户信息===============");
     // await HttpRequest.getInstance().get("http://api.bilibili.com/x/space/acc/info?mid=2");
@@ -136,13 +122,18 @@ class _VideoPageState extends State<VideoPage>
 
   // 控制音频和视频播放 暂停
   playOrStop() async {
-    if (_audioController.value.isPlaying) {
-      await _audioController.pause();
-      await _controller.pause();
+    if (_controller.value.isPlaying) {
+      Stop();
     } else {
       await _audioController.play();
       await _controller.play();
     }
+  }
+
+  // 暂停播放
+  void Stop() async {
+    await _audioController.pause();
+    await _controller.pause();
   }
 
   @override
@@ -246,7 +237,10 @@ class _VideoPageState extends State<VideoPage>
             ];
           },
           body: TabBarView(controller: _tabController, children: [
-            VideoInfo(aid: widget.aid, info: info,),
+            VideoInfo(
+              aid: widget.aid,
+              info: info,
+            ),
             CommentPage(aid: widget.aid)
           ]),
         ),
