@@ -11,8 +11,8 @@ class ExpandableText extends StatefulWidget {
   const ExpandableText(this.text, {
     Key? key,
     required this.maxLines,
-    this.style,
-    this.markerStyle,
+    required this.style,
+    required this.markerStyle,
     this.expand = false,
     this.atName = '',
   }) : super(key: key);

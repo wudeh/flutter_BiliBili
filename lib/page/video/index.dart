@@ -7,7 +7,6 @@ import 'package:chewie/chewie.dart';
 import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'package:just_audio/just_audio.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:chewie_audio/chewie_audio.dart';
 import 'package:extended_nested_scroll_view/extended_nested_scroll_view.dart';
@@ -78,11 +77,24 @@ class _VideoPageState extends State<VideoPage>
       });
     // await _controller.initialize();
     _controller.addListener(() {
-      setState(() {
-        // print(_controller.value.aspectRatio);
-      });
       // 如果视频没播放，音频也要暂停
-      // if (!_controller.value.isBuffering) Stop();
+      if (_controller.value.isPlaying) {
+        if (_audioController.value.volume == 0) _audioController.setVolume(1);
+        // 音频和视频秒数不相等，音频跳到和视频相等的进度
+        if ((_controller.value.position.inMilliseconds -
+                    _audioController.value.position.inMilliseconds)
+                .abs() >
+            600) {_audioController.seekTo(_controller.value.position);}
+        setState(() {});
+      } else if (_controller.value.isBuffering) {
+        print("该暂停了");
+        // print(_controller.value.isPlaying);
+        if (_audioController.value.isPlaying) {
+          _audioController.setVolume(0);
+          _audioController.pause();
+          _audioController.seekTo(_controller.value.position);
+        }
+      }
     });
     audioUrl = bb.data!.dash!.audio![0].baseUrl!;
     _audioController = VideoPlayerController.network(audioUrl)
@@ -90,14 +102,15 @@ class _VideoPageState extends State<VideoPage>
         setState(() {});
       });
     _audioController.addListener(() {
-      setState(() {});
-      // 如果视频没播放，音频也要暂停
-      // if (!_audioController.value.isBuffering) Stop();
+      // // 如果视频没播放，音频也要暂停
+      // if (!_audioController.value.isPlaying) {
+      //   if (_controller.value.isPlaying) _controller.pause();
+      // }
     });
     print("============这是查找用户信息===============");
     // await HttpRequest.getInstance().get("http://api.bilibili.com/x/space/acc/info?mid=2");
-    await HttpRequest.getInstance()
-        .get("http://api.bilibili.com/x/space/acc/info?mid=2");
+    // await HttpRequest.getInstance()
+    //     .get("http://api.bilibili.com/x/space/acc/info?mid=2");
   }
 
   // 获取视频信息
@@ -128,6 +141,7 @@ class _VideoPageState extends State<VideoPage>
       await _audioController.play();
       await _controller.play();
     }
+    setState(() {});
   }
 
   // 暂停播放
@@ -144,47 +158,71 @@ class _VideoPageState extends State<VideoPage>
           headerSliverBuilder: (context, innerBoxIsScrolled) {
             return <Widget>[
               // 视频播放区域
-              SliverToBoxAdapter(
-                  child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  _controller.value.isInitialized
-                      ? AspectRatio(
-                          aspectRatio: _controller.value.aspectRatio,
-                          child: VideoPlayer(_controller),
-                        )
-                      : Container(
-                          height: 375.w / 1.777777,
-                        ),
-                  Row(
-                    children: [
-                      // 暂停播放图标
-                      InkWell(
-                        onTap: () {
-                          playOrStop();
-                        },
-                        child: Icon(
-                          _controller.value.isPlaying
-                              ? Icons.pause
-                              : Icons.play_arrow,
-                          color: Colors.white70,
-                        ),
-                      ),
-                      // 进度条
-                      Container(
-                        width: 300.w,
-                        child: VideoProgressIndicator(
-                          _controller,
-                          allowScrubbing: true,
-                          colors: VideoProgressColors(
-                              // 已播放过的进度条颜色
-                              playedColor: Theme.of(context).primaryColor),
-                        ),
-                      )
-                    ],
-                  )
-                ],
-              )),
+              SliverPersistentHeader(
+                  pinned: true, //是否固定在顶部
+                  delegate: _SliverAppBarDelegate(
+                      minHeight: 375.w / 1.77777,
+                      maxHeight: 375.w / 1.77777,
+                      child: Stack(
+                        alignment: Alignment.bottomCenter,
+                        children: [
+                          _controller.value.isInitialized
+                              ? AspectRatio(
+                                  aspectRatio: _controller.value.aspectRatio,
+                                  child: VideoPlayer(_controller),
+                                )
+                              : Container(
+                                  height: 375.w / 1.777777,
+                                ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              // 暂停播放图标
+                              InkWell(
+                                onTap: () {
+                                  playOrStop();
+                                },
+                                child: Icon(
+                                  _controller.value.isPlaying
+                                      ? Icons.pause
+                                      : Icons.play_arrow,
+                                  color: Colors.white70,
+                                ),
+                              ),
+                              // 进度条
+                              Container(
+                                width: 250.w,
+                                height: 15.w,
+                                alignment: Alignment.center,
+                                child: VideoProgressIndicator(
+                                  _controller,
+                                  allowScrubbing: true,
+                                  colors: VideoProgressColors(
+                                      // 已播放过的进度条颜色
+                                      playedColor:
+                                          Theme.of(context).primaryColor),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5.w,
+                              ),
+                              // 根据视频总时长是否超过 1小时 来决定是否显示 时
+                              _controller.value.duration.inMinutes >= 60
+                                  ? Text(
+                                      "${_controller.value.position.toString().substring(0, 7)}/${_controller.value.duration.toString().substring(0, 7)}",
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 12.sp),
+                                    )
+                                  : Text(
+                                      "${_controller.value.position.toString().substring(2, 7)}/${_controller.value.duration.toString().substring(2, 7)}",
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 12.sp),
+                                    )
+                            ],
+                          )
+                        ],
+                      ))),
               SliverPersistentHeader(
                 pinned: true, //是否固定在顶部
                 floating:

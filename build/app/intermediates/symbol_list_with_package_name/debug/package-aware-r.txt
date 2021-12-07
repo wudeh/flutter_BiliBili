@@ -150,6 +150,7 @@ layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 mipmap ic_launcher
+mipmap ic_launcher12
 string default_notification_channel_name
 string pause_button_content_description
 string play_button_content_description

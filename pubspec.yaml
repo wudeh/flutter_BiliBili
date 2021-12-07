@@ -36,12 +36,9 @@ dependencies:
   video_player: any
   crypto: any
   fluro: any
-  just_audio: any
   chewie: any
   chewie_audio: any
   extended_nested_scroll_view: any
-  pull_to_refresh_notification: any
-  loading_more_list: any
   pull_to_refresh: any
 
 dev_dependencies:

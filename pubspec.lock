@@ -8,13 +8,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.8.1"
-  audio_session:
-    dependency: transitive
-    description:
-      name: audio_session
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.1.6+1"
   boolean_selector:
     dependency: transitive
     description:
@@ -106,20 +99,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.1.0"
-  extended_list:
-    dependency: transitive
-    description:
-      name: extended_list
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "3.0.0"
-  extended_list_library:
-    dependency: transitive
-    description:
-      name: extended_list_library
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "3.0.0"
   extended_nested_scroll_view:
     dependency: "direct main"
     description:
@@ -212,27 +191,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.6.3"
-  just_audio:
-    dependency: "direct main"
-    description:
-      name: just_audio
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.9.11"
-  just_audio_platform_interface:
-    dependency: transitive
-    description:
-      name: just_audio_platform_interface
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "4.0.0"
-  just_audio_web:
-    dependency: transitive
-    description:
-      name: just_audio_web
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.4.2"
   like_button:
     dependency: "direct main"
     description:
@@ -240,20 +198,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.3"
-  loading_more_list:
-    dependency: "direct main"
-    description:
-      name: loading_more_list
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "4.1.0"
-  loading_more_list_library:
-    dependency: transitive
-    description:
-      name: loading_more_list_library
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.0.1"
   matcher:
     dependency: transitive
     description:
@@ -366,20 +310,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.0"
-  pull_to_refresh_notification:
-    dependency: "direct main"
-    description:
-      name: pull_to_refresh_notification
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.2.0"
-  rxdart:
-    dependency: transitive
-    description:
-      name: rxdart
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "0.27.2"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -476,13 +406,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.0.2"
-  uuid:
-    dependency: transitive
-    description:
-      name: uuid
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "3.0.4"
   vector_math:
     dependency: transitive
     description:
@@ -546,13 +469,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.2.0"
-  waterfall_flow:
-    dependency: transitive
-    description:
-      name: waterfall_flow
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "3.0.1"
   win32:
     dependency: transitive
     description:

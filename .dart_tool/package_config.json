@@ -8,12 +8,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "audio_session",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/audio_session-0.1.6+1",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "boolean_selector",
       "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/boolean_selector-2.1.0",
       "packageUri": "lib/",
@@ -88,18 +82,6 @@
     {
       "name": "extended_image_library",
       "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/extended_image_library-3.1.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "extended_list",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/extended_list-3.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "extended_list_library",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/extended_list_library-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -188,38 +170,8 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "just_audio",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/just_audio-0.9.11",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "just_audio_platform_interface",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/just_audio_platform_interface-4.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "just_audio_web",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/just_audio_web-0.4.2",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "like_button",
       "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/like_button-2.0.3",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "loading_more_list",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/loading_more_list-4.1.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "loading_more_list_library",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/loading_more_list_library-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -320,18 +272,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "pull_to_refresh_notification",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/pull_to_refresh_notification-2.2.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
-      "name": "rxdart",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/rxdart-0.27.2",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "sky_engine",
       "rootUri": "file:///G:/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -416,12 +356,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "uuid",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/uuid-3.0.4",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "vector_math",
       "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/vector_math-2.1.0",
       "packageUri": "lib/",
@@ -476,12 +410,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "waterfall_flow",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/waterfall_flow-3.0.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "win32",
       "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/win32-2.2.9",
       "packageUri": "lib/",
@@ -500,7 +428,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-12-06T08:43:57.459465Z",
+  "generated": "2021-12-07T12:26:28.213803Z",
   "generator": "pub",
   "generatorVersion": "2.14.4"
 }

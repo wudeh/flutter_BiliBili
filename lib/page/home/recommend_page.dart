@@ -7,7 +7,6 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:pull_to_refresh_notification/pull_to_refresh_notification.dart';
 import '../../api/api.dart';
 import '../../http/http.dart';
 import '../../model/recommend_model.dart';
