@@ -1,3 +1,4 @@
+import 'package:bilibili/page/MallPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oktoast/oktoast.dart';
@@ -12,7 +13,6 @@ void main() {
   Routes.configureRoutes(router);
   Application.router = router;
 
-
   runApp(MyApp());
 }
 
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               title: '哔哩哔哩',
               theme: ThemeData(
-                primaryColor: Color.fromRGBO(251, 114, 153, 1),
+                primaryColor: Colors.pinkAccent,
                 //要支持下面这个需要使用第一种初始化方式
                 textTheme: TextTheme(button: TextStyle(fontSize: 45.sp)),
               ),
@@ -47,22 +47,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // 底部导航按钮数组
-  // final List<BottomNavigationBarItem> bottomTabs = [
-  //   BottomNavigationBarItem(
-  //        // 使用asset图片，也可以使用系统提供的图片，如Icons.home等
-  //       icon: Image.asset(
-  //         'images/home_unselected.png',
-  //         width: 18,
-  //         height: 18,
-  //       ),
-  //       activeIcon: Image.asset(
-  //         'images/home_selected.png',
-  //         width: 18,
-  //         height: 18,
-  //       ),
-  //       label: '首页'),
-  // ];
   // 模块容器数组
   final List<Widget> tabPages = [
     IndexPage(),
@@ -70,30 +54,35 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Text('动态，还没写'),
     ),
     Center(
-      child: Text('会员购，写不了'),
+      child: MallPage(),
     ),
     Center(
       child: Text('我的，还没写'),
     ),
   ];
+
+  late PageController pageController;
+
   // 当前选择index
   int currentIndex = 0;
-  // 当前页
-  late Widget currentPage;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    currentPage = tabPages[currentIndex];
+    pageController = PageController(initialPage: 0);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: currentIndex,
+      // body: IndexedStack(
+      //   index: currentIndex,
+      //   children: tabPages,
+      // ),
+      body: PageView(
         children: tabPages,
+        controller: pageController,
       ),
       bottomNavigationBar: Container(
         height: 50.w,
@@ -109,9 +98,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.white70,
                   child: InkWell(
                     onTap: () {
+                      pageController.jumpToPage(0);
                       setState(() {
                         currentIndex = 0;
-                        currentPage = tabPages[currentIndex];
                       });
                     },
                     child: Column(
@@ -143,9 +132,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.white12,
                   child: InkWell(
                     onTap: () {
+                      pageController.jumpToPage(1);
                       setState(() {
                         currentIndex = 1;
-                        currentPage = tabPages[currentIndex];
                       });
                     },
                     child: Column(
@@ -191,9 +180,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.white12,
                   child: InkWell(
                     onTap: () {
+                      pageController.jumpToPage(2);
                       setState(() {
                         currentIndex = 2;
-                        currentPage = tabPages[currentIndex];
                       });
                     },
                     child: Column(
@@ -222,8 +211,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: InkWell(
                     onTap: () {
                       setState(() {
-                        currentIndex = 3;
-                        currentPage = tabPages[currentIndex];
+                        pageController.jumpToPage(3);
+                        setState(() {
+                          currentIndex = 3;
+                        });
                       });
                     },
                     child: Column(

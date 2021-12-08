@@ -1,16 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
-import 'package:flutter_MyBilibili/model/jsonmodel/GoodItem.dart';
-import 'package:flutter_MyBilibili/util/GetUtilBilibili.dart';
+import 'package:bilibili/model/GoodItem.dart';
+import 'package:bilibili/api/GetUtilBilibili.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
+// 会员购
 class MallPage extends StatefulWidget {
   @override
   _MallPageState createState() => _MallPageState();
 }
 
-class _MallPageState extends State<MallPage> {
+class _MallPageState extends State<MallPage> with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
   List<String> bannerlist=[//banner列表
     "http://i0.hdslb.com/bfs/openplatform/201905/1242x4201557282234340.jpeg",
     "http://i0.hdslb.com/bfs/openplatform/201905/1242new1557302829737.jpeg",
@@ -50,22 +54,6 @@ class _MallPageState extends State<MallPage> {
       controller: _refreshController,
       onLoading: _onLoading,
       onRefresh: _onRefresh,
-      footer: CustomFooter(
-        builder: (context, LoadStatus mode) {
-          Widget body;
-          if (mode == LoadStatus.loading) {
-            body = CupertinoActivityIndicator();
-          } else {
-            body = Center(
-              child: Text("正在加载"),
-            );
-          }
-          return Container(
-            height: 30,
-            child: body,
-          );
-        },
-      ),
       child: ListView(
         //controller: _scrollController,
         physics: BouncingScrollPhysics(),
@@ -143,25 +131,31 @@ class _MallPageState extends State<MallPage> {
     );
   }
   Widget buildBanners(){//滚动栏
-    return Container(
-      height: 120,
-      margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-      child: Swiper(
-        itemCount: 5,
-        autoplay: true,
-        pagination: new SwiperPagination(
-          builder: DotSwiperPaginationBuilder(
-            color: Colors.black54,
-            activeColor: Colors.pink[300],
-        )
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(5),
+      child: Container(
+        height: 120,
+        margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
+        child: Swiper(
+          itemCount: 5,
+          autoplay: true,
+          pagination: new SwiperPagination(
+            builder: DotSwiperPaginationBuilder(
+              color: Colors.black54,
+              activeColor: Colors.pink[300],
+          )
+          ),
+          itemBuilder: (contex,i){
+            return Container(
+              child: Image.network(bannerlist[i],fit: BoxFit.fitWidth,),
+            );
+          },
         ),
-        itemBuilder: (contex,i){
-          return Container(
-            child: Image.network(bannerlist[i],fit: BoxFit.fitWidth,),
-          );
-        },
-      ),
+      )
     );
+    
+    
+    
   }
   Widget buildGridView(){
     return Container(
@@ -192,8 +186,8 @@ class _MallPageState extends State<MallPage> {
 }
 
 class TabPage extends StatelessWidget {//单个分区
-  String cover;
-  String name;
+  String? cover;
+  String? name;
   TabPage(String cover,String name){
     this.name=name;
     this.cover=cover;
@@ -207,17 +201,17 @@ class TabPage extends StatelessWidget {//单个分区
           width: 60,
           height: 60,
           decoration: BoxDecoration(
-            image: DecorationImage(image: NetworkImage(cover)),
+            image: DecorationImage(image: NetworkImage(cover ?? "wudeh")),
           ),
         ),
-        Text(name),
+        Text(name ?? "wudeh"),
       ],
     );
   }
 }
 
 class MallCard extends StatelessWidget {
-  GoodItem item;
+  GoodItem? item;
   MallCard(GoodItem item){
     this.item=item;
   }
@@ -233,22 +227,22 @@ class MallCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Expanded(
-            child: Image.network(item.cover+"@320w_200h.jpg",fit: BoxFit.contain),
+            child: Image.network(item!.cover +"@320w_200h.jpg",fit: BoxFit.contain),
           ),
           Container(
             height: 10,
           ),
-          Text(item.title,style: TextStyle(),maxLines: 2,),
+          Text(item!.title,style: TextStyle(),maxLines: 2,),
           Container(
             height: 10,
           ),
           Row(
             children: <Widget>[
               Expanded(
-                child: Text(item.priceSymbol+item.price,style: TextStyle(color: Colors.pink[300],fontSize: 15),),
+                child: Text(item!.priceSymbol+item!.price,style: TextStyle(color: Colors.pink[300],fontSize: 15),),
               ),
               Expanded(
-                child: Text(item.like,style: TextStyle(color: Colors.black45,fontSize: 13),),
+                child: Text(item!.like,style: TextStyle(color: Colors.black45,fontSize: 13),),
               ),
             ],
           ),

@@ -20,10 +20,6 @@
         "source": "G:\\flutter_app\\flutter_BiliBili\\android\\app\\src\\main\\res\\drawable-v21\\launch_background.xml"
     },
     {
-        "merged": "G:\\flutter_app\\flutter_BiliBili\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher12.png.flat",
-        "source": "G:\\flutter_app\\flutter_BiliBili\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher12.png"
-    },
-    {
         "merged": "G:\\flutter_app\\flutter_BiliBili\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "G:\\flutter_app\\flutter_BiliBili\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },

@@ -7,7 +7,6 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'recommend_page.dart';
 import '../index/live_broadcast/live_broadcast_page.dart';
-import '../index/hot_rank.dart';
 import '../index/like_animation.dart';
 import 'package:extended_nested_scroll_view/extended_nested_scroll_view.dart';
 
