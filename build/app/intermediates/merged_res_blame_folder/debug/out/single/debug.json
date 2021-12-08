@@ -26,5 +26,9 @@
     {
         "merged": "G:\\flutter_app\\flutter_BiliBili\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "G:\\flutter_app\\flutter_BiliBili\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "G:\\flutter_app\\flutter_BiliBili\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-hdpi_launch_image.png.flat",
+        "source": "G:\\flutter_app\\flutter_BiliBili\\android\\app\\src\\main\\res\\mipmap-hdpi\\launch_image.png"
     }
 ]
