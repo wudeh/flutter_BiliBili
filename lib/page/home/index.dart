@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:bilibili/page/home/hot_list_page.dart';
+import 'package:bilibili/page/home/live/live_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -167,15 +169,9 @@ class _IndexPageState extends State<IndexPage>
         ];
       },
       body: TabBarView(controller: _tabController, children: [
-        // LiveBroadcastPage(),
-        ListView.builder(
-              itemCount: 100,
-              itemBuilder: (context, index) {
-                return Text("data");
-              },
-            ),
+        LiveListViewPage(),
         RecommendPage(key: recommendPageKey),
-        HotRankPage(key: UniqueKey(),),
+        HotListPage(),
         LikeAnimationPage(key: UniqueKey(),)
       ]),
     ));

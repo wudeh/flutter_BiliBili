@@ -152,6 +152,13 @@ class _VideoPageState extends State<VideoPage>
 
   @override
   Widget build(BuildContext context) {
+    final chewieController = ChewieController(
+      videoPlayerController: _controller,
+      autoPlay: false,
+      looping: true,
+      showControls: true,
+      showOptions: false
+    );
     return Material(
       child: Scaffold(
         body: ExtendedNestedScrollView(
@@ -167,60 +174,64 @@ class _VideoPageState extends State<VideoPage>
                         alignment: Alignment.bottomCenter,
                         children: [
                           _controller.value.isInitialized
-                              ? AspectRatio(
-                                  aspectRatio: _controller.value.aspectRatio,
-                                  child: VideoPlayer(_controller),
-                                )
+                              ? 
+                              // AspectRatio(
+                              //     aspectRatio: _controller.value.aspectRatio,
+                              //     child: VideoPlayer(_controller),
+                              //   )
+                              Chewie(
+                                controller: chewieController,
+                              )
                               : Container(
                                   height: 375.w / 1.777777,
                                 ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              // 暂停播放图标
-                              InkWell(
-                                onTap: () {
-                                  playOrStop();
-                                },
-                                child: Icon(
-                                  _controller.value.isPlaying
-                                      ? Icons.pause
-                                      : Icons.play_arrow,
-                                  color: Colors.white70,
-                                ),
-                              ),
-                              // 进度条
-                              Container(
-                                width: 250.w,
-                                height: 15.w,
-                                alignment: Alignment.center,
-                                child: VideoProgressIndicator(
-                                  _controller,
-                                  allowScrubbing: true,
-                                  colors: VideoProgressColors(
-                                      // 已播放过的进度条颜色
-                                      playedColor:
-                                          Theme.of(context).primaryColor),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 5.w,
-                              ),
-                              // 根据视频总时长是否超过 1小时 来决定是否显示 时
-                              _controller.value.duration.inMinutes >= 60
-                                  ? Text(
-                                      "${_controller.value.position.toString().substring(0, 7)}/${_controller.value.duration.toString().substring(0, 7)}",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 12.sp),
-                                    )
-                                  : Text(
-                                      "${_controller.value.position.toString().substring(2, 7)}/${_controller.value.duration.toString().substring(2, 7)}",
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 12.sp),
-                                    )
-                            ],
-                          )
+                          // Row(
+                          //   mainAxisAlignment: MainAxisAlignment.center,
+                          //   crossAxisAlignment: CrossAxisAlignment.center,
+                          //   children: [
+                          //     // 暂停播放图标
+                          //     InkWell(
+                          //       onTap: () {
+                          //         playOrStop();
+                          //       },
+                          //       child: Icon(
+                          //         _controller.value.isPlaying
+                          //             ? Icons.pause
+                          //             : Icons.play_arrow,
+                          //         color: Colors.white70,
+                          //       ),
+                          //     ),
+                          //     // 进度条
+                          //     Container(
+                          //       width: 250.w,
+                          //       height: 15.w,
+                          //       alignment: Alignment.center,
+                          //       child: VideoProgressIndicator(
+                          //         _controller,
+                          //         allowScrubbing: true,
+                          //         colors: VideoProgressColors(
+                          //             // 已播放过的进度条颜色
+                          //             playedColor:
+                          //                 Theme.of(context).primaryColor),
+                          //       ),
+                          //     ),
+                          //     SizedBox(
+                          //       width: 5.w,
+                          //     ),
+                          //     // 根据视频总时长是否超过 1小时 来决定是否显示 时
+                          //     _controller.value.duration.inMinutes >= 60
+                          //         ? Text(
+                          //             "${_controller.value.position.toString().substring(0, 7)}/${_controller.value.duration.toString().substring(0, 7)}",
+                          //             style: TextStyle(
+                          //                 color: Colors.white, fontSize: 12.sp),
+                          //           )
+                          //         : Text(
+                          //             "${_controller.value.position.toString().substring(2, 7)}/${_controller.value.duration.toString().substring(2, 7)}",
+                          //             style: TextStyle(
+                          //                 color: Colors.white, fontSize: 12.sp),
+                          //           )
+                          //   ],
+                          // )
                         ],
                       ))),
               SliverPersistentHeader(

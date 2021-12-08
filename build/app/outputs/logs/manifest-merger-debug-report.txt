@@ -5,33 +5,28 @@ INJECTED from G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManife
 INJECTED from G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:1:1-54:12
 INJECTED from G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:1:1-54:12
 MERGED from G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:1:1-54:12
-MERGED from [:just_audio] G:\flutter_app\flutter_BiliBili\build\just_audio\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:video_player] G:\flutter_app\flutter_BiliBili\build\video_player\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:url_launcher] G:\flutter_app\flutter_BiliBili\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-14:12
 MERGED from [:path_provider] G:\flutter_app\flutter_BiliBili\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [:audio_session] G:\flutter_app\flutter_BiliBili\build\audio_session\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:wakelock] G:\flutter_app\flutter_BiliBili\build\wakelock\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [com.google.android.exoplayer:exoplayer-dash:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\f38da73be4f05890ab9da5d4094febbb\jetified-exoplayer-dash-2.15.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.exoplayer:exoplayer-hls:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\391047e802288549565ea21631181de9\jetified-exoplayer-hls-2.15.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\7d54f0990ab728c145846952e1d3e183\jetified-exoplayer-smoothstreaming-2.15.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2f681db8128542500b825444bc09e386\jetified-exoplayer-core-2.15.0\AndroidManifest.xml:17:1-26:12
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\b2ea5e05fb4fb851184e9b0af980bf49\jetified-exoplayer-hls-2.14.1\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\f09b8ddd78b021f724ecbb270644c7ef\jetified-exoplayer-dash-2.14.1\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\d9c8ace75a2893fac3be87cf34cd39b5\jetified-exoplayer-smoothstreaming-2.14.1\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\60b85d32c76f6174d43e445a6aa2cefb\jetified-exoplayer-core-2.14.1\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2fd9120a6da4df3dbabdd40f6a2d8995\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\68dbf8ea01a1dbd974fc87b5753550f0\jetified-activity-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\eb26273f8f7192460456ce62b9bdf9ef\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\d9536c14ffde0b7289f12ba6def6bfa4\loader-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:17:1-36:12
-MERGED from [androidx.media2:media2-common:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2a9501b9dcab5cf1c828b1d17b73af86\jetified-media2-common-1.1.3\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.media:media:1.2.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\b282f40886b7a619d66f9a84428500bc\media-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\bc28a09d8d2212ffd5788fe6c1853326\customview-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core:1.3.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\a69d6fcd21e670073cd9cab171299398\core-1.3.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.core:core:1.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2e94107f30f39be366a17347c2bf100b\core-1.1.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\ca6b214160bd0909b103aa12202ef51c\lifecycle-runtime-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2271d874344878e62b9a8e309af0c39d\jetified-savedstate-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\fb333fb43575d8a3b51161295454427f\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\cad25976877a6ae855ef6821534f58a1\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\0593ff83999a5ca7055fe7e22ccd7f84\jetified-exoplayer-extractor-2.15.0\AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.exoplayer:exoplayer-common:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\ddc633bf2ebc8c7582b0768f902d2a8f\jetified-exoplayer-common-2.15.0\AndroidManifest.xml:17:1-26:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\b712161584c0f03d21bcedf0af2bd366\jetified-exoplayer-extractor-2.14.1\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\9c869d6c39afd30e0ee6a960de621a9b\jetified-exoplayer-common-2.14.1\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\5f606c30f064eed94124828de37fadc0\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\96aee308bccd03bc62c306516c23a410\versionedparcelable-1.1.0\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\15792e6083b2b5b5a7ffa285d47daa24\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:17:1-22:12
 INJECTED from G:\flutter_app\flutter_BiliBili\android\app\src\debug\AndroidManifest.xml:1:1-7:12
 INJECTED from G:\flutter_app\flutter_BiliBili\android\app\src\debug\AndroidManifest.xml:1:1-7:12
@@ -62,10 +57,10 @@ ADDED from G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.
 		ADDED from G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:6:22-78
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:8:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2f681db8128542500b825444bc09e386\jetified-exoplayer-core-2.15.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2f681db8128542500b825444bc09e386\jetified-exoplayer-core-2.15.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-common:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\ddc633bf2ebc8c7582b0768f902d2a8f\jetified-exoplayer-common-2.15.0\AndroidManifest.xml:24:5-79
-MERGED from [com.google.android.exoplayer:exoplayer-common:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\ddc633bf2ebc8c7582b0768f902d2a8f\jetified-exoplayer-common-2.15.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\60b85d32c76f6174d43e445a6aa2cefb\jetified-exoplayer-core-2.14.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\60b85d32c76f6174d43e445a6aa2cefb\jetified-exoplayer-core-2.14.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\9c869d6c39afd30e0ee6a960de621a9b\jetified-exoplayer-common-2.14.1\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\9c869d6c39afd30e0ee6a960de621a9b\jetified-exoplayer-common-2.14.1\AndroidManifest.xml:24:5-79
 	android:name
 		ADDED from G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:8:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
@@ -84,12 +79,12 @@ application
 ADDED from G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:15:4-53:19
 MERGED from [:url_launcher] G:\flutter_app\flutter_BiliBili\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
 MERGED from [:url_launcher] G:\flutter_app\flutter_BiliBili\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-12:19
-MERGED from [androidx.core:core:1.3.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\a69d6fcd21e670073cd9cab171299398\core-1.3.0\AndroidManifest.xml:24:5-89
-MERGED from [androidx.core:core:1.3.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\a69d6fcd21e670073cd9cab171299398\core-1.3.0\AndroidManifest.xml:24:5-89
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.core:core:1.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2e94107f30f39be366a17347c2bf100b\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2e94107f30f39be366a17347c2bf100b\core-1.1.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\96aee308bccd03bc62c306516c23a410\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\96aee308bccd03bc62c306516c23a410\versionedparcelable-1.1.0\AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
-		ADDED from [androidx.core:core:1.3.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\a69d6fcd21e670073cd9cab171299398\core-1.3.0\AndroidManifest.xml:24:18-86
+		ADDED from [androidx.core:core:1.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2e94107f30f39be366a17347c2bf100b\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:label
 		ADDED from G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml:16:9-29
 	android:icon
@@ -142,26 +137,22 @@ uses-sdk
 INJECTED from G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml
 INJECTED from G:\flutter_app\flutter_BiliBili\android\app\src\main\AndroidManifest.xml
-MERGED from [:just_audio] G:\flutter_app\flutter_BiliBili\build\just_audio\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:just_audio] G:\flutter_app\flutter_BiliBili\build\just_audio\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:video_player] G:\flutter_app\flutter_BiliBili\build\video_player\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:video_player] G:\flutter_app\flutter_BiliBili\build\video_player\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:url_launcher] G:\flutter_app\flutter_BiliBili\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:url_launcher] G:\flutter_app\flutter_BiliBili\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] G:\flutter_app\flutter_BiliBili\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:path_provider] G:\flutter_app\flutter_BiliBili\build\path_provider\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:audio_session] G:\flutter_app\flutter_BiliBili\build\audio_session\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [:audio_session] G:\flutter_app\flutter_BiliBili\build\audio_session\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:wakelock] G:\flutter_app\flutter_BiliBili\build\wakelock\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:wakelock] G:\flutter_app\flutter_BiliBili\build\wakelock\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.exoplayer:exoplayer-dash:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\f38da73be4f05890ab9da5d4094febbb\jetified-exoplayer-dash-2.15.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-dash:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\f38da73be4f05890ab9da5d4094febbb\jetified-exoplayer-dash-2.15.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-hls:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\391047e802288549565ea21631181de9\jetified-exoplayer-hls-2.15.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-hls:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\391047e802288549565ea21631181de9\jetified-exoplayer-hls-2.15.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\7d54f0990ab728c145846952e1d3e183\jetified-exoplayer-smoothstreaming-2.15.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\7d54f0990ab728c145846952e1d3e183\jetified-exoplayer-smoothstreaming-2.15.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2f681db8128542500b825444bc09e386\jetified-exoplayer-core-2.15.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-core:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2f681db8128542500b825444bc09e386\jetified-exoplayer-core-2.15.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\b2ea5e05fb4fb851184e9b0af980bf49\jetified-exoplayer-hls-2.14.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\b2ea5e05fb4fb851184e9b0af980bf49\jetified-exoplayer-hls-2.14.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\f09b8ddd78b021f724ecbb270644c7ef\jetified-exoplayer-dash-2.14.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\f09b8ddd78b021f724ecbb270644c7ef\jetified-exoplayer-dash-2.14.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\d9c8ace75a2893fac3be87cf34cd39b5\jetified-exoplayer-smoothstreaming-2.14.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\d9c8ace75a2893fac3be87cf34cd39b5\jetified-exoplayer-smoothstreaming-2.14.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\60b85d32c76f6174d43e445a6aa2cefb\jetified-exoplayer-core-2.14.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\60b85d32c76f6174d43e445a6aa2cefb\jetified-exoplayer-core-2.14.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2fd9120a6da4df3dbabdd40f6a2d8995\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2fd9120a6da4df3dbabdd40f6a2d8995\fragment-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\68dbf8ea01a1dbd974fc87b5753550f0\jetified-activity-1.0.0\AndroidManifest.xml:20:5-22:41
@@ -170,16 +161,10 @@ MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\竹子梢头\.gradle\cache
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\eb26273f8f7192460456ce62b9bdf9ef\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\d9536c14ffde0b7289f12ba6def6bfa4\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\d9536c14ffde0b7289f12ba6def6bfa4\loader-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.media2:media2-common:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2a9501b9dcab5cf1c828b1d17b73af86\jetified-media2-common-1.1.3\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.media2:media2-common:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2a9501b9dcab5cf1c828b1d17b73af86\jetified-media2-common-1.1.3\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.media:media:1.2.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\b282f40886b7a619d66f9a84428500bc\media-1.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.media:media:1.2.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\b282f40886b7a619d66f9a84428500bc\media-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\bc28a09d8d2212ffd5788fe6c1853326\customview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\bc28a09d8d2212ffd5788fe6c1853326\customview-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core:1.3.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\a69d6fcd21e670073cd9cab171299398\core-1.3.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.core:core:1.3.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\a69d6fcd21e670073cd9cab171299398\core-1.3.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2e94107f30f39be366a17347c2bf100b\core-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2e94107f30f39be366a17347c2bf100b\core-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\ca6b214160bd0909b103aa12202ef51c\lifecycle-runtime-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\ca6b214160bd0909b103aa12202ef51c\lifecycle-runtime-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\2271d874344878e62b9a8e309af0c39d\jetified-savedstate-1.0.0\AndroidManifest.xml:20:5-22:41
@@ -188,14 +173,14 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\竹子梢头\.gra
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\fb333fb43575d8a3b51161295454427f\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\cad25976877a6ae855ef6821534f58a1\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\cad25976877a6ae855ef6821534f58a1\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\0593ff83999a5ca7055fe7e22ccd7f84\jetified-exoplayer-extractor-2.15.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\0593ff83999a5ca7055fe7e22ccd7f84\jetified-exoplayer-extractor-2.15.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-common:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\ddc633bf2ebc8c7582b0768f902d2a8f\jetified-exoplayer-common-2.15.0\AndroidManifest.xml:20:5-22:41
-MERGED from [com.google.android.exoplayer:exoplayer-common:2.15.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\ddc633bf2ebc8c7582b0768f902d2a8f\jetified-exoplayer-common-2.15.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\87cae496edf0d81af80ab48e3e89ecce\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\b712161584c0f03d21bcedf0af2bd366\jetified-exoplayer-extractor-2.14.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-extractor:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\b712161584c0f03d21bcedf0af2bd366\jetified-exoplayer-extractor-2.14.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\9c869d6c39afd30e0ee6a960de621a9b\jetified-exoplayer-common-2.14.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.exoplayer:exoplayer-common:2.14.1] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\9c869d6c39afd30e0ee6a960de621a9b\jetified-exoplayer-common-2.14.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\5f606c30f064eed94124828de37fadc0\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\5f606c30f064eed94124828de37fadc0\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\96aee308bccd03bc62c306516c23a410\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\96aee308bccd03bc62c306516c23a410\versionedparcelable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\15792e6083b2b5b5a7ffa285d47daa24\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\15792e6083b2b5b5a7ffa285d47daa24\lifecycle-viewmodel-2.1.0\AndroidManifest.xml:20:5-44
 INJECTED from G:\flutter_app\flutter_BiliBili\android\app\src\debug\AndroidManifest.xml
@@ -214,23 +199,3 @@ ADDED from [:url_launcher] G:\flutter_app\flutter_BiliBili\build\url_launcher\in
 		ADDED from [:url_launcher] G:\flutter_app\flutter_BiliBili\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:11:13-71
 	android:name
 		ADDED from [:url_launcher] G:\flutter_app\flutter_BiliBili\build\url_launcher\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-74
-queries
-ADDED from [androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:24:5-34:15
-intent#action:name:android.media.browse.MediaBrowserService
-ADDED from [androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:25:9-27:18
-action#android.media.browse.MediaBrowserService
-ADDED from [androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:26:13-79
-	android:name
-		ADDED from [androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:26:21-76
-intent#action:name:androidx.media2.session.MediaSessionService
-ADDED from [androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:28:9-30:18
-action#androidx.media2.session.MediaSessionService
-ADDED from [androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:29:13-82
-	android:name
-		ADDED from [androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:29:21-79
-intent#action:name:androidx.media2.session.MediaLibraryService
-ADDED from [androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:31:9-33:18
-action#androidx.media2.session.MediaLibraryService
-ADDED from [androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:32:13-82
-	android:name
-		ADDED from [androidx.media2:media2-session:1.1.3] C:\Users\竹子梢头\.gradle\caches\transforms-2\files-2.1\4074dcb3d3743cf31f0281258ccf41ac\jetified-media2-session-1.1.3\AndroidManifest.xml:32:21-79
