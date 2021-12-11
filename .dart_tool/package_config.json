@@ -128,6 +128,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_easyrefresh",
+      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_easyrefresh-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_screenutil",
       "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/flutter_screenutil-5.0.0+2",
       "packageUri": "lib/",
@@ -434,7 +440,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-12-08T09:05:57.497893Z",
+  "generated": "2021-12-11T02:35:03.445744Z",
   "generator": "pub",
   "generatorVersion": "2.14.4"
 }

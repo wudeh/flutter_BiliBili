@@ -40,6 +40,7 @@ dependencies:
   chewie_audio: any
   extended_nested_scroll_view: any
   pull_to_refresh: any
+  flutter_easyrefresh: any
   card_swiper: any
 
 dev_dependencies:

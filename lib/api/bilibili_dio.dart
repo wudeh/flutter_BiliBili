@@ -10,6 +10,7 @@ class BilibiliDio{
         sendTimeout: 5000,);
       if(headers!=null) options.headers=headers;
        Response res=await dio.get(url,options: options);
+      //  Response res=await dio.get(url);
        return res;
     }
     catch(e){

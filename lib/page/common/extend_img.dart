@@ -4,12 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ExtenedImage extends StatefulWidget {
   double width;
-  double height;
+  double? height;
   String img;
   bool notCircle;
   bool isRectangle;
 
-  ExtenedImage({Key? key,required this.width,required this.height,required this.img,required this.notCircle, this.isRectangle = true}) : super(key: key);
+  ExtenedImage({Key? key,required this.width,this.height,required this.img,required this.notCircle, this.isRectangle = true}) : super(key: key);
 
   _ExtenedImageState createState() => _ExtenedImageState();
 }
@@ -21,6 +21,7 @@ class _ExtenedImageState extends State<ExtenedImage> {
     return widget.notCircle ? ExtendedImage.network(
                 widget.img,
                 width: widget.width,
+                fit: BoxFit.fitWidth,
                 borderRadius: BorderRadius.all(Radius.circular(10.0.w)),
                 loadStateChanged: (ExtendedImageState state) {
                   switch (state.extendedImageLoadState) {
@@ -44,7 +45,7 @@ class _ExtenedImageState extends State<ExtenedImage> {
                       break;
                     case LoadState.failed:
                       return GestureDetector(
-                        child: Text('加载失败', style: TextStyle(fontSize: 12.sp),),
+                        child: Center(child: Icon(Icons.error_outline),),
                         onTap: () {
                           state.reLoadImage();
                         },
@@ -56,6 +57,7 @@ class _ExtenedImageState extends State<ExtenedImage> {
               : ExtendedImage.network(
                 widget.img,
                 width: widget.width,
+                fit: BoxFit.fitWidth,
                 shape: widget.isRectangle ? BoxShape.rectangle : BoxShape.circle,
                 borderRadius: BorderRadius.all(Radius.circular(10.0.w)),
                 loadStateChanged: (ExtendedImageState state) {
@@ -80,7 +82,7 @@ class _ExtenedImageState extends State<ExtenedImage> {
                       break;
                     case LoadState.failed:
                       return GestureDetector(
-                        child: Text('加载失败', style: TextStyle(fontSize: 12.sp),),
+                        child: Center(child: Icon(Icons.error_outline),),
                         onTap: () {
                           state.reLoadImage();
                         },

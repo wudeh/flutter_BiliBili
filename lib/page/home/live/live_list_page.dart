@@ -1,6 +1,9 @@
+import 'package:bilibili/page/common/extend_img.dart';
+import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:bilibili/icons/bilibili_icons.dart';
 import "package:bilibili/model/LiveItem.dart";
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import './live_play_page.dart';
 // import 'package:flutter_MyBilibili/pages/me/LoginPage.dart';
 import 'package:bilibili/util/MyMath.dart';
@@ -110,9 +113,14 @@ class _LiveListViewPageState extends State<LiveListViewPage>
             itemBuilder: (context, i) {
               return Container(
                   child: Tab(
-                icon: Image.network(
-                  areaCard.list[i].cover,
-                  fit: BoxFit.fitWidth,
+                // icon: Image.network(
+                //   areaCard.list[i].cover,
+                //   fit: BoxFit.fitWidth,
+                // ),
+                icon: ExtenedImage(
+                  width: 40.w,
+                  img: areaCard.list[i].cover,
+                  notCircle: true,
                 ),
                 child: Text(
                   areaCard.list[i].title,
@@ -133,8 +141,8 @@ class _LiveListViewPageState extends State<LiveListViewPage>
     return Column(
       children: <Widget>[
         Container(
-          height: 40,
-          padding: EdgeInsets.all(10),
+          // height: 40,
+          padding: EdgeInsets.only(left: 10, top: 10),
           child: Container(
             alignment: Alignment.centerLeft,
             child: Text("${partition.name}"),
@@ -189,9 +197,14 @@ class _LiveListViewPageState extends State<LiveListViewPage>
                       Container(
                         width: double.infinity,
                         height: double.infinity,
-                        child: Image.network(
-                          carditem.user_cover! + "@320w_200h",
-                          fit: BoxFit.cover,
+                        // child: Image.network(
+                        //   carditem.user_cover! + "@320w_200h",
+                        //   fit: BoxFit.cover,
+                        // ),
+                        child: ExtenedImage(
+                          width: 180.w,
+                          img: carditem.user_cover!,
+                          notCircle: true,
                         ),
                       ),
                       Positioned(
@@ -220,7 +233,7 @@ class _LiveListViewPageState extends State<LiveListViewPage>
                                 ),
                               ),
                               Icon(
-                                BIcon.live_people,
+                                Icons.remove_red_eye_outlined,
                                 size: 18,
                                 color: Colors.white,
                               ),
@@ -265,19 +278,23 @@ class _LiveListViewPageState extends State<LiveListViewPage>
     );
   }
 
+  // 轮播图
   buildBanners(Banners banners) {
     return Container(
-      height: 100,
-      margin: EdgeInsets.all(10),
+      height: 115.w,
+      margin: EdgeInsets.only(left:10.w, top:10.w, right:10.w),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadius.circular(10.w),
         child: Swiper(
+          autoplay: true,
           itemCount: banners.list!.length,
           itemBuilder: (context, i) {
             return Container(
-              child: Image.network(
-                banners.list![i].pic!,
-                fit: BoxFit.fitWidth,
+              child: ExtenedImage(
+                width: 356.w,
+                height: 94.w,
+                img: banners.list![i].pic!,
+                notCircle: true,
               ),
             );
           },

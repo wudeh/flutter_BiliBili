@@ -1,3 +1,4 @@
+import 'package:bilibili/page/common/extend_img.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bilibili/icons/bilibili_icons.dart';
@@ -9,7 +10,6 @@ import '../common/LineTools.dart';
 import 'package:bilibili/api/bilibili_dio.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-
 
 // 首页的热门
 class HotListPage extends StatefulWidget {
@@ -53,7 +53,26 @@ class _HotListPageState extends State<HotListPage>
       controller: _refreshController,
       onRefresh: _onRefresh,
       onLoading: _onLoading,
-      
+      footer: CustomFooter(
+        builder: (BuildContext context, LoadStatus? mode) {
+          Widget body;
+          if (mode == LoadStatus.idle) {
+            body = Text("上拉加载更多");
+          } else if (mode == LoadStatus.loading) {
+            body = CupertinoActivityIndicator();
+          } else if (mode == LoadStatus.failed) {
+            body = Text("加载失败点击重试");
+          } else if (mode == LoadStatus.canLoading) {
+            body = Text("释放加载更多");
+          } else {
+            body = Text("到底啦");
+          }
+          return Container(
+            height: 55.0,
+            child: Center(child: body),
+          );
+        },
+      ),
       child: ListView(
         physics: BouncingScrollPhysics(),
         children: <Widget>[
@@ -75,9 +94,12 @@ class _HotListPageState extends State<HotListPage>
           return Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Image.network(
-                item.icon!,
-                height: 40,
+              
+              ExtenedImage(
+                width: 40.w,
+                height: 40.w,
+                img: item.icon!,
+                notCircle: true,
               ),
               Text(
                 item.title!,
@@ -166,10 +188,14 @@ class _HotListPageState extends State<HotListPage>
     if (_hotList.length >= 100) {
       _refreshController.loadNoData();
     } else {
-      var res = await getHotList();
-      if (res != null) {
-        _hotList.addAll(res);
-        _refreshController.loadComplete();
+      try {
+        var res = await getHotList();
+        if (res != null) {
+          _hotList.addAll(res);
+          _refreshController.loadComplete();
+        }
+      } catch (e) {
+        _refreshController.loadFailed();
       }
     }
     if (mounted) setState(() {});
@@ -228,35 +254,29 @@ class HotVideoView extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+              padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Expanded(
-                    //封面
-                    flex: 1,
-                    child: Container(
-                      height: 95,
-                      alignment: Alignment.bottomRight,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(2)),
-                          image: DecorationImage(
-                              image: NetworkImage(
-                                item.cover! + "@320w_200h",
-                              ), //封面
-                              fit: BoxFit.cover)),
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(5, 2, 5, 2),
-                        margin: EdgeInsets.fromLTRB(5, 3, 5, 3),
+                  Stack(
+                    children: [
+                      
+                      Container(
+                        clipBehavior: Clip.antiAlias,
+                        width: 160.w,
+                        height: 100.w,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(3)),
-                          color: Colors.black54,
+                          borderRadius: BorderRadius.all(Radius.circular(10.w))
                         ),
-                        child: Text(
-                          item.coverRightText_1!,
-                          style: TextStyle(color: Colors.white),
+                        child: ExtenedImage(
+                          width: 160.w,
+                          height: 100.w,
+                          img: item.cover!,
+                          notCircle: false,
                         ),
                       ),
-                    ),
+                      
+                    ],
                   ),
                   SizedBox(
                     width: 10,
@@ -265,15 +285,18 @@ class HotVideoView extends StatelessWidget {
                     //详情
                     flex: 1,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        Text(
-                          item.title!,
-                          style: TextStyle(fontSize: 14),
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
+                        Container(
+                          height: 40.w,
+                          child: Text(
+                            item.title!,
+                            style: TextStyle(fontSize: 14),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
                         item.rcmdReasonStyle == null
                             ? Container(
@@ -425,12 +448,11 @@ class HotUpVideoView extends StatelessWidget {
             flex: 2,
             child: Container(
                 decoration: BoxDecoration(
-                  //封面图
-                  image: DecorationImage(
-                      image: NetworkImage(item.cover! + "@320w_200h"),
-                      fit: BoxFit.fitHeight),
-                  borderRadius: BorderRadius.circular(5)
-                ),
+                    //封面图
+                    image: DecorationImage(
+                        image: NetworkImage(item.cover! + "@320w_200h"),
+                        fit: BoxFit.fitHeight),
+                    borderRadius: BorderRadius.circular(5)),
                 alignment: Alignment.bottomCenter,
                 child: Container(
                   width: double.infinity,

@@ -1,8 +1,10 @@
+import 'package:bilibili/page/common/extend_img.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:bilibili/model/GoodItem.dart';
 import 'package:bilibili/api/GetUtilBilibili.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 // 会员购
@@ -227,7 +229,12 @@ class MallCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Expanded(
-            child: Image.network(item!.cover +"@320w_200h.jpg",fit: BoxFit.contain),
+            // child: Image.network(item!.cover +"@320w_200h.jpg",fit: BoxFit.contain),
+            child: ExtenedImage(
+              width: 180.w,
+              img: item!.cover,
+              notCircle: true,
+            ),
           ),
           Container(
             height: 10,
