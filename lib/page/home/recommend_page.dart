@@ -187,6 +187,7 @@ class _RecommendPageState extends State<RecommendPage>
                                         height: 106.w,
                                         img: e.cover!,
                                         notCircle: true,
+                                        haveBorderRadius: false,
                                       ),
                                       // 播放量，弹幕量，时长
                                       Positioned(

@@ -3,8 +3,10 @@ import 'dart:math';
 
 import 'package:bilibili/http/http.dart';
 import 'package:bilibili/model/video_url_model.dart';
+import 'package:bilibili/page/common/extend_img.dart';
 import 'package:chewie/chewie.dart';
 import 'package:crypto/crypto.dart';
+import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,6 +37,11 @@ class _VideoPageState extends State<VideoPage>
   String url = '';
   // 音频流地址
   String audioUrl = "";
+
+  // 封面
+  String pic = "";
+
+  bool isFirstPlay = true;
 
   // 视频简介需要的信息
   var info;
@@ -72,7 +79,8 @@ class _VideoPageState extends State<VideoPage>
 
   // 获取视频地址
   void getUrl() async {
-    VideoUrlModel aa = await VideoService.getUrl(widget.aid.toString(), widget.cid.toString());
+    VideoUrlModel aa =
+        await VideoService.getUrl(widget.aid.toString(), widget.cid.toString());
     var bb = aa;
     url = bb.data!.dash!.video![0].baseUrl!;
     _controller = VideoPlayerController.network(url,
@@ -92,14 +100,14 @@ class _VideoPageState extends State<VideoPage>
             600) {
           _audioController.seekTo(_controller.value.position);
         }
+        // 视频播放，音频没播放也要播放
+        if (!_audioController.value.isPlaying) _audioController.play();
         // setState(() {});
-      } else if (_controller.value.isBuffering) {
+      } else {
         print("该暂停了");
         // print(_controller.value.isPlaying);
         if (_audioController.value.isPlaying) {
-          _audioController.setVolume(0);
           _audioController.pause();
-          _audioController.seekTo(_controller.value.position);
         }
       }
     });
@@ -133,6 +141,7 @@ class _VideoPageState extends State<VideoPage>
       print("这是视频信息$url");
       print(res);
       info = res;
+      pic = info['data']['pic'];
     } catch (e) {
       print(e.toString());
       print("获取视频详情");
@@ -145,7 +154,6 @@ class _VideoPageState extends State<VideoPage>
     if (_controller.value.isPlaying) {
       Stop();
     } else {
-      await _audioController.play();
       await _controller.play();
     }
     setState(() {});
@@ -189,8 +197,28 @@ class _VideoPageState extends State<VideoPage>
                                   controller: chewieController,
                                 )
                               : Container(
-                                  height: 375.w / 1.777777,
+                                  height: 395.w / 1.777777,
                                 ),
+                          // 封面点击播放
+                          isFirstPlay
+                              ? InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      isFirstPlay = false;
+                                    });
+                                    playOrStop();
+                                  },
+                                  child: Container(
+                                    width: 375.w,
+                                    child: ExtenedImage(
+                                        img: pic,
+                                        width: 375.w,
+                                        notCircle: true,
+                                        haveBorderRadius: false),
+                                  ),
+                                )
+                              : SizedBox(),
+
                           // Row(
                           //   mainAxisAlignment: MainAxisAlignment.center,
                           //   crossAxisAlignment: CrossAxisAlignment.center,

@@ -6,11 +6,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oktoast/oktoast.dart';
 import 'page/home/index.dart';
 import 'package:get/get.dart';
+import './util/ColorToMatrialColor.dart';
 
 void main() {
   runApp(GetMaterialApp(
+    debugShowCheckedModeBanner: false,
     home: MyApp(),
-    theme: ThemeData(primaryColor: Colors.pinkAccent),
+    theme: ThemeData(primaryColor: Colors.pinkAccent, primarySwatch: createMaterialColor(Color(0xFF000000))),
     getPages: [
       GetPage(name: '/video', page: () => VideoPage()),
       GetPage(name: '/channel', page: () => ChannelPage()),

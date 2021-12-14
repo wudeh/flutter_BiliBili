@@ -1,6 +1,9 @@
+import 'package:bilibili/page/common/extend_img.dart';
+import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:bilibili/model/ChannelItem.dart';
 import 'package:bilibili/api/GetUtilBilibili.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -43,7 +46,7 @@ class _ChannelPageState extends State<ChannelPage> {
           title: Text("频道"),
           centerTitle: true,
         ),
-        body: GridView.builder(
+        body: channellist.isEmpty ? Center(child: CircularProgressIndicator(color: Get.theme.primaryColor,),) : GridView.builder(
             itemCount: channellist.length,
             physics: AlwaysScrollableScrollPhysics(),
             padding: EdgeInsets.all(5),
@@ -71,12 +74,18 @@ class ChannelCard extends StatelessWidget {
           child: Center(
             child: Column(
               children: <Widget>[
-                Container(
-                  //图标
-                  height: 35,
-                  width: 35,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(image: NetworkImage(item.logo!))),
+                // Container(
+                //   //图标
+                //   height: 35,
+                //   width: 35,
+                //   decoration: BoxDecoration(
+                //       image: DecorationImage(image: NetworkImage(item.logo!))),
+                // ),
+                ExtenedImage(
+                  width: 35.w,
+                  height: 35.w,
+                  img: item.logo!,
+                  notCircle: true,
                 ),
                 SizedBox(
                   height: 5,
