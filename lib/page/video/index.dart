@@ -13,12 +13,13 @@ import 'package:extended_nested_scroll_view/extended_nested_scroll_view.dart';
 import './video_info.dart';
 import './comment.dart';
 import './video_service.dart';
+import 'package:get/get.dart';
 
 class VideoPage extends StatefulWidget {
-  final aid;
-  final cid;
+  var aid;
+  var cid;
 
-  VideoPage({Key? key, required this.aid, required this.cid}) : super(key: key);
+  VideoPage({Key? key}) : super(key: key);
 
   _VideoPageState createState() => _VideoPageState();
 }
@@ -45,6 +46,10 @@ class _VideoPageState extends State<VideoPage>
   void initState() {
     // TODO: implement initState
     super.initState();
+    // 获取传递过来的 aid，cid
+    final argument = Get.arguments as Map;
+    widget.aid = argument['aid'];
+    widget.cid = argument['cid'];
     _tabController = new TabController(vsync: this, length: 2);
     _controller = VideoPlayerController.network(
         'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
@@ -67,7 +72,7 @@ class _VideoPageState extends State<VideoPage>
 
   // 获取视频地址
   void getUrl() async {
-    VideoUrlModel aa = await VideoService.getUrl(widget.aid, widget.cid);
+    VideoUrlModel aa = await VideoService.getUrl(widget.aid.toString(), widget.cid.toString());
     var bb = aa;
     url = bb.data!.dash!.video![0].baseUrl!;
     _controller = VideoPlayerController.network(url,
@@ -84,8 +89,10 @@ class _VideoPageState extends State<VideoPage>
         if ((_controller.value.position.inMilliseconds -
                     _audioController.value.position.inMilliseconds)
                 .abs() >
-            600) {_audioController.seekTo(_controller.value.position);}
-        setState(() {});
+            600) {
+          _audioController.seekTo(_controller.value.position);
+        }
+        // setState(() {});
       } else if (_controller.value.isBuffering) {
         print("该暂停了");
         // print(_controller.value.isPlaying);
@@ -99,7 +106,7 @@ class _VideoPageState extends State<VideoPage>
     audioUrl = bb.data!.dash!.audio![0].baseUrl!;
     _audioController = VideoPlayerController.network(audioUrl)
       ..initialize().then((value) {
-        setState(() {});
+        // setState(() {});
       });
     _audioController.addListener(() {
       // // 如果视频没播放，音频也要暂停
@@ -153,12 +160,11 @@ class _VideoPageState extends State<VideoPage>
   @override
   Widget build(BuildContext context) {
     final chewieController = ChewieController(
-      videoPlayerController: _controller,
-      autoPlay: false,
-      looping: true,
-      showControls: true,
-      showOptions: false
-    );
+        videoPlayerController: _controller,
+        autoPlay: false,
+        looping: true,
+        showControls: true,
+        showOptions: false);
     return Material(
       child: Scaffold(
         body: ExtendedNestedScrollView(
@@ -174,14 +180,14 @@ class _VideoPageState extends State<VideoPage>
                         alignment: Alignment.bottomCenter,
                         children: [
                           _controller.value.isInitialized
-                              ? 
+                              ?
                               // AspectRatio(
                               //     aspectRatio: _controller.value.aspectRatio,
                               //     child: VideoPlayer(_controller),
                               //   )
                               Chewie(
-                                controller: chewieController,
-                              )
+                                  controller: chewieController,
+                                )
                               : Container(
                                   height: 375.w / 1.777777,
                                 ),
@@ -254,9 +260,9 @@ class _VideoPageState extends State<VideoPage>
                             child: TabBar(
                                 controller: _tabController,
                                 indicatorSize: TabBarIndicatorSize.label,
-                                labelColor: Theme.of(context).primaryColor,
+                                labelColor: Get.theme.primaryColor,
                                 unselectedLabelColor: Colors.black,
-                                indicatorColor: Theme.of(context).primaryColor,
+                                indicatorColor: Get.theme.primaryColor,
                                 labelStyle: TextStyle(color: Colors.white),
                                 tabs: <Widget>[
                                   Tab(text: '简介'),

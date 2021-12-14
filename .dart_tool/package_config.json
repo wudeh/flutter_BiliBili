@@ -3,7 +3,7 @@
   "packages": [
     {
       "name": "async",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/async-2.8.1",
+      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/async-2.8.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -21,7 +21,7 @@
     },
     {
       "name": "characters",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/characters-1.1.0",
+      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/characters-1.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -116,12 +116,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "fluro",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/fluro-2.0.3",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "flutter",
       "rootUri": "file:///G:/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -148,6 +142,12 @@
     {
       "name": "flutter_web_plugins",
       "rootUri": "file:///G:/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "get",
+      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/get-4.6.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -189,7 +189,7 @@
     },
     {
       "name": "matcher",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/matcher-0.12.10",
+      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/matcher-0.12.11",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -321,7 +321,7 @@
     },
     {
       "name": "test_api",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/test_api-0.4.2",
+      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/test_api-0.4.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -369,9 +369,9 @@
     },
     {
       "name": "vector_math",
-      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/vector_math-2.1.0",
+      "rootUri": "file:///G:/flutter/.pub-cache/hosted/pub.flutter-io.cn/vector_math-2.1.1",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.14"
     },
     {
       "name": "video_player",
@@ -440,7 +440,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-12-11T02:35:03.445744Z",
+  "generated": "2021-12-14T07:28:42.175186Z",
   "generator": "pub",
-  "generatorVersion": "2.14.4"
+  "generatorVersion": "2.15.0"
 }

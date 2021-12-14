@@ -1,19 +1,20 @@
 import 'package:bilibili/page/MallPage.dart';
+import 'package:bilibili/page/home/ChannelPage.dart';
+import 'package:bilibili/page/video/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oktoast/oktoast.dart';
 import 'page/home/index.dart';
-import './route/application.dart';
-import 'package:fluro/fluro.dart';
-import './route/routes.dart';
+import 'package:get/get.dart';
 
 void main() {
-  // 路由配置
-  var router = FluroRouter();
-  Routes.configureRoutes(router);
-  Application.router = router;
-
-  runApp(MyApp());
+  runApp(GetMaterialApp(
+    home: MyApp(),
+    theme: ThemeData(primaryColor: Colors.pinkAccent),
+    getPages: [
+      GetPage(name: '/video', page: () => VideoPage()),
+      GetPage(name: '/channel', page: () => ChannelPage()),
+    ],));
 }
 
 class MyApp extends StatelessWidget {
@@ -31,8 +32,6 @@ class MyApp extends StatelessWidget {
                 textTheme: TextTheme(button: TextStyle(fontSize: 45.sp)),
               ),
               home: MyHomePage(title: '哔哩哔哩'),
-              //注册路由表
-              onGenerateRoute: Application.router.generator,
             )));
   }
 }

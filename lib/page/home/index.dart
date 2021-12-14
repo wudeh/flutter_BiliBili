@@ -5,6 +5,7 @@ import 'package:bilibili/page/home/live/live_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'recommend_page.dart';
 import '../index/live_broadcast/live_broadcast_page.dart';
 import '../index/like_animation.dart';
@@ -157,7 +158,14 @@ class _IndexPageState extends State<IndexPage>
                               Tab(text: '追番'),
                             ]),
                       ),
-                      Icon(Icons.list)
+                      
+                      InkWell(
+                        onTap: () {
+                          // 跳转频道页
+                          Get.toNamed("/channel");
+                        },
+                        child: Icon(Icons.list),
+                      )
                     ],
                   ),
                 )),

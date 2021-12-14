@@ -35,13 +35,13 @@ dependencies:
   extended_image: any
   video_player: any
   crypto: any
-  fluro: any
   chewie: any
   chewie_audio: any
   extended_nested_scroll_view: any
   pull_to_refresh: any
   flutter_easyrefresh: any
   card_swiper: any
+  get:
 
 dev_dependencies:
   flutter_test:

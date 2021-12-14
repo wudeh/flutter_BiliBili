@@ -8,12 +8,12 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import '../../api/api.dart';
 import '../../http/http.dart';
 import '../../model/recommend_model.dart';
 import '../common/extend_img.dart';
-import '../../route/navigator_util.dart';
 
 final GlobalKey<_RecommendPageState> recommendPageKey = GlobalKey();
 
@@ -160,10 +160,7 @@ class _RecommendPageState extends State<RecommendPage>
                             onTap: () {
                               print(e.playerArgs);
                               // 跳转到视频播放页
-                              NavigatorUtil.gotoVideoPage(
-                                  context,
-                                  e.playerArgs!.aid!.toString(),
-                                  e.playerArgs!.cid.toString());
+                              Get.toNamed('/video', arguments: {"aid":e.playerArgs!.aid, "cid":e.playerArgs!.cid});
                             },
                             child: Container(
                               clipBehavior: Clip.antiAlias,
