@@ -2,6 +2,14 @@
 
 A new Flutter project.
 
+
+# 下载
+
+| 下载最新版本 |  |
+| --- | --- |
+| [(点击下载)](https://ghproxy.com/https://github.com/wudeh/flutter_BiliBili/tree/main/screenshot/app-armeabi-v7a-release.apk) | ghproxy.com(国内用这个) |
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
